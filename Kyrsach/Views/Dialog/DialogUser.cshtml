@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Kyrsach.ViewModels.GroupViewModel>
+
+@{
+    ViewData["Title"] = "DialogUser";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+<div class="card">
+    <section class="top">
+        <span>Список чатов:</span>
+       
+    </section>
+    <hr />
+    <section class="bottom">
+        <ul class="users">
+            @foreach (var item in Model)
+            {
+                <li class="user" style="    grid-template-columns: 0.5fr 2fr 0.3fr;">
+                    @*  @if (item.Img != null)
+                {
+                <img  src="data:image/png;base64,@(Convert.ToBase64String(item.Img))" />
+                }
+                else
+                {
+                <img  src="~/images/Icons/defaulfUser.png" />
+                }*@
+                    <span class="user-name name" >@item.NameGroup</span>
+                    <p>
+                        @foreach (var p in item.Students)
+                        {
+                                    <span class="soughtFor">@p.FirstName @p.LastName,</span>
+                        }
+                    </p>
+                    <div class="CreateCategoryButtons">
+
+                        <a asp-action="IndexDialog" asp-controller="Dialog" asp-route-IdGroup="@item.IdGroup" class="btn">
+                            <strong>Написать</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </section>
+</div>
+
+      

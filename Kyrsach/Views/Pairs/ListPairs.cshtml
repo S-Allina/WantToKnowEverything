@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Pair>
+
+@{
+	ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/Cards.css" asp-append-version="true" />
+
+
+
+<div class="wrap">
+	<div class="CreateCategoryButtons">
+
+	<a asp-action="Create" asp-route-idCat="@ViewBag.idCat">
+		<button type="submit" value="Create" class="btn">
+			<strong>Добавить</strong>
+			<div id="container-stars">
+				<div id="stars"></div>
+			</div>
+
+			<div id="glow">
+				<div class="circle"></div>
+				<div class="circle"></div>
+			</div>
+		</button>
+	</a>
+	<a asp-action="Index" asp-route-idCat="@ViewBag.idCat">
+			<button type="button" class="btnBack button_pair-red">
+
+		<div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+		<div class="text">Назад</div>
+	</button>
+	</a>
+	</div>
+	@if (ViewBag.type == "fieldText")
+	{
+
+		@foreach (var item in Model)
+		{
+
+			<form asp-action="Edit" asp-controller="Pairs"  class="ListPairItem">
+
+					
+				
+				
+				<div class="aa">
+					<div class="inputbox">
+						<input  readonly required autocomplete="off" value="@item.Card1Text" name="Card1Text" type="text">
+						<span asp-for="Card1Text" class="spanQuestion"></span>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="aa">
+					<div class="inputbox">
+						<input  readonly required autocomplete="off" value="@item.Card2Text" name="Card2Text" type="text">
+						<span asp-for="Card2Text" class="spanQuestion"></span>
+						<i></i>
+					</div>
+				</div>
+				
+			 <div class="CreateCategoryButtons">
+					<button type="button"  onclick="Update(@item.IdPair)" class="btnBack button_pair-orange @item.IdPair">
+						<div class="sign"><img class="button_Img_pair" src="~/img//editField.png" /></div>
+						<div class="text">Изменить</div>
+					</button>
+					<button type="submit" id="button__save" class=" none btnBack button_pair-green @item.IdPair">
+						<div class="sign"><img class="button_Img_pair" src="~/img/savePair.png" /></div>
+						<div class="text">Сохранить</div>
+					</button>
+					<a asp-action="Delete" asp-route-idPairs="@item.IdPair">
+						<button type="button" class="btnBack button_pair-red">
+					<div class="sign"><img class="button_Img_pair" src="~/img/DeleteField.png" /></div>
+						<div class="text"> удалить</div>
+				</button>
+					</a>
+				</div>
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<input type="hidden" class="none" value="@item.IdPair" asp-for="@item.IdPair" name="IdPair"/>
+				<input value="@item.IdCategory" class="none" asp-for="@item.IdCategory" name="IdCategory">
+				</form>
+			
+
+		}
+	}
+	else
+	{
+		@foreach (var item in Model)
+		{
+			<form asp-action="Edit" asp-controller="Pairs" class="ListPairItem">
+
+					<div class="card">
+							<div class="front">
+								<img src="data:image/png;base64,@(Convert.ToBase64String(item.Card2Img))"/>
+							</div>
+					</div>
+
+				<div class="aa">
+					<div class="inputbox">
+						<input readonly required autocomplete="off" value="@item.Card2Text" name="Card2Text" type="text">
+						<span asp-for="Card2Text" class="spanQuestion"></span>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="CreateCategoryButtons">
+					
+					<a asp-action="Delete" asp-route-idPairs="@item.IdPair">
+						<button type="button" class="btnBack button_pair-red">
+							<div class="sign"><img class="button_Img_pair" src="~/img/DeleteField.png" /></div>
+							<div class="text"> удалить</div>
+						</button>
+					</a>
+				</div>
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<input type="hidden" class="none" value="@item.IdPair" asp-for="@item.IdPair" name="IdPair" />
+				<input value="@item.IdCategory" class="none" asp-for="@item.IdCategory" name="IdCategory">
+			</form>
+		}
+	}
+
+	<!-- блок с игрой -->
+	
+</div>
+
+<script>
+	
+	const buttonsSave = document.querySelectorAll('.button_pair-green');
+	const buttonsUpdate = document.querySelectorAll('.button_pair-orange');
+	const inputs1 = document.querySelectorAll('.ListPairItem > *:first-child > .inputbox > input');
+	const inputs2 = document.querySelectorAll('.ListPairItem > *:nth-child(2) > .inputbox > input');
+	const buttonsDelete = document.querySelectorAll('.button_pair-red');
+	buttonsUpdate.forEach((btn, i) => btn.addEventListener('click', () => {
+		inputs1[i].readOnly = false
+		inputs2[i].readOnly = false
+		btn.classList.add("none");
+
+		buttonsUpdate.forEach((btn2) => btn2.disabled = true)
+		buttonsDelete.forEach((i) => i.disabled = true)
+		buttonsSave[i].classList.remove("none")
+	}))
+
+	buttonsSave.forEach((btn, i) => btn.addEventListener('click', () => {
+		inputs1[i].readOnly = true
+		inputs2[i].readOnly = true
+		btn.classList.add("none");
+		buttonsUpdate.forEach((btn2) => btn2.disabled = false)
+		buttonsUpdate[i].classList.remove("none")
+	}))
+	//save.addEventListener('click', () => {
+	//	update.classList.remove("none");
+	//	save.classList.add("none")
+	//	for(let i of inputs){
+	//		i.setAttribute("readonly");
+	//	}
+	//})
+
+</script>

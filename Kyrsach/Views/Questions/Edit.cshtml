@@ -1,0 +1,74 @@
+﻿@model Kyrsach.Models.Question
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Question</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdQuestion" />
+            <div class="form-group">
+                <label asp-for="IdTest" class="control-label"></label>
+                <select asp-for="IdTest" class="form-control" asp-items="ViewBag.IdTest"></select>
+                <span asp-validation-for="IdTest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TextQuetion" class="control-label"></label>
+                <input asp-for="TextQuetion" class="form-control" />
+                <span asp-validation-for="TextQuetion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Option1" class="control-label"></label>
+                <input asp-for="Option1" class="form-control" />
+                <span asp-validation-for="Option1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Option2" class="control-label"></label>
+                <input asp-for="Option2" class="form-control" />
+                <span asp-validation-for="Option2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Option3" class="control-label"></label>
+                <input asp-for="Option3" class="form-control" />
+                <span asp-validation-for="Option3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Option4" class="control-label"></label>
+                <input asp-for="Option4" class="form-control" />
+                <span asp-validation-for="Option4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Option5" class="control-label"></label>
+                <input asp-for="Option5" class="form-control" />
+                <span asp-validation-for="Option5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorrectAnswer" class="control-label"></label>
+                <input asp-for="CorrectAnswer" class="form-control" />
+                <span asp-validation-for="CorrectAnswer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhoAnsweredQuestion" class="control-label"></label>
+                <input asp-for="WhoAnsweredQuestion" class="form-control" />
+                <span asp-validation-for="WhoAnsweredQuestion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="Home">
+
+
+    <div id="loader" style="display: none;">
+        <div id="myPartial">
+            @Html.Partial("Loader")
+        </div>
+    </div>
+    <h1 class="display-4 Home__Titile">Добро пожаловать</h1>
+    <section style="position:relative" class="loader">
+
+        <div class="slider" style="--i:0">
+        </div>
+        <div class="slider" style="--i:1">
+        </div>
+        <div class="slider" style="--i:2">
+        </div>
+        <div class="slider" style="--i:3">
+        </div>
+        <div class="slider" style="--i:4">
+        </div>
+    </section>
+    <p class="HomeText_1">
+        Добро пожаловать в тестирующий комплекс по школьным предметам! Мы рады приветствовать вас на нашей платформе, где вы можете проверить свои знания в различных школьных предметах.
+        Тестирующий комплекс предназначен для тех, кто хочет проконтролировать свои знания и подготовиться к экзаменам и тестированиям в школе. Здесь вы можете найти тесты по таким предметам, как математика, русский язык, история, география, биология и многое другое.
+    </p>
+
+
+
+    <div class="pyramid-loader">
+        <div class="wrapper">
+            <span class="side side1"></span>
+            <span class="side side2"></span>
+            <span class="side side3"></span>
+            <span class="side side4"></span>
+            <span class="shadow"></span>
+        </div>
+    </div>
+
+    <!-- Еще круги -->
+    @* <div class="cube-loader" style="position:relative">
+    <div class="cube-top"></div>
+    <div class="cube-wrapper">
+    <span style="--i:0" class="cube-span"></span>
+    <span style="--i:1" class="cube-span"></span>
+    <span style="--i:2" class="cube-span"></span>
+    <span style="--i:3" class="cube-span"></span>
+    </div>
+    </div>*@
+
+
+    <div class="pyramid-loader" style="position:relative">
+        <div class="wrapper">
+            <span class="side side1"></span>
+            <span class="side side2"></span>
+            <span class="side side3"></span>
+            <span class="side side4"></span>
+            <span class="shadow"></span>
+        </div>
+    </div>
+
+    <p class="HomeText_2">
+        Наши тесты разнообразны и позволяют проверить не только теоретические знания, но и практические навыки. Они состоят из вопросов различной сложности и могут помочь вам лучше понять и запомнить темы, которые вы изучали в классе.
+        Мы гарантируем, что наш тестирующий комплекс легок в использовании и полностью бесплатен. Вы можете использовать его в любое время и в любом месте, где есть доступ к интернету. Надеемся, что наш ресурс станет для вас полезным инструментом в обучении и подготовке к экзаменам. Желаем вам удачи при прохождении тестов!
+    </p>
+
+
+</div>
+<script>
+    //var ball = document.getElementById('ball');
+
+    //ball.onmousedown = function (e) { // 1. отследить нажатие
+
+    //    // подготовить к перемещению
+    //    // 2. разместить на том же месте, но в абсолютных координатах
+    //    ball.style.position = 'relative';
+    //    moveAt(e);
+    //    // переместим в body, чтобы мяч был точно не внутри position:relative
+    //    document.body.appendChild(ball);
+
+    //    ball.style.zIndex = 1000; // показывать мяч над другими элементами
+
+    //    // передвинуть мяч под координаты курсора
+    //    // и сдвинуть на половину ширины/высоты для центрирования
+    //    function moveAt(e) {
+    //        ball.style.left = e.pageX - ball.offsetWidth / 2 + 'px';
+    //        ball.style.top = e.pageY - ball.offsetHeight / 2 + 'px';
+    //    }
+
+    //    // 3, перемещать по экрану
+    //    document.onmousemove = function (e) {
+    //        moveAt(e);
+    //    }
+
+    //    // 4. отследить окончание переноса
+    //    ball.onmouseup = function () {
+    //        document.onmousemove = null;
+    //        ball.onmouseup = null;
+    //    }
+    //}
+</script>

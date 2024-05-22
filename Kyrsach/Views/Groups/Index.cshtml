@@ -1,0 +1,129 @@
+﻿@model IEnumerable<Kyrsach.ViewModels.GroupViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+<div class="card">
+    <section class="top">
+        <span >Список групп:</span>
+        @if (ViewBag.name == null)
+        {
+            <form asp-action="create" style="display:flex;  width:30%" method="post">
+                <div class="inputBox">
+                <input name="NameGroup" type="text"/>
+                </div>
+            <button type="submit" class="btn">
+                <strong>Добавить</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+            </form>
+        }
+        else
+            {
+            <form  asp-action="edit" style="display:flex; width:30%" method="post">
+                     <div class="inputBox">
+                <input name="NameGroup" type="text" value="@ViewBag.name" />
+                </div>
+                <input name="IdGroup" value="@ViewBag.Id" hidden />
+                    <button type="submit" class="btn">
+                        <strong>Изменить</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                </form>
+            }
+            </section>
+            <hr/>
+    <section class="bottom">
+        <ul class="users">
+            @foreach (var item in Model)
+            {
+                    <li class="user found">
+                    @*  @if (item.Img != null)
+                {
+                <img  src="data:image/png;base64,@(Convert.ToBase64String(item.Img))" />
+                }
+                else
+                {
+                <img  src="~/images/Icons/defaulfUser.png" />
+                }*@
+                        <span class="user-name name soughtFor" >@item.NameGroup</span>
+                    <p>
+                        @foreach(var p in item.Students)
+                        {
+                            <span >@p.FirstName @p.LastName,</span>
+                        }
+                    </p>
+                    <div class="CreateCategoryButtons">
+                        @if (item.isIn)
+                        {
+                            <a asp-action="Unfollow" asp-route-id="@item.IdGroup" class="btn">
+                                <strong>Выйти</strong>
+                                <div id="container-stars">
+                                    <div id="stars"></div>
+                                </div>
+
+                                <div id="glow">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                            </a>
+                        }else{
+                        <a asp-action="Follow" asp-route-id="@item.IdGroup" class="btn">
+                                <strong>Войти</strong>
+                                <div id="container-stars">
+                                    <div id="stars"></div>
+                                </div>
+
+                                <div id="glow">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                        </a>
+                        }
+                        <a asp-action="Index" asp-route-idGroup="@item.IdGroup" class="btn">
+                            <strong>Изменить</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.IdGroup" class="btn">
+                            <strong>Удалить</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </section>
+</div>

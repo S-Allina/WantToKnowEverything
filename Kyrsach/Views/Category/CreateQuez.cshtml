@@ -1,0 +1,92 @@
+﻿@model Kyrsach.ViewModels.CategoryViewModel
+@using (Html.BeginForm("Edit", "Admin",
+            FormMethod.Post, new { enctype = "multipart/form-data" }));
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Добавление категории</h1>
+
+<hr />
+<form asp-action="Create" class="formCreate" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="category-card-create">
+        <input asp-for="WhoCreatedCategory" hidden value="@User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value" />
+
+        <input name="Type" asp-for="Type" id="Type" class="none" value="quez" type="text">
+
+        <div class="CategoryCreate">
+            <div class="inputbox question ">
+
+                <input asp-for="NameCategory" maxlength="20" autocomplete="off" onchange="Text()" id="input-Cat" required type="text">
+                <span asp-validation-for="NameCategory" class="spanCategory">Название:</span>
+                <i></i>
+            </div>
+            @* <div class="form-group">
+            <label asp-for="WhoAnsweredCategory" class="control-label"></label>
+            <input asp-for="WhoAnsweredCategory" class="form-control" />
+            <span asp-validation-for="WhoAnsweredCategory" class="text-danger"></span>
+            </div>*@
+
+            <div class="input__wrapper CategoryCreate">
+                <input type="file" asp-for="Picture" accept="image/png, image/jpeg" class="input input__file" name="Picture">
+                <label asp-for="Picture" class="input__file-button">
+                    <span class="input__file-icon-wrapper">
+                        <img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55">
+                    </span>
+                    <span class="input__file-button-text" asp-validation-for="Picture">Выберите файл</span>
+                </label>
+            </div>
+
+            <button type="submit" value="Create" class="btn">
+                <strong>Добавить</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+            <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="contener">
+            <div class="contener1">
+@*
+                <div class="contener__element">
+                    <div class="container1">
+*@
+                        <a href="#" class="contener__elementQuez">
+                            <div class="boxQuez">
+                                <span></span>
+                                <div class="contentQuez">
+                                    <h2 id="NameCate"></h2>
+                                    <img src="~/img/DefautlCate.png" id="imgCate" class="CategoryImgQuez" />
+                                    <strong class="strong">
+                                        <a href="#" class="link">Изменить</a>
+                                        <a href="#" class="link">Удалить</a>
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        </a>
+                   @* </div>
+                </div>*@
+            </div>
+
+        </div>
+
+
+
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

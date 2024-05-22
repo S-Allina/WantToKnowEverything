@@ -1,0 +1,110 @@
+﻿@model List<Kyrsach.Models.Category>
+
+@{
+        ViewData["Title"] = "Index";
+}
+
+<h1 >Категории</h1>
+
+<div id="loader" style="display: none;">
+    <h1  style="font-size:40">PEYHEPRF</h1>
+</div>
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+
+<section class="top">
+        @if (User.IsInRole("admin") || User.IsInRole("teacher"))
+        {
+            <a asp-action="Create">
+                <button type="button" class="btn">
+
+                    <strong class="strongBtn">Добавить</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+
+                </button>
+
+
+            </a>
+        }
+
+    <form asp-action="Index" style="display: flex;width: 30%;align-items: baseline;gap: 15px;">
+            <span>Фильтр:</span>
+            <div class="inputBox">
+                <input name="NameCat" type="text" />
+            </div>
+            <button type="submit" class="btn">
+                <strong>Отфильтровать</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </form>
+        </section>
+<div class="contener">
+    @foreach (var item in Model) {
+        <div class="contener1 ">
+
+            <a asp-controller="Tests" asp-action="Index" asp-route-idCat="@item.IdCategory" class="contener__element">
+                    <div class="container1 found">
+
+                    <div class="box">
+                        <span class="title soughtFor" >@Html.DisplayFor(modelItem => item.NameCategory)</span>
+                        @if (item.Picture != null)
+                        {
+                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.Picture))" class="CategoryImg" />
+                        }
+                        @if (User.IsInRole("admin") || (User.IsInRole("teacher") && User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value==item.WhoCreatedCategory))
+                {
+                            <strong class="strong">
+                                <a asp-action="Edit" asp-route-id="@item.IdCategory" class="link">Изменить</a>
+                                <a asp-action="Delete" asp-route-id="@item.IdCategory" class="link">Удалить</a>
+
+                            </strong>
+                        }
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+<script>
+    // Получаем ссылки на элементы DOM
+    var loader = document.getElementById("loader");
+
+    // Функция для показа индикатора загрузки
+    function showLoader() {
+        loader.style.display = "block";
+    }
+
+    // Функция для скрытия индикатора загрузки
+    function hideLoader() {
+        loader.style.display = "none";
+    }
+
+    // Перехватываем начало и окончание AJAX-запроса
+    function setupLoader() {
+        // Показываем индикатор загрузки перед началом AJAX-запроса
+        document.addEventListener("ajaxStart", showLoader, false);
+
+        // Скрываем индикатор загрузки после окончания AJAX-запроса
+        document.addEventListener("ajaxStop", hideLoader, false);
+    }
+
+    // Вызываем функцию для настройки индикатора загрузки
+    setupLoader();
+</script>

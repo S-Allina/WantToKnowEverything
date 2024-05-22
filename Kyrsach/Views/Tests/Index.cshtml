@@ -1,0 +1,74 @@
+﻿@model List<Kyrsach.Models.Test>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Тесты</h1>
+@if (User.IsInRole("admin") || User.IsInRole("teacher"))
+{
+    <a asp-action="Create" asp-route-idCat="@ViewBag.idCat">
+        <button type="button" class="btn">
+
+            <strong class="strongBtn">Добавить</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+
+        </button>
+    </a>
+}
+<div class="ContenerForImg">
+<div class="contenerTest">
+@foreach (var item in Model) {
+    <div class="contener1">
+
+        @if(item.IdCategoryNavigation.Type=="test"){
+                    <a asp-controller="Questions" asp-action="Index" asp-route-idT="@item.IdTest" class="contener__elementTest">
+                                <div class="container1Test found">
+
+                            <div class="boxTest">
+
+                                        <span class="title soughtFor">@Html.DisplayFor(modelItem => item.NameTest)</span>
+                                <strong class="strongTest">
+                                    @if (User.IsInRole("admin") || (User.IsInRole("teacher") && item.IdCategoryNavigation.WhoCreatedCategory == User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value))
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.IdTest" class="link">Изменить</a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdTest" class="link">Удалить</a>
+                                    }
+                                </strong>
+                            </div>
+                        </div>
+                    </a>
+        }else{
+                        <a asp-controller="Quezs" asp-route-idT="@item.IdTest" asp-action="Index" class="contener__elementTest">
+                        <div class="container1Test">
+
+                            <div class="boxTest">
+
+                                <span class="title">@Html.DisplayFor(modelItem => item.NameTest)</span>
+                                <strong class="strongTest">
+                                    @if (User.IsInRole("admin") || (User.IsInRole("teacher") && item.IdCategoryNavigation.WhoCreatedCategory == User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value))
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.IdTest" class="link">Изменить</a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdTest" class="link">Удалить</a>
+                                    }
+                                </strong>
+                            </div>
+                        </div>
+                    </a>
+        }
+
+        </div>
+}
+    
+    </div>
+<div class="TestImg">
+    <img src="~/img/test.png" class="ImgTest"/>
+</div>
+</div>

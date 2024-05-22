@@ -1,0 +1,263 @@
+﻿
+
+.wrap {
+    /* устанавливаем относительное позиционирование */
+    position: relative;
+    /* высота элементов */
+    max-height: max-content;
+    /* минимальная высота и отступы */
+    min-height: 500px;
+    padding: 40px;
+    /*padding-left:180px;*/
+    display:flex;
+   flex-direction:column;
+   align-items:center;
+    text-align: center;
+    width: 100%;
+    align-content: center;
+}
+
+/* блок с игрой */
+.game {
+    /* добавляем трёхмерность для эффекта вращения */
+    transform-style: preserve-3d;
+    perspective: 500px;
+    /* пусть элементы занимают всё доступное им пространство */
+    min-height: 100%;
+    height: 100%;
+}
+
+.CardText{
+    font-size: 20px;
+    color:white;
+    font-weight:700;
+}
+/* стили карточек */
+.card {
+    float: left;
+    width: 170px;
+    height: 170px;
+    /*height: 25%;*/
+    /*max-width: 255px;*/
+    padding: 5px;
+    text-align: center;
+    display: block;
+    perspective: 500px;
+    margin: 15px;
+    position: relative;
+    cursor: pointer;
+    z-index: 50;
+    background: transparent;
+    border: none;
+}
+
+    /* настройки размера карт при максимальной ширине экрана 800 пикселей */
+    /*media (max-width: 800px) {
+		.card {
+			width: 25%;
+			height: 16.666%;
+		}
+	}*/
+
+    /* обратная сторона карточки */
+    .card .inside {
+        /* содержимое занимает весь размер карточки */
+        width: 100%;
+        height: 100%;
+        display: block;
+        /* анимация переворачивания */
+        transform-style: preserve-3d;
+        transition: 0.4s ease-in-out;
+        /* у лицевой стороны будет белый фон */
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+
+
+    /* общие настройки для обеих сторон карточки */
+    .card .front, .card .back {
+        /* рисуем границу */
+        border: 1px solid black;
+        /* прячем обратную сторону */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /* абсолютное позиционирование */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* размеры и отступ */
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border: 1px solid coral;
+        border-radius: 1rem;
+    }
+
+        /* настройки изображения на лицевой и обратной стороне */
+        .card .front img, .card .back img {
+            max-width: 100%;
+            /* отображаем как блочный элемент, без отступов */
+            display: block;
+            margin: 0 auto;
+            max-height: 100%;
+        }
+
+    /* настройки лицевой стороны */
+    .card .front {
+        /* переворачиваем карточку обложкой вверх */
+        transform: rotateY(-180deg);
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border: none;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+
+    .card .back {
+        background: linear-gradient(120deg, yellow, fuchsia);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+
+    /* настройки при максимальной ширине экрана 800 пикселей */
+    /*media (max-width: 800px) {
+		.card .front {
+			padding: 5px;
+		}
+
+		.card .back {
+			padding: 10px;
+		}
+	}*/
+
+    /* запускаем анимацию переворачивания при клике на карточку */
+    .card .inside.picked, .card .inside.matched {
+        transform: rotateY(180deg);
+    }
+
+    /* задаём ключевые кадры анимации совпадения */
+    /*
+	*/
+    /* и делаем то же самое для движка WebKit */
+    /*
+	*/
+    /* анимация совпадения пары */
+    .card .inside.matched {
+        -webkit-animation: 1s matchAnim ease-in-out;
+        animation: 1s matchAnim ease-in-out;
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+
+/* настройки затемнения при выводе модального окна */
+.modal-overlay {
+    /* на старте его не видно */
+    display: none;
+    /* затемняем экран */
+    background: rgba(0, 0, 0, 0.8);
+    /* располагаем окно по центру экрана */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* настройки модального окна */
+.modal {
+    display: none;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    max-height: 90%;
+    max-width: 90%;
+    min-height: 380px;
+    margin: 0 auto;
+    background: white;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px 10px;
+}
+
+    /* настройки шрифта сообщения о победе */
+    .modal .winner {
+        font-size: 80px;
+        text-align: center;
+        color: #4d4d4d;
+        text-shadow: 0px 3px 0 black;
+    }
+
+    /* если ширина окна маленькая, делаем шрифт поменьше */
+    /*media (max-width: 480px) {
+		.modal .winner {
+			font-size: 60px;
+		}
+	}
+	*/
+    /* настройки кнопки перезапуска игры */
+    .modal .restart {
+        margin: 30px auto;
+        padding: 20px 30px;
+        display: block;
+        font-size: 30px;
+        border: none;
+        background: #4d4d4d;
+        background: linear-gradient(#4d4d4d, #222);
+        border: 1px solid #222;
+        border-radius: 5px;
+        color: white;
+        text-shadow: 0px 1px 0 black;
+        cursor: pointer;
+    }
+
+        /* меняем фон при наведении мышки на кнопку */
+        .modal .restart:hover {
+            background: linear-gradient(#222, black);
+        }
+
+    /* выравниваем надписи на модальном окне по центру */
+    .modal .message {
+        text-align: center;
+    }
+
+
+    @media screen and (max-width:400px){
+        .wrap {
+            padding: 10px;
+        }
+
+        .card {
+            width: 110px;
+            height: 110px;
+            margin: 5px;
+        }
+
+        .CardText {
+            font-size: 16px;
+        }
+
+        .wrap > .ListPairItem > .CreateCategoryButtons {
+            margin-right: -18%;
+        }
+
+        .ListPairItem {
+            gap: 30px;
+            flex-direction: column;
+        }
+        .inputbox {
+            max-width: 200px;
+            margin-left: 10px;
+        }
+        }

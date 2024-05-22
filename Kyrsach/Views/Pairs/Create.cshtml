@@ -1,0 +1,107 @@
+﻿@model Kyrsach.ViewModels.PairViewModel
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создание пары</h1>
+
+<hr />
+<form asp-action="Create" class="" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label  class="none"></label>
+    <input class="none" name="IdCategory" value="@ViewBag.idCat" />
+
+  
+
+        <section class="tasks2">
+
+            <div class="tasks__list2">
+                    @if (ViewBag.type == "fieldText")
+            {
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Card1Text" required autocomplete="off" name="Card1Text" type="text">
+                        <span asp-validation-for="Card1Text" class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Card2Text" required autocomplete="off" name="Card2Text" type="text">
+                        <span asp-validation-for="Card2Text" class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="aa">
+                    <div class="input__wrapper CategoryCreate">
+                        <input type="file" asp-for="Card2Img" accept="image/png, image/jpeg" class="input input__file" name="Card2Img">
+                        <label asp-for="Card2Img" class="input__file-button">
+                            <span class="input__file-icon-wrapper">
+                                <img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55">
+                            </span>
+                            <span class="input__file-button-text" asp-validation-for="Card2Img">Выберите файл</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Card2Text" required autocomplete="off" name="Card2Text" type="text">
+                        <span asp-validation-for="Card2Text" class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+
+                </div>
+            }
+        </div>
+        </section>
+    
+
+
+                               
+          
+      
+   
+    <div class="CreateCategoryButtons">
+        <button type="submit" value="Create" class="btn">
+            <strong>Добавить</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+
+        <button type="button" class="btnBack">
+
+            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+            <div class="text"> <a asp-action="Index" asp-route-idCat="@ViewBag.idCat">Назад</a></div>
+        </button>
+    </div>
+
+
+</form>
+
+
+
+<script>
+
+    const label = document.querySelector('.input__file-button-text');
+    const img = document.getElementById('imgCate');
+    const inputCat = document.querySelector('.input__file');
+    inputCat.addEventListener('change', () => {
+        label.textContent = 'Файл выбран';
+        img.src = URL.createObjectURL(inputCat.files[0]);
+    });
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

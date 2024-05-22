@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Pair>
+
+@{
+	ViewData["Title"] = "Index";
+
+}
+<head>
+<link rel="stylesheet" href="~/css/Cards.css" asp-append-version="true" />
+		<link rel="stylesheet" href="~/css/Confetti.css" asp-append-version="true" />
+	</head>
+<h1>Найди пару</h1>
+@if (User.IsInRole("admin")|| User.IsInRole("teacher"))
+                {
+<a asp-action="ListPairs" asp-route-idCat="@ViewBag.idCat">
+	<button type="submit" value="Create" class="btn">
+		<strong>Список пар</strong>
+		<div id="container-stars">
+			<div id="stars"></div>
+		</div>
+
+		<div id="glow">
+			<div class="circle"></div>
+			<div class="circle"></div>
+		</div>
+	</button>
+
+
+
+</a>
+				}
+<input id="idCat" value="@ViewBag.idCat" hidden />
+<div class="wrap">
+@*
+	@if (ViewBag.type == "fieldText")
+	{
+		@foreach (var item in Model)
+		{
+
+			<div id="pair" class="none">
+				<p class="card1">@item.Card1Text</p>
+				<p class="card2">@item.Card2Text</p>
+			</div>
+
+			
+		}
+	}
+	else
+	{
+		@foreach (var item in Model)
+		{
+
+			<div id="pair" class="none">
+				<p class="card1">@item.Card2Text</p>
+				<img class="card2" src="data:image/png;base64,@(Convert.ToBase64String(item.Card2Img))" class="CategoryImgQuez" alt="">
+
+			</div>
+		}
+	}*@
+	
+	<!-- блок с игрой -->
+	<div class="game"></div>
+	<!-- модальное окно, которое появится после сбора всех пар -->
+	<div class="modal-overlay">
+		
+		<div class="modal confetti">
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<!-- поздравительная надпись -->
+			<h2 class="winner">Поздравляем, ты молодец!</h2>
+		
+			<!-- кнопка перезапуска игры -->
+			<button class="restart btn">
+				<strong class="strongBtn">Сыграем ещё?</strong>
+				<div id="container-stars">
+					<div id="stars"></div>
+				</div>
+
+				<div id="glow">
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- подключаем jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- и наш скрипт -->
+<script src="~/js/Cards.js"/>

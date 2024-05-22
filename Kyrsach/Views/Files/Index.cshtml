@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Kyrsach.Models.FileModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+            table th {
+                background-color: #F7F7F7;
+                color: #333;
+                font-weight: bold;
+            }
+
+            table th, table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "Files", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="postedFile" accept=".docx" />
+        <input type="submit" id="btnUpload" value="Upload" />
+    }
+    <hr />
+    <table id="tblFiles" cellpadding="0" cellspacing="0">
+        <tr>
+            <th style="width:120px">File Name</th>
+            <th></th>
+        </tr>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.Name</td>
+                <td><a class="view" href="javascript:;" rel="@file.Id">View Word Doc</a></td>
+            </tr>
+        }
+    </table>
+    <hr />
+    <div id="word-container" class=""></div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+    <script src="docx-preview.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id*=tblFiles] .view").click(function () {
+                var fileId = $(this).attr("rel");
+
+                console.log(fileId)
+                $.ajax({
+                    type: "POST",
+                    url: "/Files/GetWordDocument",
+                    data: "{fileId: " + fileId + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (r) {
+                        //Convert BLOB to File object.
+                        var doc = new File([new Uint8Array(r.Data)], r.ContentType);
+
+                        //If Document not NULL, render it.
+                        if (doc != null) {
+                            //Set the Document options.
+                            var docxOptions = Object.assign(docx.defaultOptions, {
+                                useMathMLPolyfill: true
+                            });
+                            //Reference the Container DIV.
+                            var container = document.querySelector("#word-container");
+
+                            //Render the Word Document.
+                            docx.renderAsync(doc, container, null, docxOptions);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

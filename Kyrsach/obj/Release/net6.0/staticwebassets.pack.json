@@ -1,0 +1,525 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Kyrsach.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Kyrsach.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\Cards.css",
+      "PackagePath": "staticwebassets\\css\\Cards.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\Loader.css",
+      "PackagePath": "staticwebassets\\css\\Loader.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\MobileNavLink.css",
+      "PackagePath": "staticwebassets\\css\\MobileNavLink.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\Style.css",
+      "PackagePath": "staticwebassets\\css\\Style.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\StyleDiagram.css",
+      "PackagePath": "staticwebassets\\css\\StyleDiagram.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\StyleLoginRegIn.css",
+      "PackagePath": "staticwebassets\\css\\StyleLoginRegIn.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\question.css",
+      "PackagePath": "staticwebassets\\css\\question.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\1.png",
+      "PackagePath": "staticwebassets\\img\\1.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\1622861_edaa2.gif",
+      "PackagePath": "staticwebassets\\img\\1622861_edaa2.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\Bio.png",
+      "PackagePath": "staticwebassets\\img\\Bio.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\Cards.png",
+      "PackagePath": "staticwebassets\\img\\Cards.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\CategoryCreate.png",
+      "PackagePath": "staticwebassets\\img\\CategoryCreate.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\DefautlCate.png",
+      "PackagePath": "staticwebassets\\img\\DefautlCate.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\DeleteField.png",
+      "PackagePath": "staticwebassets\\img\\DeleteField.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\Study.png",
+      "PackagePath": "staticwebassets\\img\\Study.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\TestIcon.png",
+      "PackagePath": "staticwebassets\\img\\TestIcon.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\WhitePlus.png",
+      "PackagePath": "staticwebassets\\img\\WhitePlus.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\acount.png",
+      "PackagePath": "staticwebassets\\img\\acount.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\arrowLeft.png",
+      "PackagePath": "staticwebassets\\img\\arrowLeft.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\celebration-gif-4.gif",
+      "PackagePath": "staticwebassets\\img\\celebration-gif-4.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\confetti-19.gif",
+      "PackagePath": "staticwebassets\\img\\confetti-19.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\confetti-gif-3.gif",
+      "PackagePath": "staticwebassets\\img\\confetti-gif-3.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\editField.png",
+      "PackagePath": "staticwebassets\\img\\editField.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\error1.png",
+      "PackagePath": "staticwebassets\\img\\error1.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\error2.png",
+      "PackagePath": "staticwebassets\\img\\error2.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\filesIcon.png",
+      "PackagePath": "staticwebassets\\img\\filesIcon.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\glitter.gif",
+      "PackagePath": "staticwebassets\\img\\glitter.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\home1.png",
+      "PackagePath": "staticwebassets\\img\\home1.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\hz.png",
+      "PackagePath": "staticwebassets\\img\\hz.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\loguot.png",
+      "PackagePath": "staticwebassets\\img\\loguot.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\minus.jpg",
+      "PackagePath": "staticwebassets\\img\\minus.jpg"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\minus.png",
+      "PackagePath": "staticwebassets\\img\\minus.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\party-balloons-and-confetti-31.gif",
+      "PackagePath": "staticwebassets\\img\\party-balloons-and-confetti-31.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\picture.png",
+      "PackagePath": "staticwebassets\\img\\picture.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\plus.png",
+      "PackagePath": "staticwebassets\\img\\plus.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\question.png",
+      "PackagePath": "staticwebassets\\img\\question.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\questionleft.png",
+      "PackagePath": "staticwebassets\\img\\questionleft.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\questionright.png",
+      "PackagePath": "staticwebassets\\img\\questionright.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\right.png",
+      "PackagePath": "staticwebassets\\img\\right.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\role.png",
+      "PackagePath": "staticwebassets\\img\\role.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\savePair.png",
+      "PackagePath": "staticwebassets\\img\\savePair.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\sound.png",
+      "PackagePath": "staticwebassets\\img\\sound.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\sountnot.png",
+      "PackagePath": "staticwebassets\\img\\sountnot.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\star1.png",
+      "PackagePath": "staticwebassets\\img\\star1.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\star2.png",
+      "PackagePath": "staticwebassets\\img\\star2.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\star3.png",
+      "PackagePath": "staticwebassets\\img\\star3.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\star4.png",
+      "PackagePath": "staticwebassets\\img\\star4.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\star5.png",
+      "PackagePath": "staticwebassets\\img\\star5.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\statics.png",
+      "PackagePath": "staticwebassets\\img\\statics.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\test.png",
+      "PackagePath": "staticwebassets\\img\\test.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\testPhone.png",
+      "PackagePath": "staticwebassets\\img\\testPhone.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\testR.png",
+      "PackagePath": "staticwebassets\\img\\testR.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\testttttt.png",
+      "PackagePath": "staticwebassets\\img\\testttttt.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\thinking.png",
+      "PackagePath": "staticwebassets\\img\\thinking.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\vecteezy_3d-hand-holding-mobile-phone-isolated-on-pastel-background_17218012_189.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_3d-hand-holding-mobile-phone-isolated-on-pastel-background_17218012_189.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\vecteezy_3d-minimal-social-media-with-video-and-photo-gallery-on_8879463_729.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_3d-minimal-social-media-with-video-and-photo-gallery-on_8879463_729.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\vecteezy_3d-online-airline-ticket-buying-confirm-concept-icon-with-3d_10916024_536.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_3d-online-airline-ticket-buying-confirm-concept-icon-with-3d_10916024_536.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\vecteezy_ink-with-feather-icons-of-art-and-stationary-illustration_8470746_847.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_ink-with-feather-icons-of-art-and-stationary-illustration_8470746_847.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\Cards.js",
+      "PackagePath": "staticwebassets\\js\\Cards.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\Quez.js",
+      "PackagePath": "staticwebassets\\js\\Quez.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\React.js",
+      "PackagePath": "staticwebassets\\js\\React.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\dia1.js",
+      "PackagePath": "staticwebassets\\js\\dia1.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\diagrams.js",
+      "PackagePath": "staticwebassets\\js\\diagrams.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\loader.js",
+      "PackagePath": "staticwebassets\\js\\loader.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\question.js",
+      "PackagePath": "staticwebassets\\js\\question.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.Kyrsach.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.Kyrsach.props",
+      "PackagePath": "build\\Kyrsach.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Kyrsach.props",
+      "PackagePath": "buildMultiTargeting\\Kyrsach.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.Kyrsach.props",
+      "PackagePath": "buildTransitive\\Kyrsach.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

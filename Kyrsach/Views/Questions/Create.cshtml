@@ -1,0 +1,273 @@
+﻿@model Kyrsach.Models.Question
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создание вопроса</h1>
+
+<hr />
+@*<div class="row">
+    <div class="col-md-4">*@
+<form asp-action="Create" class="formCreate" enctype="multipart/form-data">
+    
+
+        <input name="idT" class="none"  value="@ViewBag.IdT" />
+
+
+    <div class="inputbox question">
+       
+        <span asp-validation-for="TextQuetion" class="spanQuestion">Вопрос:</span>
+        <textarea asp-for="TextQuetion" minlength="1" required autocomplete="off" type="text"></textarea>
+        <i></i>
+    </div>
+
+
+    <div class="QuestionImeges">
+        <div class="QuestionText">
+    <div class="radio-inputs">
+        <label>
+                    <input checked class="radio-input" type="radio" id="options" name="engine">
+            <span class="radio-tile">
+                <span class="radio-label">С вариантами ответа</span>
+            </span>
+        </label>
+        <label>
+                    <input class="radio-input" type="radio" id="Nooptions" name="engine">
+            <span class="radio-tile">
+                <span class="radio-icon">
+                </span>
+                <span class="radio-label">Без вариантов ответа</span>
+            </span>
+        </label>
+      @*  <label>
+            <input class="radio-input" type="radio" name="engine">
+            <span class="radio-tile">
+                <span class="radio-icon">
+                </span>
+                <span class="radio-label">Car</span>
+            </span>
+        </label>*@
+    </div>
+    <div class="create-options" id="create-options">
+        <div class="aa">
+                <label class="container">
+                        <input  type="checkbox" id="11" onchange="copyInputValue(1, 11)">
+                    <div class="checkmark"></div>
+                </label>
+                <div class="inputbox">
+                        <input asp-for="Option1"  minlength="1" maxlength="30" id="1" autocomplete="off" required type="text">
+                    <span asp-validation-for="Option1">Вариант 1</span>
+                    <i></i>
+                </div>
+        </div>
+            <div class="aa">
+                <label class="container">
+                <input type="checkbox" id="22"  onchange="copyInputValue(2, 22)" />
+                    <div class="checkmark"></div>
+                </label>
+                <div class="inputbox">
+                        <input asp-for="Option2" minlength="1" maxlength="30" autocomplete="off" required id="2" type="text">
+                    <span asp-validation-for="Option2">Вариант 2</span>
+                    <i></i>
+                </div>
+            </div>
+                <div class="aa none" id="option3">
+                <label class="container">
+                <input type="checkbox" id="33" onchange="copyInputValue(3, 33)" />
+                    <div class="checkmark"></div>
+                </label>
+                <div class="inputbox">
+                        <input asp-for="Option3" minlength="1" maxlength="30" autocomplete="off" id="3" required type="text">
+                    <span asp-validation-for="Option3">Вариант 3</span>
+                    <i></i>
+                </div>
+            </div>
+                <div class="aa none" id="option4" >
+                <label class="container">
+                <input type="checkbox" id="44" onchange="copyInputValue(4,44)" />
+                    <div class="checkmark"></div>
+                </label>
+                <div class="inputbox">
+                        <input asp-for="Option4" minlength="1" maxlength="30" autocomplete="off" id="4" required type="text">
+                    <span asp-validation-for="Option4">Вариант 4</span>
+                    <i></i>
+                </div>
+            </div>
+                <div class="aa none" id="option5" >
+                <label class="container">
+                <input type="checkbox" id="55" onchange="copyInputValue(5,55)" />
+                    <div class="checkmark"></div>
+                </label>
+            <div class="inputbox" >
+                        <input asp-for="Option5" minlength="1" maxlength="30" autocomplete="off" id="5" required type="text">
+                    <span asp-validation-for="Option5">Вариант 5</span>
+                    <i></i>
+                </div>
+           
+                </div>
+             
+                @*  <div class="form-group">
+            <label asp-for="PictureTest" class="control-label"></label>
+            <input type="file" name="PictureTest" asp-for="PictureTest" class="form-control" accept="image/png, image/jpeg" />
+            <span asp-validation-for="PictureTest" class="text-danger"></span>
+        </div>*@
+        <input asp-for="CorrectAnswer" type="text" id="CorrectAnswer" class="none" name="answer" />
+        <span asp-validation-for="CorrectAnswer" class="text-danger"></span>
+
+                <div class="radio-inputs">
+
+                    <button type="button" id="plus" class="Option-button plus ">
+
+        </button>
+                    <button type="button" id="minus" class="Option-button minus none">
+
+                </button>
+                </div>
+    </div>
+    <div class="create-Nooptions none" id="create-Nooptions">
+        <div class="inputbox">
+                    <input asp-for="CorrectAnswer" minlength="1" maxlength="15" autocomplete="off" type="text">
+            <span asp-validation-for="CorrectAnswer">Ответ:</span>
+            <i></i>
+        </div>
+       
+    </div>
+    
+    @*<div class="input-container">
+        <label asp-for="PictureTest" class="control-label"></label>
+        <input type="file"  asp-for="PictureTest" class="form-control" accept="image/png, image/jpeg" class="inputQ">
+        <span asp-validation-for="PictureTest">Картинка</span>
+    </div>*@
+
+    <div class="input__wrapper">
+        <input type="file" asp-for="PictureTest" accept="image/png, image/jpeg" class="input input__file" name="PictureTest">
+        <label asp-for="PictureTest" class="input__file-button">
+      <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
+            <span class="input__file-button-text" asp-validation-for="PictureTest">Выберите файл</span>
+   </label>
+</div>
+</div>
+    <div class="questionImg">
+        <div class="cardQuestion">
+            <div class="circleQuestion"></div>
+            <div class="circleQuestion"></div>
+            <div class="card-innerQuestion">
+                <img src="~/img/DefautlCate.png" id="imgCate" class="imgQuestion" />
+            </div>
+        </div>
+       
+
+         @*   <img class="imgleft" src="~/img/questionleft.png">
+            <img class="imgcenter" src="~/img/question.png">
+            <img class="imgright" src="~/img/questionright.png">*@
+
+        
+    </div>
+    </div>
+           @* <div class="form-group">
+                <label asp-for="CorrectAnswer" class="control-label"></label>
+                <input asp-for="CorrectAnswer" class="form-control" />
+                <span asp-validation-for="CorrectAnswer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhoAnsweredQuestion" class="control-label"></label>
+                <input asp-for="WhoAnsweredQuestion" class="form-control" />
+                <span asp-validation-for="WhoAnsweredQuestion" class="text-danger"></span>
+            </div>*@
+
+                <div class="CreateCategoryButtons">
+        <button type="submit" value="Create" class="btn">
+            <strong>Добавить</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+
+                    <button type="button" class="btnBack">
+
+                    <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+            <div class="text"> <a asp-action="Index" asp-route-idT="@ViewBag.idT">Назад</a></div>
+                </button>
+                </div>
+      </form>
+
+<script src="~/js/question.js">
+
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+
+    document.querySelector('#plus').addEventListener('click', () => {
+        const plus = document.querySelector('#plus');
+        const min = document.querySelector('#minus');
+        const option = document.querySelectorAll('.aa.none');
+        if (option.length === 1) plus.classList.add('none');
+
+        option[0].classList.remove('none');
+        if (min.classList.contains('none')) min.classList.remove('none');
+    });
+
+    document.querySelector('#minus').addEventListener('click', () => {
+        const min = document.querySelector('#minus');
+        const plus = document.querySelector('#plus');
+        if (plus.classList.contains('none')) plus.classList.remove('none');
+        const option = document.querySelectorAll('.aa');
+        const None = document.querySelectorAll('.aa.none');
+        for (let i = option.length - 1; i > 1; i--) {
+            if (option[i].classList.contains('none') === false) {
+                console.log("-------");
+                option[i].classList.add('none');
+                option[i].children[1].children[0].value = "";
+                option[i].children[0].children[0].checked = false;
+                break;
+            }
+        }
+        console.log(None.length)
+        if (None.length === 2) {
+            min.classList.add('none');
+            console.log("opopop");
+
+        }
+
+
+
+
+
+    })
+
+
+    const no = document.querySelector('#create-Nooptions');
+    console.log('jujjjjjj');
+
+    const yes = document.querySelector('#create-options');
+    const rodio1 = document.querySelector('#options');
+    const rodio2 = document.querySelector('#Nooptions');
+    rodio1.addEventListener('change', () => {
+        if (rodio1.checked) {
+            no.classList.add('none');
+            console.log('jujjjjjj');
+            yes.classList.remove('none');
+            /*   yes.classList.add('flex');*/
+        }
+    });
+    rodio2.addEventListener('change', () => {
+        if (rodio2.checked) {
+            yes.classList.add('none');
+            console.log('jujjjjjj');
+            no.classList.remove('none');
+        }
+    });
+
+
+
+</script>

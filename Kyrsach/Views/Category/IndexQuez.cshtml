@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Kyrsach.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+<h1>Категории найди пару</h1>
+<section class="top">
+    @if (User.IsInRole("admin") || User.IsInRole("teacher"))
+    {
+        <a asp-action="CreateQuez" class="btn">
+                <strong class="strongBtn">Добавить</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </a>
+    }
+
+</section>
+
+<div class="contener">
+    @foreach (var item in Model)
+    {
+        <a asp-controller="Tests" asp-action="Index" asp-route-idCat="@item.IdCategory" class="contener__elementQuez">
+                <div class="boxQuez found">
+                <span></span>
+                    <div class="contentQuez soughtFor">
+                    <h2>@Html.DisplayFor(modelItem => item.NameCategory)</h2>
+                    @if (item.Picture != null)
+                    {
+                        <img src="data:image/png;base64,@(Convert.ToBase64String(item.Picture))" class="CategoryImgQuez" alt="">
+                    }
+                    <strong class="strong">
+                        @if (User.IsInRole("admin")||(User.IsInRole("teacher") && User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value == item.WhoCreatedCategory))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.IdCategory" class="link">Изменить</a>
+                            <a asp-action="Delete" asp-route-id="@item.IdCategory" class="link">Удалить</a>
+                        }
+                    </strong>
+                </div>
+             
+            </div>
+              
+        </a>
+                            
+    }
+</div>
+

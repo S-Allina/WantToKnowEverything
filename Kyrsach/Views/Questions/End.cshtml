@@ -1,0 +1,41 @@
+﻿
+@model Kyrsach.Models.Question
+
+@{
+    ViewData["Title"] = "End";
+}
+<div class="diagr">
+    <div class="pie animate" style="--p: @ViewBag.Count; --c: fuchsia">@ViewBag.Count %</div>
+</div>
+@if (ViewBag.Count<=20){
+
+    <img src="~/img/star1.png" class="result-img"/>
+}
+else if (ViewBag.Count > 20 && ViewBag.Count <= 40)
+{
+    <img src="~/img/star2.png" class="result-img" />
+}
+else if (ViewBag.Count > 40 && ViewBag.Count <= 60)
+{
+    <img src="~/img/star3.png" class="result-img" />
+}
+else if (ViewBag.Count > 60 && ViewBag.Count <= 80)
+{
+    <img src="~/img/star4.png" class="result-img" />
+}
+else if (ViewBag.Count > 80 && ViewBag.Count <= 100)
+{
+    <img src="~/img/star5.png" class="result-img" />
+}
+<img src="~/img/testPhone.png" class="result-phone"/>
+<a asp-action="Index" class="btn" asp-controller="Category" asp-route-type="test">
+        <strong>Назад</strong>
+        <div id="container-stars">
+            <div id="stars"></div>
+        </div>
+
+        <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+</a>

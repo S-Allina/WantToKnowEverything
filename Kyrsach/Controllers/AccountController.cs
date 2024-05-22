@@ -1,0 +1,232 @@
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Kyrsach.Models;
+using Kyrsach.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+
+namespace Kyrsach.Controllers
+{
+    public class AccountController : Controller
+    {
+        private readonly UserManager<UserModel> _userManager;
+        private readonly SignInManager<UserModel> _signInManager;
+        private readonly SerovaContext _context;
+        public AccountController(UserManager<UserModel> userManager, SignInManager<UserModel> signInManager, SerovaContext context)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _context = context;
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Register(LoginAndRegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userFromNumber = _userManager.Users.Where(u=>u.FirstName==model.FirstName 
+                && u.LastName==model.LastName && u.NumberStudentBook==model.NumberStudentBook).FirstOrDefault();
+                if (userFromNumber == null) ModelState.AddModelError("", "Студента с таким номером зачётки ещё не зарегистрировано. Проверьте правильность введённых данных.");
+                else
+                {
+                    if (_userManager.FindByNameAsync(model.Name) != null)
+                    {
+                        ModelState.AddModelError(string.Empty, "Логин не уникален");
+                    }
+                    if (_userManager.FindByEmailAsync(model.Name) != null)
+                    {
+                        ModelState.AddModelError(string.Empty, "Email не уникален");
+
+                    }
+                    if(ModelState.ErrorCount!=0) return View(model);
+                    userFromNumber.Email = model.Email;
+                    userFromNumber.UserName = model.Name;
+                    var result = _userManager.PasswordHasher.HashPassword(userFromNumber, model.Password);
+                    userFromNumber.PasswordHash= result;
+                      await  _userManager.UpdateAsync(userFromNumber);
+                        return RedirectToAction("Index", "Home");
+                  
+                }
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> FullUsers()
+        {
+            var user = _userManager.Users.FirstOrDefaultAsync(u => u.UserName == User.Identity.Name).Result;
+            List<UserViewModel> users = new List<UserViewModel>();
+            if (_userManager.IsInRoleAsync(user, "admin").Result){
+                users = _context.UserView.OrderBy(u => u.NameGroup).ToList();
+                return View(users);
+            }
+            else if( _userManager.IsInRoleAsync(user, "teacher").Result)
+            {
+                users = _context.UserView.Where(u=>u.NameRole=="user").OrderBy(u=>u.NameGroup).ToList();
+                return View(users);
+            }
+            return RedirectToAction("Index", "Home");
+
+        }
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> RegisterTeacher()
+        {
+            return View();
+        }
+        [HttpGet]
+        [Authorize(Roles = "teacher")]
+        public async Task<IActionResult> RegisterUser()
+        {
+            var groups = await _context.Groups.ToListAsync();
+
+            // Создаем список объектов SelectListItem для заполнения выпадающего списка
+            var selectListItems = groups.Select(c => new SelectListItem
+            {
+                Value = c.IdGroup.ToString(), // Здесь должно быть строковое значение идентификатора категории
+                Text = c.NameGroup // Здесь должно быть название категории
+            }).ToList();
+            ViewBag.Groups = selectListItems;
+
+            return View();
+        }
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RegisterTeacher(LoginAndRegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_userManager.FindByNameAsync(model.Name) != null)
+                {
+                    ModelState.AddModelError(string.Empty, "Логин не уникален");
+                }
+                if (_userManager.FindByEmailAsync(model.Name) != null)
+                {
+                    ModelState.AddModelError(string.Empty, "Email не уникален");
+                }
+                if (ModelState.ErrorCount != 0) return View(model);
+                UserModel user = new UserModel
+                {
+                    Email = model.Email,
+                    UserName = model.Name,
+                    NormalizedUserName = model.LastName + model.FirstName,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+
+                };
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                await _userManager.AddToRoleAsync(user, "teacher");
+
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+            }
+            return View(model);
+        }
+        [HttpPost]
+        [Authorize(Roles = "teacher")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RegisterUser(LoginAndRegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_userManager.FindByNameAsync(model.Name) != null)
+                {
+                    ModelState.AddModelError(string.Empty, "Логин не уникален");
+                }
+                if (_userManager.FindByEmailAsync(model.Name) != null)
+                {
+                    ModelState.AddModelError(string.Empty, "Email не уникален");
+                }
+                if (ModelState.ErrorCount != 0) return View(model);
+
+                UserModel user = new UserModel
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    NumberStudentBook = model.NumberStudentBook,
+                    UserName = model.NumberStudentBook.ToString()
+
+                };
+
+                //var result = await _userManager.CreateAsync(user, model.Password);
+                await _userManager.CreateAsync(user);
+                await _userManager.AddToRoleAsync(user, "user");
+               var t = await _signInManager.CanSignInAsync(user);
+                PeopleInGroup peopleInGroup = new PeopleInGroup
+                {
+                    IdGroup = model.Group,
+                    IdUser = _userManager.Users.FirstOrDefault(u=>u.NumberStudentBook==model.NumberStudentBook).Id,
+                    Role = "user"
+
+                };
+                await _context.PeopleInGroups.AddAsync(peopleInGroup);
+                _context.SaveChanges();
+                    return RedirectToAction("Index", "Home");
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Login()
+        {
+		 await _signInManager.GetExternalAuthenticationSchemesAsync();
+            return View(new LoginAndRegisterModel
+            {
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginAndRegisterModel model)
+        {
+            if (model.Name != null && model.Password != null)
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u=>u.UserName==model.Name);
+                if (user != null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(model.Name, model.Password, model.RememberMe, false);
+                    if (result.Succeeded)
+                    {
+                        await _userManager.UpdateAsync(user);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Неверный логин или пароль");
+                    }
+
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Пользователя с таким логином не существует, проверьте правильность введённых данных.");
+                }
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "Не все поля заполнены");
+            }
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
+    }
+}

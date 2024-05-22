@@ -1,0 +1,60 @@
+﻿<form id="pdfForm" enctype="multipart/form-data">
+    <input id="pdfFile" type="file" name="pdfFile" accept=".pdf" />
+    <button type="submit">Display</button>
+</form>
+
+<div id="pdfContainer"></div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+    <script>
+        document.getElementById("pdfForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Отменить стандартное действие формы
+
+            var fileInput = document.getElementById("pdfFile");
+            var file = fileInput.files[0];
+
+            var formData = new FormData();
+            formData.append("pdfFile", file);
+
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+              
+                fileInput.value = null; // Сбросить значение входного поля файла
+            };
+            xhr.open("POST", "/Cards/Index", true);
+            xhr.responseType = "blob";
+            xhr.send(formData);
+        });
+
+        function displayPdf(pdfBlob) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var pdfData = new Uint8Array(e.target.result);
+                pdfjsLib.getDocument(pdfData).promise.then(function (pdfDoc) {
+                    pdfDoc.getPage(1).then(function (page) {
+                        var pdfContainer = document.getElementById("pdfContainer");
+                        var canvas = document.createElement("canvas");
+                        var context = canvas.getContext("2d");
+
+                        var viewport = page.getViewport({ scale: 1 });
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        var renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+                        page.render(renderContext).promise.then(function () {
+                            while (pdfContainer.firstChild) {
+                                pdfContainer.removeChild(pdfContainer.firstChild);
+                            }
+                            pdfContainer.appendChild(canvas);
+                        });
+                    });
+                });
+            };
+            reader.readAsArrayBuffer(pdfBlob);
+        }
+    </script>
+}

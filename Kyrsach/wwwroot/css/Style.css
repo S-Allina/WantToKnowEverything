@@ -1,0 +1,530 @@
+﻿
+
+body {
+    overflow-x: hidden;
+    margin-bottom: 60px;
+    background: -webkit-linear-gradient(-45deg, #7030a0 10%,#9dc3e6 39%,#ff66ff 66%,#d6cf01 90%);
+   
+    animation: gradient 10s infinite linear;
+    background-size: 300%;
+    color: white;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+
+    50% {
+        background-position: 20% 100%;
+    }
+
+    100% {
+        background-position: 80% 0%;
+    }
+}
+/*///////////////////////////////////////  Штучки /////////////////////////////*/
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.slider {
+    overflow: hidden;
+    background-color: white;
+    margin: 0 15px;
+    height: 80px;
+    width: 20px;
+    border-radius: 30px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 30px #fff, inset -5px -5px 10px rgba(0, 0, 255, 0.1), inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+    .slider::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 420px 0 400px #2697f3, inset 0px 0px 0px rgba(0, 0, 0, 0.1);
+        animation: animate_2 2.5s ease-in-out infinite;
+        animation-delay: calc(-0.5s * var(--i));
+    }
+
+@keyframes animate_2 {
+    0% {
+        transform: translateY(250px);
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(250px);
+        filter: hue-rotate(180deg);
+    }
+}
+
+.pyramid-loader {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: block;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg);
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.pyramid-loader .wrapper .side {
+    width: 280px;
+    height: 280px;
+    /* you can choose any gradient or color you want */
+    /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: center top;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader .wrapper .side1 {
+    transform: rotateZ(-30deg) rotateY(90deg);
+    background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .side2 {
+    transform: rotateZ(30deg) rotateY(90deg);
+    background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side3 {
+    transform: rotateX(30deg);
+    background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side4 {
+    transform: rotateX(-30deg);
+    background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .shadow {
+    width: 300px;
+    height: 300px;
+    background: #8B5AD5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotateX(90deg) translateZ(-150px);
+    filter: blur(12px);
+}
+/*//////// куб ////////*/
+
+.cube-loader {
+    position: relative;
+    /* u can choose any size */
+    width: 75px;
+    height: 75px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 4s linear infinite;
+    padding-top: 80px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-30deg) rotateY(0);
+    }
+
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube-loader .cube-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* top: 0;
+  left: 0; */
+    transform-style: preserve-3d;
+}
+
+    .cube-loader .cube-wrapper .cube-span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* top: 0;
+  left: 0; */
+        /* width 75px / 2 = 37.5px */
+        transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
+        background: linear-gradient( to bottom, hsl(330, 3.13%, 25.1%) 0%, hsl(177.27, 21.71%, 32.06%) 5.5%, hsl(176.67, 34.1%, 36.88%) 12.1%, hsl(176.61, 42.28%, 40.7%) 19.6%, hsl(176.63, 48.32%, 43.88%) 27.9%, hsl(176.66, 53.07%, 46.58%) 36.6%, hsl(176.7, 56.94%, 48.91%) 45.6%, hsl(176.74, 62.39%, 50.91%) 54.6%, hsl(176.77, 69.86%, 52.62%) 63.4%, hsl(176.8, 76.78%, 54.08%) 71.7%, hsl(176.83, 83.02%, 55.29%) 79.4%, hsl(176.85, 88.44%, 56.28%) 86.2%, hsl(176.86, 92.9%, 57.04%) 91.9%, hsl(176.88, 96.24%, 57.59%) 96.3%, hsl(176.88, 98.34%, 57.93%) 99%, hsl(176.89, 99.07%, 58.04%) 100% );
+    }
+
+.cube-top {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: hsl(330, 3.13%, 25.1%) 0%;
+    /* width 75px / 2 = 37.5px */
+    transform: rotateX(90deg) translateZ(37.5px);
+    transform-style: preserve-3d;
+}
+
+    .cube-top::before {
+        content: '';
+        position: absolute;
+        /* u can choose any size */
+        width: 75px;
+        height: 75px;
+        background: hsl(176.61, 42.28%, 40.7%) 19.6%;
+        transform: translateZ(-90px);
+        filter: blur(10px);
+        box-shadow: 0 0 10px #323232, 0 0 20px hsl(176.61, 42.28%, 40.7%) 19.6%, 0 0 30px #323232, 0 0 40px hsl(176.61, 42.28%, 40.7%) 19.6%;
+    }
+/*    ///////////////////////////*/
+
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animateD 8s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes animateD {
+    0% {
+        transform: rotateX(-15deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(-15deg) rotateY(-360deg);
+    }
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube2 {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    animation: animateD2 5s ease-out infinite alternate;
+}
+
+@keyframes animateD2 {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(180deg) rotateY(-360deg);
+    }
+}
+
+.cube2 div {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 65%;
+    height: 65%;
+    transform-style: preserve-3d;
+}
+
+    .cube2 div span {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        width: 65%;
+        height: 65%;
+        background: transparent;
+        border: 2px solid hotpink;
+        transform: rotateY(calc(90deg * var(--i))) translateZ(62px);
+    }
+
+.cube3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animateD3 1s ease-in-out infinite alternate;
+}
+
+@keyframes animateD3 {
+    0% {
+        transform: rotateX(-90deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(90deg) rotateY(45deg);
+    }
+}
+
+.cube3 div {
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    width: 15%;
+    height: 15%;
+    transform-style: preserve-3d;
+}
+
+    .cube3 div span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: hotpink;
+        transform: rotateY(calc(90deg * var(--i))) translateZ(14px);
+        box-shadow: 0px 0px 7px hotpink;
+    }
+
+.top3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: hotpink;
+    transform: rotateX(90deg) translateZ(14px);
+    box-shadow: 0px 0px 10px hotpink;
+}
+/*//////////////////////////// КНИГА ///////////////////////////////////*/
+.loader1 {
+    --background: linear-gradient(135deg, #23C4F8, #275EFE);
+    --shadow: rgba(39, 94, 254, 0.28);
+    --text: #6C7486;
+    --page: rgba(255, 255, 255, 0.36);
+    --page-fold: rgba(255, 255, 255, 0.52);
+    --duration: 3s;
+    width: 200px;
+    height: 140px;
+    position: relative;
+}
+
+    .loader1:before, .loader1:after {
+        --r: -6deg;
+        content: "";
+        position: absolute;
+        bottom: 8px;
+        width: 120px;
+        top: 80%;
+        box-shadow: 0 16px 12px var(--shadow);
+        transform: rotate(var(--r));
+    }
+
+    .loader1:before {
+        left: 4px;
+    }
+
+    .loader1:after {
+        --r: 6deg;
+        right: 4px;
+    }
+
+    .loader1 div {
+        width: 100%;
+        height: 100%;
+        border-radius: 13px;
+        position: relative;
+        z-index: 1;
+        perspective: 600px;
+        box-shadow: 0 4px 6px var(--shadow);
+        background-image: var(--background);
+    }
+
+        .loader1 div ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+        }
+
+            .loader1 div ul li {
+                --r: 180deg;
+                --o: 0;
+                --c: var(--page);
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                transform-origin: 100% 50%;
+                color: var(--c);
+                opacity: var(--o);
+                transform: rotateY(var(--r));
+                -webkit-animation: var(--duration) ease infinite;
+                animation: var(--duration) ease infinite;
+            }
+
+                .loader1 div ul li:nth-child(2) {
+                    --c: var(--page-fold);
+                    -webkit-animation-name: page-2;
+                    animation-name: page-2;
+                }
+
+                .loader1 div ul li:nth-child(3) {
+                    --c: var(--page-fold);
+                    -webkit-animation-name: page-3;
+                    animation-name: page-3;
+                }
+
+                .loader1 div ul li:nth-child(4) {
+                    --c: var(--page-fold);
+                    -webkit-animation-name: page-4;
+                    animation-name: page-4;
+                }
+
+                .loader1 div ul li:nth-child(5) {
+                    --c: var(--page-fold);
+                    -webkit-animation-name: page-5;
+                    animation-name: page-5;
+                }
+
+                .loader1 div ul li svg {
+                    width: 90px;
+                    height: 120px;
+                    display: block;
+                }
+
+                .loader1 div ul li:first-child {
+                    --r: 0deg;
+                    --o: 1;
+                }
+
+                .loader1 div ul li:last-child {
+                    --o: 1;
+                }
+
+    .loader1 span {
+        display: block;
+        left: 0;
+        right: 0;
+        top: 100%;
+        margin-top: 20px;
+        text-align: center;
+        color: var(--text);
+    }
+
+@keyframes page-2 {
+    0% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    35%, 100% {
+        opacity: 0;
+    }
+
+    50%, 100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes page-3 {
+    15% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+
+    65%, 100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes page-4 {
+    30% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    65%, 100% {
+        opacity: 0;
+    }
+
+    80%, 100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes page-5 {
+    45% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    80%, 100% {
+        opacity: 0;
+    }
+
+    95%, 100% {
+        transform: rotateY(0deg);
+    }
+}
+
+
+.QuezEnd {
+    background: url('https://i.pinimg.com/originals/67/d9/35/67d9350a82968b19a7d011f662904f54.gif');
+    animation: moveBackground 30s linear infinite;
+}
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 100vh;
+    }
+}

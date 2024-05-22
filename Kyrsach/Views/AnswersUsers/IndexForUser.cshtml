@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Kyrsach.Models.Test>
+
+@{
+    ViewData["Title"] = "Статистика";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+    <link rel="stylesheet" href="~/css/StyleDiagram.css" asp-append-version="true" />
+</head>
+<hr />
+<h1 style="margin-right:20px;">Построение графиков</h1>
+
+
+<div class="card-3d-wrap mx-auto" style="    width: 1150px;height: 200px; margin-top:0px">
+    <div class="square" style="--i: 0"></div>
+    <div class="square" style="--i: 1"></div>
+    <div class="square" style="--i: 2"></div>
+    <div class="square" style="--i: 3"></div>
+    <div class="square" style="--i: 4"></div>
+    <div class="card-3d-wrapper" style="width: 1150px; height: 230px; ">
+
+
+        <div class="card-front" style="padding:20px">
+
+            <h2>Формирование графиков успеваимости ученика</h2>
+            <form class="center-wrap" style="width: 100% !important;display: flex;justify-content: space-between;
+    align-items: center;" >
+    <div class="formSelect">
+        <p>@User.Identity.Name</p>
+        <input id="User" hidden class="my-select-menu" name="User" value="@ViewBag.UserId">
+        </input>
+    </div>  <div class="formSelect">
+
+        <label for="tests">Категории</label>
+        <select class="my-select-menu " id="tests" name="tests"></select>
+    </div>
+    <div class="formSelect">
+        <label for="tests">Дата с</label>
+        <input id="startDate" class="my-select-menu" type="date" />
+    </div>  <div class="formSelect">
+        <label for="tests">Дата по</label>
+        <input id="endDate" class="my-select-menu" type="date" />
+    </div>
+    <button class="btn">
+
+        <strong class="strongBtn">Сформировать</strong>
+        <div id="container-stars">
+            <div id="stars"></div>
+        </div>
+
+        <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+    </button>
+</form>
+
+        </div>
+    </div>
+</div>
+
+<br />
+<h1 id="titleDiagramm1"></h1>
+<br />
+<div id="container">
+
+    <div id="content">
+        <div class="mainChart">
+            <canvas id="salesData"></canvas>
+        </div>
+    </div>
+</div>
+<hr />
+<h1 id="titleDiagramm2"></h1>
+<div id="container">
+   
+<canvas id="myChart" width="400" height="400"></canvas>
+
+
+    <!-- Canvas for Chart.js -->
+    <div style="width: 50%;">
+        <h1 id="titleDiagramm3">Оценки</h1>
+   
+    <div id="chartdiv"></div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="~/js/diagrams.js"></script>

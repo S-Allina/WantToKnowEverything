@@ -1,0 +1,367 @@
+﻿@model Kyrsach.ViewModels.QuezViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создание соотношения</h1>
+
+<hr />
+<div class="radio-inputs">
+    <label>
+        <input checked="" class="radio-input" type="radio" id="pictures" name="engine">
+        <span class="radio-tile">
+            <span class="radio-label">Без картинок</span>
+        </span>
+    </label>
+    <label>
+        <input class="radio-input" type="radio" id="Nopictures" name="engine">
+        <span class="radio-tile">
+            <span class="radio-icon">
+            </span>
+            <span class="radio-label">С картинками </span>
+        </span>
+    </label>
+</div>
+
+
+<form asp-action="Create" enctype="multipart/form-data" class="create-Nooptions none" id="create-Nopictures">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label asp-for="IdTest" class="none"></label>
+    <input asp-for="IdTest" class="none" name="IdTest" value="@ViewBag.idT" />
+
+    
+        <section class="tasks2">
+              <div class="formCreate" id="t">
+            <span>Необходимо ввести в поля для ввода текста <b>три</b> слова разделяя их <b>пробелом</b> (среднее слово будет подвихно)</span>
+                  </div>
+          <div >
+            <div class="ultasks2">
+                <div class="input__wrapper">
+                    <input asp-for="Pic1" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic1">
+                    <label asp-for="Pic1" class="input__file-button">
+                        <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
+                        <span asp-validation-for="Pic1" class="input__file-button-text">Выберите файл</span>
+                    </label>
+                </div>
+
+                <div class="input__wrapper">
+                    <input asp-for="Pic2" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic2">
+                    <label asp-for="Pic2" class="input__file-button">
+                        <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
+                        <span asp-validation-for="Pic2" class="input__file-button-text">Выберите файл</span>
+                    </label>
+                </div>
+
+                <div class="input__wrapper">
+                    <input asp-for="Pic3" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic3">
+                    <label asp-for="Pic3" class="input__file-button">
+                        <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
+                        <span asp-validation-for="Pic3" class="input__file-button-text">Выберите файл</span>
+                    </label>
+                </div>
+
+                <div class="input__wrapper">
+                    <input asp-for="Pic4" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic4">
+                    <label asp-for="Pic4" class="input__file-button">
+                        <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
+                        <span asp-validation-for="Pic4" class="input__file-button-text">Выберите файл</span>
+                    </label>
+                </div>
+
+                <div class="input__wrapper">
+                    <input asp-for="Pic5" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic5">
+                    <label asp-for="Pic5" class="input__file-button">
+                        <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
+                        <span asp-validation-for="Pic5" class="input__file-button-text">Выберите файл</span>
+                    </label>
+                </div>
+            </div>
+            <div class="tasks__list2">
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Q1" required autocomplete="off" name="Q1" type="text">
+                        <span asp-validation-for="Q1" class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Q2" required autocomplete="off" name="Q2" type="text">
+                        <span asp-validation-for="Q2" class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Q3" required autocomplete="off" name="Q3" type="text">
+                        <span asp-validation-for="Q3" class="spanQuestion">Третье предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Q4" required autocomplete="off" name="Q4" type="text">
+                        <span asp-validation-for="Q4" class="spanQuestion">Четвертое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input asp-for="Q5" required autocomplete="off" name="Q5" type="text">
+                        <span asp-validation-for="Q5" class="spanQuestion">Пятое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+    <div class="CreateCategoryButtons">
+        <button type="submit" value="Create" class="btn">
+            <strong>Добавить</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+
+        <button type="button" class="btnBack">
+
+            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+            <div class="text"> <a asp-action="Index" asp-route-idT="@ViewBag.idT">Назад</a></div>
+        </button>
+    </div>
+</form>
+
+<form asp-action="Create" enctype="multipart/form-data" id="create-pictures">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label asp-for="IdTest" class="none"></label>
+    <input asp-for="IdTest" class="none" name="IdTest" value="@ViewBag.idT" />
+    <section class="tasks2" style="display:flex; flex-direction:column;     margin-left: 8%;">
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
+                <input asp-for="Q1" hidden required autocomplete="off" id="Q1" name="Q1" type="text" class="q1-input">
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q1-1" type="text" class="q1-input-1">
+                        <span class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa" >
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q1-2" type="text" class="q1-input-2">
+                        <span class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q1-3" type="text" class="q1-input-3">
+                        <span class="spanQuestion">Третье предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
+                <input asp-for="Q2" hidden required autocomplete="off" id="Q2" name="Q2" type="text" class="q2-input">
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q2-1" type="text" class="q2-input-1">
+                        <span class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q2-2" type="text" class="q2-input-2">
+                        <span class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q2-3" type="text" class="q2-input-3">
+                        <span class="spanQuestion">Третье предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
+                <input asp-for="Q3" hidden required autocomplete="off" id="Q3" name="Q3" type="text" class="q3-input">
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q3-1" type="text" class="q3-input-1">
+                        <span class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q3-2" type="text" class="q3-input-2">
+                        <span class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q3-3" type="text" class="q3-input-3">
+                        <span class="spanQuestion">Третье предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
+                <input asp-for="Q4" hidden required autocomplete="off" id="Q4" name="Q4" type="text" class="q4-input">
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q4-1" type="text" class="q4-input-1">
+                        <span class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q4-2" type="text" class="q4-input-2">
+                        <span class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q4-3" type="text" class="q4-input-3">
+                        <span class="spanQuestion">Третье предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
+                <input asp-for="Q5" hidden required autocomplete="off" id="Q5" name="Q5" type="text" class="q5-input">
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q5-1" type="text" class="q5-input-1">
+                        <span class="spanQuestion">Первое предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q5-2" type="text" class="q5-input-2">
+                        <span class="spanQuestion">Второе предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="aa">
+                    <div class="inputbox">
+                        <input required autocomplete="off" name="Q5-3" type="text" class="q5-input-3">
+                        <span class="spanQuestion">Третье предложение</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    <div class="CreateCategoryButtons">
+        <button type="submit" value="Create" class="btn">
+            <strong>Добавить</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+
+        <button type="button" class="btnBack">
+
+            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+            <div class="text"> <a asp-action="Index" asp-route-idT="@ViewBag.idT">Назад</a></div>
+        </button>
+    </div>
+
+
+</form>
+
+
+<script>
+
+    const no = document.querySelector('#create-Nopictures');
+    console.log('jujjjjjj');
+
+    const yes = document.querySelector('#create-pictures');
+    const rodio1 = document.querySelector('#pictures');
+    const rodio2 = document.querySelector('#Nopictures');
+    rodio1.addEventListener('change', () => {
+        if (rodio1.checked) {
+            no.classList.add('none');
+            yes.classList.remove('none');
+            /*   yes.classList.add('flex');*/
+        }
+    });
+    rodio2.addEventListener('change', () => {
+        if (rodio2.checked) {
+            yes.classList.add('none');
+            no.classList.remove('none');
+        }
+    });
+    
+    const inputElements = document.querySelectorAll('.input__wrapper');
+
+    inputElements.forEach((inputElement, index) => {
+        const label = inputElement.querySelector('.input__file-button-text');
+        const img = inputElement.querySelector('input')
+
+        inputElement.addEventListener('change', () => {
+            label.textContent = 'Файл выбран';
+            img.src = URL.createObjectURL(inputElement.files[0]);
+        });
+    });
+
+
+    const createPicturesDiv = document.getElementById('create-pictures');
+
+    function handleInputValues(questionNumber) {
+        console.log("8888");
+        const inputs = createPicturesDiv.querySelectorAll(`.q${questionNumber}-input-1, .q${questionNumber}-input-2, .q${questionNumber}-input-3`);
+        const hiddenInput = createPicturesDiv.querySelector(`#Q${questionNumber}`);
+        console.log(inputs);
+        inputs.forEach(input => {
+            input.addEventListener('change', () => {
+                hiddenInput.value += input.value + "%";
+            });
+        });
+    }
+
+    handleInputValues(1);
+    handleInputValues(2);
+    handleInputValues(3);
+    handleInputValues(4);
+    handleInputValues(5);
+
+    // Repeat the same structure for Q2, Q3, Q4, Q5
+
+    // Repeat the same structure for Q2, Q3, Q4, Q5
+
+    // Repeat the same structure for Q2, Q3, Q4, Q5
+
+    // Repeat the same structure for Q2, Q3, Q4, Q5
+
+
+</script>
+@*<script src="~/js/site.js"></script>*@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

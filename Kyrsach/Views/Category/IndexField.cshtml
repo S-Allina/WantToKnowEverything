@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Kyrsach.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+<h1>Категории соотношений</h1>
+<section class="top">
+    @if (User.IsInRole("admin") || User.IsInRole("teacher"))
+    {
+        <a asp-action="CreateField">
+            <button type="button" class="btn">
+
+                <strong class="strongBtn">Добавить</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </a>
+    }
+@*
+    <form asp-action="IndexField" style="display: flex;width: 30%;align-items: baseline;gap: 15px;">
+        <span>Фильтр:</span>
+        <div class="inputBox">
+            <input name="NameCat" type="text" />
+        </div>
+        <button type="submit" class="btn">
+            <strong>Отфильтровать</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </form>*@
+</section>
+
+<div class="contener">
+    @foreach (var item in Model)
+    {
+        <a asp-controller="Pairs" asp-action="Index" asp-route-idCat="@item.IdCategory" class="contener__elementQuez">
+
+            <div class="cardField found">
+                <div class="backgroundField">
+                </div>
+                    <div class="logoField soughtFor">
+                    @Html.DisplayFor(modelItem => item.NameCategory)
+                </div>
+
+
+                @if (User.IsInRole("admin")||(User.IsInRole("teacher") && User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value == item.WhoCreatedCategory))
+                {
+                    <a asp-action="EditField" asp-route-id="@item.IdCategory">
+                        <div class="boxField box2Field">
+                            <span class="iconField">
+
+                                <img class="svgField" src="~/img/editField.png" />
+                            </span>
+                        </div>
+                    </a>
+
+                    <a asp-action="Delete" asp-route-id="@item.IdCategory">
+                        <div class="boxField box3Field">
+                        <span class="iconField">
+
+                            <img class="svgField" src="~/img/DeleteField.png" />
+                        </span>
+                    </div>
+                </a>
+                }
+                <div class="boxField box4Field"></div>
+            </div>
+
+        </a>
+
+    }
+</div>
+

@@ -1,0 +1,249 @@
+﻿@model IEnumerable<Kyrsach.Models.Quez>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    var r = new Random();
+    var item = Model.Where(t=>t.IdQuez==ViewBag.idQuez).FirstOrDefault();
+    string[] mass = { item?.Q1, item?.Q2, item?.Q3, item?.Q4, item?.Q5 };
+}
+<h1>Соотношения</h1>
+@if (User.IsInRole("admin")|| User.IsInRole("teacher"))
+                { <div class="CreateCategoryButtons">
+<a asp-action="Create" asp-route-idT="@ViewBag.idT">
+    <button type="submit" value="Create" class="btn">
+        <strong>Добавить</strong>
+        <div id="container-stars">
+            <div id="stars"></div>
+        </div>
+
+        <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </button>
+
+
+
+</a>
+    @if (item != null)
+    {
+          <a asp-action="Delete" asp-route-idT="@ViewBag.idT" asp-route-id="@item.IdQuez">
+                <button type="button" value="Delete" class="btn">
+                    <strong>Удалить</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+                    
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </button>
+            </a>
+    }
+   </div>
+}
+        <form class=""  asp-action="Dalee" asp-controller="Quezs" >
+ @if (item != null)
+    {
+                    <input value="@item.IdQuez" name="idQues" class="none" />
+                            <input value="@item.IdTest" name="idT" class="none" />
+   
+        @if (item.Pic1 == null)
+        {
+
+            <div class="containertasks1">
+                <section class="tasks1">
+
+                    <ul class="ultasks1">
+                        <li class="lutasks">@mass[0].Split("%")[0]</li>
+                        <li class="lutasks">@mass[1].Split('%')[0]</li>
+                        <li class="lutasks">@mass[2].Split('%')[0]</li>
+                        <li class="lutasks">@mass[3].Split('%')[0]</li>
+                        <li class="lutasks">@mass[4].Split('%')[0]</li>
+                    </ul>
+                    <ul class="tasks__list">
+
+                        <li class="tasks__item">@mass[ViewBag.numbers[0]].Split('%')[1]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[1]].Split('%')[1]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[2]].Split('%')[1]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[4]].Split('%')[1]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[3]].Split('%')[1]</li>
+                    </ul>
+
+                    <ul class="ultasks1">
+                        <li class="lutasks">@item.Q1.Split('%')[2]</li>
+                        <li class="lutasks">@item.Q2.Split('%')[2]</li>
+                        <li class="lutasks">@item.Q3.Split('%')[2]</li>
+                        <li class="lutasks">@item.Q4.Split('%')[2]</li>
+                        <li class="lutasks">@item.Q5.Split('%')[2]</li>
+                    </ul>
+         </section>
+            </div>
+            <p id="current1" class="none">@item.Q1.ToString().Split('%')[1]^@item.Q2.ToString().Split('%')[1]^@item.Q3.ToString().Split('%')[1]^@item.Q4.ToString().Split('%')[1]^@item.Q5.ToString().Split('%')[1]</p>
+            <img src="~/img/vecteezy_3d-hand-holding-mobile-phone-isolated-on-pastel-background_17218012_189.png" class="img1tasks" alt="">
+            <img src="~/img/right.png" class="img2tasks" alt="">
+        }
+        else{
+
+            <div class="containertasks2">
+                <div class="square" style="--i: 0"></div>
+                <div class="square" style="--i: 1"></div>
+                <div class="square" style="--i: 2"></div>
+                <div class="square" style="--i: 3"></div>
+                <div class="square" style="--i: 4"></div>
+                <div class="square" style="--i: 5"></div>
+                <div class="square" style="--i: 6"></div>
+                <div class="square" style="--i: 7"></div>
+                <section class="tasks2">
+
+                    <ul class="ultasks2">
+                        <li class="lu2"> 
+                            <div class="circleStart"></div>
+                            <div class="circleStart"></div>
+                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.Pic1))" class="imgg" alt=""></li>
+                        <li class="lu2">
+                            <div class="circleStart"></div>
+                            <div class="circleStart"></div>
+                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.Pic2))" class="imgg" alt=""></li>
+                        <li class="lu2">
+                            <div class="circleStart"></div>
+                            <div class="circleStart"></div>
+                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.Pic3))" class="imgg" alt=""></li>
+                        <li class="lu2">
+                            <div class="circleStart"></div>
+                            <div class="circleStart"></div>
+                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.Pic4))" class="imgg" alt=""></li>
+                        <li class="lu2">
+                            <div class="circleStart"></div>
+                            <div class="circleStart"></div>
+                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.Pic5))" class="imgg" alt=""></li>
+                    </ul>
+                    <ul class="tasks__list flex">
+                        <li class="tasks__item">@mass[ViewBag.numbers[0]]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[1]]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[2]]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[4]]</li>
+                        <li class="tasks__item">@mass[ViewBag.numbers[3]]</li>
+                    </ul>
+                </section>
+            </div>
+            <p id="current1" class="none">@mass[0].ToString()^@mass[1].ToString()^@mass[2].ToString()^@mass[3].ToString()^@mass[4].ToString()</p>
+            @*<p id="current1" class="none">@item.Q1.ToString() @item.Q2.ToString() @item.Q3.ToString() @item.Q4.ToString() @item.Q5.ToString()</p>*@
+
+        }
+
+
+        <div id="Dall" class="none">
+            <div class="tasks1" >
+                <button type="submit" name="button"  class="btn ">
+                <strong>Далее</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </div>
+        </div>
+        }
+
+</form>
+@if(item!=null){
+<div id="Got" class="">
+    <div class="tasks1" >
+            <button   onclick="Proverka()" class="btn">
+                <strong>Готово</strong>
+    <div id="container-stars">
+        <div id="stars"></div>
+    </div>
+
+    <div id="glow">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</button>
+</div>
+    </div>
+   
+
+}
+    <script>
+const tasksListElement = document.querySelector(`.tasks__list`);
+const taskElements = tasksListElement.querySelectorAll(`.tasks__item`);
+
+for (const task of taskElements) {
+    task.draggable = true;
+}
+
+tasksListElement.addEventListener(`dragstart`, (evt) => {
+    evt.target.classList.add(`selected`);
+});
+
+tasksListElement.addEventListener(`dragend`, (evt) => {
+    evt.target.classList.remove(`selected`);
+});
+
+const getNextElement = (cursorPosition, currentElement) => {
+    const currentElementCoord = currentElement.getBoundingClientRect();
+    const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+
+    const nextElement = (cursorPosition < currentElementCenter) ?
+        currentElement :
+        currentElement.nextElementSibling;
+    return nextElement;
+};
+tasksListElement.addEventListener(`dragover`, (evt) => {
+    evt.preventDefault();
+    const activeElement = tasksListElement.querySelector(`.selected`);
+    const currentElement = evt.target;
+    const isMoveable = activeElement !== currentElement &&
+        currentElement.classList.contains(`tasks__item`);
+    if (!isMoveable) {
+        return;
+    }
+    const nextElement = getNextElement(evt.clientY, currentElement);
+    if (
+        nextElement &&
+        activeElement === nextElement.previousElementSibling ||
+        activeElement === nextElement
+    ) {
+        return;
+    }
+    tasksListElement.insertBefore(activeElement, nextElement);
+});
+function Proverka() {
+    const task = document.querySelectorAll('.tasks__item');
+    const curr1 = document.getElementById('current1').textContent.split('^');
+    const g = document.getElementById('Got');
+    g.classList.add('none');
+    const d = document.getElementById('Dall');
+    d.classList.remove('none');
+    console.log(curr1);
+    for (let i = 0; i < task.length; i++) {
+        console.log(task[i].textContent, curr1[i]);
+        if (task[i].textContent == curr1[i]) {
+            task[i].classList.add('True');
+            console.log( "TRUE");
+        }
+        else {
+            task[i].classList.add('False');
+            
+            console.log("FALSE");
+
+        }
+    }
+
+}
+
+    </script>
+
+              @*  <a asp-action="Edit" asp-route-id="@item.IdTask">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdTask">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTask">Delete</a>*@
+          

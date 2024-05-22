@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Kyrsach.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    string group = "";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+
+<div class="card">
+    <section class="top">
+        <span >Список групп:</span>
+
+        <a class="btn" style="width:fit-content!important" asp-action="RegisterUser">
+                <strong>Зарегистрировать ученика</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </a>
+        @if (User.IsInRole("admin"))
+        {
+            <a class="btn" style="width:fit-content!important" asp-action="RegisterTeacher">
+                <strong>Зарегистрировать учителя</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </a>
+        }
+    </section>
+            <hr/>
+    <section class="bottom">
+        <ul class="users">
+            @foreach (var item in Model)
+            {
+                <li class="user found" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr">
+                    @*  @if (item.Img != null)
+                {
+                <img  src="data:image/png;base64,@(Convert.ToBase64String(item.Img))" />
+                }
+                else
+                {
+                <img  src="~/images/Icons/defaulfUser.png" />
+                }*@
+                    <span class="user-name name soughtFor" >@item.LastName @item.FirstName</span>
+                    <span>@item.UserName</span>
+                    <span>@item.Email</span>
+                    <span>@item.NameGroup</span>
+                      @if (User.IsInRole("admin"))
+        {
+                        <span>@item.NameRole</span>
+        }
+                  @*  <div class="CreateCategoryButtons">
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn">
+                            <strong>Удалить</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </a>
+                    </div>*@
+                </li>
+            }
+        </ul>
+    </section>
+</div>

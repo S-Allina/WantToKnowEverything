@@ -1,0 +1,204 @@
+﻿@*@model IEnumerable<Kyrsach.Models.UserWithRole>*@
+@{
+    //var role = Model.FirstOrDefault(u=>u.NormalizedUserName==User?.Identity.Name)?.RoleName;
+    
+    //var b = role!=null ? User.IsInRole(role) : true;
+    //var s =7;
+}
+@*@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kyrsach</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Play:wght@400;700&family=Rampart+One&family=Sofia+Sans+Semi+Condensed:ital,wght@0,1..1000;1,1..1000&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="~/css/Style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/MobileNavLink.css" asp-append-version="true" />
+    <base href="~/">
+    <link rel="stylesheet" href="~/css/question.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Loader.css" />
+</head>
+<body>
+    <header>
+        <div class="navi">
+            <p class="nav__title"><img src="~/img/logo.png" style="width:50px"/></p>
+            <div class="navi" style="width:40%">
+            <input id="search" placeholder="поиск..."/>
+            @if (User.Identity.IsAuthenticated )
+            {
+                @*<p class="nav__title">@Model.FirstOrDefault()?.RoleName</p>*@
+                <p class="nav__title">@User.Identity.Name</p>
+            }
+            </div>
+        </div>
+        <div class="head">
+
+            <div class="head__link">
+                <a class="navbar" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/1.png" class="head__img" />
+                </a>
+
+                <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="test">
+                    <img src="~/img/testttttt.png" class="head__img" />
+                </a>
+              @*  <a class="navbar" asp-controller="Biography" asp-action="Start">
+                    <img src="~/img/Bio.png" class="head__img" />
+                </a>*@
+
+                <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="quez" asp-route-idQ="1">
+                    <img src="~/img/thinking.png" class="head__img" />
+                </a>
+
+                <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="field">
+                    <img src="~/img/Cards.png" class="head__img" />
+                </a>
+
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("teacher") || User.IsInRole("admin")))
+                {
+                    <a class="navbar" asp-controller="AnswersUsers" asp-action="Index">
+                        <img src="~/img/statics.png" class="head__img" />
+                    </a>
+                    <a class="navbar" asp-action="FullUsers" asp-controller="Account">
+                        <img src="~/img/addStudent.png" class="head__img" />
+                    </a>
+                    <a class="navbar" asp-action="Index" asp-controller="Groups">
+                        <img src="~/img/group.png" class="head__img" />
+                    </a>
+                }else{
+                    <a class="navbar" asp-controller="AnswersUsers" asp-action="IndexForUser">
+                        <img src="~/img/statics.png" class="head__img" />
+                    </a>
+                    }
+                @if (User.IsInRole("admin"))
+                {
+                    <a class="navbar" asp-action="RegisterTeacher" asp-controller="Account">
+                        <img src="~/img/AddAdminIcon.png" class="head__img" />
+                    </a>
+                }
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="navbar" asp-action="Login" asp-controller="Account">
+                        <img src="~/img/acount.png" class="head__img" />
+
+                    </a>
+                }else
+                    {
+                    <a class="navbar" asp-action="DialogUser" asp-route-userName="@User.Identity.Name" asp-controller="Dialog">
+                        <img src="~/img/chat.png" class="head__img" />
+                    </a>
+                    <a class="navbar" asp-action="Logout"  asp-controller="Account">
+                        <img src="~/img/loguot.png" class="head__img" />
+                    </a>
+                }
+
+                @*   <a class="navbar" asp-controller="Cards" asp-action="Index">
+                <img src="~/img/filesIcon.png" class="head__img" />
+
+                </a>*@
+
+
+
+                @*<partial name="_LoginPartial" />*@
+            </div>
+
+            <div class="Menu">
+                <img src="~/img/menu.png" />
+            </div>
+        </div>
+
+
+        <nav class="sidebar none">
+
+            <div class="menu-bar">
+
+                <div class=" nav-link Menu">
+                    <img src="~/img/arrowLeft.png" class="icon" />
+                    <p class="text nav-text">Меню</p>
+
+                </div>
+                <div class="menu">
+                    @* {/* <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search..." />
+                    </li> */}*@
+
+
+                    <ul class="menu-links">
+
+                        <li class="nav-link">
+                            <img src="~/img/1.png" class="icon" />
+                            <a class="text nav-text" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
+
+                        </li>
+                        <li class="nav-link">
+                            <img src="~/img/testttttt.png" class="icon" />
+                            <a id="test" class="text nav-text" asp-area="" asp-controller="Category" asp-action="Index" asp-route-type="test">Тесты</a>
+
+                        </li>
+                      @*  <li class="nav-link">
+                            <img src="~/img/Bio.png" class="icon" />
+                            <a class="text nav-text" asp-area="" asp-controller="Biography" asp-action="Start">Биографии</a>
+
+                        </li>*@
+                        <li class="nav-link">
+                            <img src="~/img/thinking.png" class="icon" />
+                            <a class="text nav-text" asp-area="" asp-controller="Category" asp-action="Index" asp-route-type="quez">Соотношения</a>
+
+                        </li>
+                        <li class="nav-link">
+                            <img src="~/img/Cards.png" class="icon" />
+                            <a class="text nav-text" asp-area="" asp-controller="Category" asp-action="Index" asp-route-type="field">Карточки</a>
+
+                        </li>
+                        <li class="nav-link">
+                            <img src="~/img/filesIcon.png" class="icon" />
+                            <a class="text nav-text" asp-controller="Cards" asp-action="Index">Лекции</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <div id="loader" style="display: none;">
+        <div id="myPartial">
+            @Html.Partial("Loader")
+        </div>
+    </div>
+    <main role="main" class="pb-3">
+
+        @RenderBody()
+    </main>
+
+
+ @*   <footer class="border-top text-muted footerMy">
+        <div class="">
+            &copy; 2023 - Kyrsach - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <a href="https://www.vecteezy.com/free-png/sound">Звуковые файлы PNG от Vecteezy</a>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/search.js"/>
+    <script>
+        document.querySelectorAll(".Menu").forEach((i) => i.addEventListener("click", () => {
+
+            document.querySelector(".sidebar").classList.toggle("none");
+        }))
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false);
+
+
+    <script src="js/loader.js"></script>
+</body>
+</html>
