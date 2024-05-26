@@ -17,24 +17,7 @@
                 pointHighlightStroke: "rgba(225,225,225,0.9)",
                 data: data.averageScore
             },
-            //{
-            //    label: "Middle",
-            //    fillColor: "rgba(255, 172, 100, 0.1)",
-            //    strokeColor: "rgba(255, 172, 100, 1)",
-            //    pointColor: "rgba(255, 172, 100, 1)",
-            //    pointStrokeColor: "#202b33",
-            //    pointHighlightStroke: "rgba(225,225,225,0.9)",
-            //    data: [0, 0, 0]
-            //},
-            //{
-            //    label: "Back",
-            //    fillColor: "rgba(19, 71, 34, 0.3)",
-            //    strokeColor: "rgba(88, 188, 116, 1)",
-            //    pointColor: "rgba(88, 188, 116, 1)",
-            //    pointStrokeColor: "#202b33",
-            //    pointHighlightStroke: "rgba(225,225,225,0.9)",
-            //    data: [0, 0, 0]
-            //}
+           
         ]
     };
     var ctx = document.getElementById("salesData").getContext("2d");
@@ -147,25 +130,14 @@ function GenerateDiagramm3(data) {
     label.fontSize = 40;
 }
 
+function areFieldsFilled(data) {
+    return data.idUser && data.idCategory && data.startDate && data.endDate;
+}
 
 var excelBtn = document.querySelector("#Excel");
-//excelBtn.addEventListener("click", function (e) {
 
-//    e.preventDefault();
-//    var selectedTest = document.querySelector('#tests');
-//    var xhr = new XMLHttpRequest();
-//    xhr.open("GET", "/Diagrams/ExportPeopleInExcel?idCategory=" + parseInt(selectedTest.value), true);
-//    xhr.onreadystatechange = function () {
-//        console.log(xhr.status)
-      
-//            console.log(xhr.responseText)
-//        }
-   
-//    xhr.send();
-
-//})
 document.querySelector('form.center-wrap .dia').addEventListener('click', function (e) {
-    console.log("9999999999999999")
+ 
     e.preventDefault();
 
     // Get selected values from the form
@@ -184,7 +156,12 @@ document.querySelector('form.center-wrap .dia').addEventListener('click', functi
         startDate: new Date(startDate.value),
         endDate: new Date(endDate.value)
     };
-    console.log(data)
+    if (!areFieldsFilled(data)) {
+        alert('Пожалуйста, заполните все необходимые поля');
+        return;
+    }
+
+    try {
     // Send a POST request to the controller and retrieve the JSON data
     fetch('/Diagrams/GetResultTest', {
         method: 'POST',
@@ -238,6 +215,11 @@ document.querySelector('form.center-wrap .dia').addEventListener('click', functi
         .catch(error => {
             console.error('Error:', error);
         });
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
+    }
 });
 
 window.onload = function () {
@@ -279,21 +261,7 @@ window.onload = function () {
     }
 };
 var optionsSelect2 = document.getElementById("idCategory");
-//optionsSelect2.innerHTML = "";
-//function loadOptionsFromDatabaseAll() {
-//    var xhr = new XMLHttpRequest();
-//    xhr.open("GET", "/Diagrams/GetAllTests", true);
-//    xhr.onreadystatechange = function () {
-//        console.log(xhr.status)
-//        if (xhr.readyState === 4 && xhr.status === 200) {
-//            var options = JSON.parse(xhr.responseText);
-//            console.log(xhr.responseText)
-//            fillOptionsSelect(options);
-//        }
-//    };
-//    xhr.send();
-//}
-//loadOptionsFromDatabaseAll();
+
 function fillOptionsSelect(options) {
     console.log(options)
     options.forEach(function (option) {
@@ -301,5 +269,26 @@ function fillOptionsSelect(options) {
         optionElement.text = option.nameCategory;
         optionElement.value = option.idCategory;
         optionsSelect2.add(optionElement);
+    });
+}
+
+const forms = document.querySelectorAll('form');
+console.log(forms)
+for (let form of forms) {
+    console.log(form)
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const inputs = form.querySelectorAll('input,select');
+        console.log(inputs)
+        for (const input of inputs) {
+            console.log(input.value)
+            if (!input.value) {
+                alert('Пожалуйста, заполните все поля формы.');
+                event.preventDefault(); 
+                return;
+            }
+        }
+
     });
 }

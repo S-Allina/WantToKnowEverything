@@ -19,8 +19,7 @@
 <section class="top">
         @if (User.IsInRole("admin") || User.IsInRole("teacher"))
         {
-            <a asp-action="Create">
-                <button type="button" class="btn">
+            <a asp-action="Create" class="btn">
 
                     <strong class="strongBtn">Добавить</strong>
                     <div id="container-stars">
@@ -31,14 +30,10 @@
                         <div class="circle"></div>
                         <div class="circle"></div>
                     </div>
-
-                </button>
-
-
             </a>
         }
 
-    <form asp-action="Index" style="display: flex;width: 30%;align-items: baseline;gap: 15px;">
+    <form asp-action="Index" asp-route-type="test" style="display: flex;width: 30%;align-items: baseline;gap: 15px;">
             <span>Фильтр:</span>
             <div class="inputBox">
                 <input name="NameCat" type="text" />

@@ -40,14 +40,7 @@
                 <span class="radio-label">Без вариантов ответа</span>
             </span>
         </label>
-      @*  <label>
-            <input class="radio-input" type="radio" name="engine">
-            <span class="radio-tile">
-                <span class="radio-icon">
-                </span>
-                <span class="radio-label">Car</span>
-            </span>
-        </label>*@
+ 
     </div>
     <div class="create-options" id="create-options">
         <div class="aa">
@@ -107,11 +100,7 @@
            
                 </div>
              
-                @*  <div class="form-group">
-            <label asp-for="PictureTest" class="control-label"></label>
-            <input type="file" name="PictureTest" asp-for="PictureTest" class="form-control" accept="image/png, image/jpeg" />
-            <span asp-validation-for="PictureTest" class="text-danger"></span>
-        </div>*@
+             
         <input asp-for="CorrectAnswer" type="text" id="CorrectAnswer" class="none" name="answer" />
         <span asp-validation-for="CorrectAnswer" class="text-danger"></span>
 
@@ -134,11 +123,7 @@
        
     </div>
     
-    @*<div class="input-container">
-        <label asp-for="PictureTest" class="control-label"></label>
-        <input type="file"  asp-for="PictureTest" class="form-control" accept="image/png, image/jpeg" class="inputQ">
-        <span asp-validation-for="PictureTest">Картинка</span>
-    </div>*@
+  
 
     <div class="input__wrapper">
         <input type="file" asp-for="PictureTest" accept="image/png, image/jpeg" class="input input__file" name="PictureTest">

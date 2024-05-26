@@ -169,7 +169,7 @@ namespace Kyrsach.Controllers
         }
 
 
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         public IActionResult Create(int idT)
         {
             ViewBag.idT = idT;
@@ -178,7 +178,7 @@ namespace Kyrsach.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdTest,IdQuez,Pic1,Pic2,Pic3,Pic4,Pic5,Q1,Q2,Q3,Q4,Q5")] QuezViewModel quezViewModel)
         {
@@ -253,7 +253,7 @@ namespace Kyrsach.Controllers
 
 
 
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> Delete(int id, int idT)
         {
             try{ 

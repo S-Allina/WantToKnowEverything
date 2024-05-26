@@ -11,8 +11,7 @@
 <h1>Найди пару</h1>
 @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
                 {
-<a asp-action="ListPairs" asp-route-idCat="@ViewBag.idCat">
-	<button type="submit" value="Create" class="btn">
+	<a asp-action="ListPairs" asp-route-idCat="@ViewBag.idCat" class="btn">
 		<strong>Список пар</strong>
 		<div id="container-stars">
 			<div id="stars"></div>
@@ -22,10 +21,6 @@
 			<div class="circle"></div>
 			<div class="circle"></div>
 		</div>
-	</button>
-
-
-
 </a>
 				}
 <input id="idCat" value="@ViewBag.idCat" hidden />

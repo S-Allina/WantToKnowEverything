@@ -1,16 +1,15 @@
-﻿@model IEnumerable<Kyrsach.Models.Question>
+﻿@model Kyrsach.Models.Question
 
 @{
     ViewData["Title"] = "Index";
    
 }
 
-@if(Model.Count() ==0){
+@if(Model ==null){
     @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
     {
-        
-        <a asp-action="Create" asp-route-idT="@ViewBag.idT">
-            <button type="submit" value="Create" class="btn">
+
+        <a class="btn" asp-action="Create" asp-route-idT="@ViewBag.idT">
                 <strong>Добавить</strong>
                 <div id="container-stars">
                     <div id="stars"></div>
@@ -20,18 +19,11 @@
                     <div class="circle"></div>
                     <div class="circle"></div>
                 </div>
-            </button>
-
-
-
         </a>
     }
 }
 
-@foreach (var item in Model)
-
-{
-    <h1>@await Component.InvokeAsync("Count", new {idT = item.IdTest, idQ=item.IdQuestion})</h1>
+<h1>@await Component.InvokeAsync("Count", new {idT = Model.IdTest, idQ=Model.IdQuestion})</h1>
   
         @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
         {  <div class="CreateCategoryButtons">
@@ -47,7 +39,7 @@
                     </div>
             </a>
 
-            <a class="btn" asp-action="Delete" asp-route-idT="@ViewBag.idT" asp-route-id="@item.IdQuestion">
+            <a class="btn" asp-action="Delete" asp-route-idT="@ViewBag.idT" asp-route-id="@Model.IdQuestion">
                     <strong>Удалить</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
@@ -62,73 +54,63 @@
     }
    
     <form class="formCreate" asp-action="Dalee" asp-controller="Questions">
-
-        <input name="idQ" class="none" value="@item.IdQuestion" />
-        <input value="@item.IdTest" name="idT" class="none" />
-        @*  <div class="inputbox question">*@
-        @*  <input asp-for="TextQuetion"  type="text">*@
-        <span class="spanQuestion1 question"><b>Вопрос:</b> @Html.DisplayFor(modelItem => item.TextQuetion)</span>
-        @*<i></i>*@
-        @*   </div>*@
+    <input name="idQ" class="none" value="@Model.IdQuestion" />
+    <input value="@Model.IdTest" name="idT" class="none" />
+    <span class="spanQuestion1 question"><b>Вопрос:</b> @Html.DisplayFor(modelItem => Model.TextQuetion)</span>
         <div class="QuestionImeges">
             <div class="QuestionText">
-                @if (item.Option2 != null)
+            @if (Model.Option2 != null)
                 {
                     <div class="create-options">
-                        @if (item.Option1 != null)
+                    @if (Model.Option1 != null)
                         {
                             <div class="aa">
                                 <label class="container">
                                     <input type="checkbox" id="11" onchange="copyInputValue(1, 11)">
                                     <div class="checkmark"></div>
                                 </label>
-                                <span class="spanQuestion1" id="1">@Html.DisplayFor(modelItem => item.Option1)</span>
+                            <span class="spanQuestion1" id="1">@Html.DisplayFor(modelItem => Model.Option1)</span>
                             </div>
                         }
-                        @if (item.Option2 != null)
+                    @if (Model.Option2 != null)
                         {
                             <div class="aa">
                                 <label class="container">
                                     <input type="checkbox" id="22" onchange="copyInputValue(2, 22)">
                                     <div class="checkmark"></div>
                                 </label>
-                                <span class="spanQuestion1" id="2">@Html.DisplayFor(modelItem => item.Option2)</span>
+                            <span class="spanQuestion1" id="2">@Html.DisplayFor(modelItem => Model.Option2)</span>
                             </div>
                         }
-                        @if (item.Option3 != null)
+                    @if (Model.Option3 != null)
                         {
                             <div class="aa">
                                 <label class="container">
                                     <input type="checkbox" id="33" onchange="copyInputValue(3, 33)">
                                     <div class="checkmark"></div>
                                 </label>
-                                <span class="spanQuestion1" id="3">@Html.DisplayFor(modelItem => item.Option3)</span>
+                            <span class="spanQuestion1" id="3">@Html.DisplayFor(modelItem => Model.Option3)</span>
                             </div>
                         }
-                        @if (item.Option4 != null)
+                    @if (Model.Option4 != null)
                         {
                             <div class="aa">
                                 <label class="container">
                                     <input type="checkbox" id="44" onchange="copyInputValue(4, 44)">
                                     <div class="checkmark"></div>
                                 </label>
-                                <span class="spanQuestion1" id="4">@Html.DisplayFor(modelItem => item.Option4)</span>
+                            <span class="spanQuestion1" id="4">@Html.DisplayFor(modelItem => Model.Option4)</span>
                             </div>
                         }
-                        @if (item.Option5 != null)
+                    @if (Model.Option5 != null)
                         {
                             <div class="aa">
                                 <label class="container">
                                     <input type="checkbox" id="55" onchange="copyInputValue(5, 55)">
                                     <div class="checkmark"></div>
                                 </label>
-                                <span class="spanQuestion1" id="5">@Html.DisplayFor(modelItem => item.Option5)</span>
+                                <span class="spanQuestion1" id="5">@Html.DisplayFor(modelItem => Model.Option5)</span>
                             </div>
-
-
-
-
-
                         }
 
                     </div>
@@ -147,13 +129,13 @@
             </div>
 
             <div class="questionImg">
-                @if (item.PictureTest != null)
+            @if (Model.PictureTest != null)
                 {
                     <div class="cardQuestion">
                         <div class="circleQuestion"></div>
                         <div class="circleQuestion"></div>
                         <div class="card-innerQuestion">
-                            <img src="data:image/png;base64,@(Convert.ToBase64String(item.PictureTest))" class="imgQuestion" />
+                        <img src="data:image/png;base64,@(Convert.ToBase64String(Model.PictureTest))" class="imgQuestion" />
                         </div>
                     </div>
                 }
@@ -166,7 +148,10 @@
 
                 }
             </div>
+
         </div>
+        <span class="text-danger">@ViewBag.Message</span>
+
         <button type="submit" name="button" class="btn">
             <strong>@ViewBag.Button</strong>
             <div id="container-stars">
@@ -179,21 +164,10 @@
             </div>
         </button>
 
-        @*        <button type="submit" name="button" class="cta">
-    <span>@ViewBag.Button</span>
-    <svg viewBox="0 0 13 10" height="10px" width="15px">
-    <path d="M1,5 L11,5"></path>
-    <polyline points="8 1 12 5 8 9"></polyline>
-    </svg>
-    </button>*@
 
     </form>
     @*<a asp-action="Index" class="formCreate" asp-route-answer="@Request.Form["value"]" asp-route-answer="answer" asp-route-idQ="@item.IdQuestion" asp-route-idT="@item.IdTest">Далее</a>*@
     <script src="~/js/question.js"></script>
-
-    @*<a asp-action="Edit" asp-route-id="@item.IdQuestion">Edit</a>
-    <a asp-action="Details" asp-route-id="@item.IdQuestion">Details</a>
-    <a asp-action="Delete" asp-route-id="@item.IdQuestion">Delete</a>*@
 
 }
 

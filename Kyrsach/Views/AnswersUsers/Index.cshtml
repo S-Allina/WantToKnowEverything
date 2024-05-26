@@ -69,22 +69,22 @@
                             <h2>Вывод оценок по всем предметам за указанный период</h2>
             <form class="center-wrap" style="width: 100% !important;display: flex;justify-content: space-between;
     align-items: center;" asp-controller="Diagrams" asp-action="ExportTestByDateInExcel">
-
                     <div class="contener">
                         <div class="formSelect">
                             <label for="DateStart">Дата с</label>
-                            <input type="date" id="DateStart" class="my-select-menu" name="DateStart" />
-                        </div>
+                        <input type="date" required min="2020-01-01" max="2024-12-31" class="my-select-menu" name="DateStart" />
+                    <span class="text-danger" >@ViewBag.Message</span>    
+                    </div>
                         <div class="formSelect">
                             <label for="DateEnd">Дата по</label>
-                            <input type="date" id="DateEnd" class="my-select-menu" name="DateEnd" />
+                        <input type="date" required min="2020-01-01" max="2024-12-31" class="my-select-menu" name="DateEnd" />
                         </div>
                          <div class="formSelect">
                                 <label for="tests">Группы</label>
-                                <select class="my-select-menu" id="idGroup" name="idGroup" asp-items="@ViewBag.Groups"></select>
+                                <select class="my-select-menu"  name="idGroup" asp-items="@ViewBag.Groups"></select>
                             </div>
                     </div>
-                    <button type="submit" id="Excel" class="btn">
+                    <button type="submit"  class="btn">
 
                         <strong class="strongBtn">Вывод Excel</strong>
                         <div id="container-stars">
@@ -135,10 +135,10 @@
                 </div>
                 <div class="formSelect">
                     <label for="tests">Дата с</label>
-                    <input id="startDate" class="my-select-menu" type="date" />
+                    <input id="startDate" required class="my-select-menu" min="2020-01-01" max="2024-12-31" type="date" />
                 </div>  <div class="formSelect">
                     <label for="tests">Дата по</label>
-                    <input id="endDate" class="my-select-menu" type="date" />
+                    <input id="endDate" required class="my-select-menu" min="2020-01-01" max="2024-12-31" type="date" />
                 </div>
                 <button class="btn dia" type="button">
 

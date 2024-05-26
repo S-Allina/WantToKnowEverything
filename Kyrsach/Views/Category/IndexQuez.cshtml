@@ -42,7 +42,7 @@
                     <strong class="strong">
                         @if (User.IsInRole("admin")||(User.IsInRole("teacher") && User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value == item.WhoCreatedCategory))
                         {
-                            <a asp-action="Edit" asp-route-id="@item.IdCategory" class="link">Изменить</a>
+                            <a asp-action="EditQuez" asp-route-id="@item.IdCategory" class="link">Изменить</a>
                             <a asp-action="Delete" asp-route-id="@item.IdCategory" class="link">Удалить</a>
                         }
                     </strong>

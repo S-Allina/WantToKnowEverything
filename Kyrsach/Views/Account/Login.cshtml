@@ -1,4 +1,4 @@
-﻿@model Kyrsach.ViewModels.LoginAndRegisterModel
+﻿@model Kyrsach.Models.LoginModel
 
 
 
@@ -12,14 +12,7 @@
 
 <div>
     <div class="box">
-
-
         <div class="col-12 text-center align-self-center py-5">
-            <h6 class="mb-0 pb-3 TitleH6"><span>Войти </span><span>Зарегистрироваться</span></h6>
-
-            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
-            <label for="reg-log"></label>
-
                 <div class="card-3d-wrap mx-auto">
                     <div class="square" style="--i: 0"></div>
                     <div class="square" style="--i: 1"></div>
@@ -27,14 +20,9 @@
                     <div class="square" style="--i: 3"></div>
                     <div class="square" style="--i: 4"></div>
                     <div class="card-3d-wrapper">
-
-
                         <div class="card-front">
-
                             <div class="center-wrap">
                                 <form class="None" method="post" asp-controller="Account" asp-action="Login">
-
-                                    @*<input type="hidden" asp-for="ReturnUrl" />*@
                                     <h4 class="title">
                                         Войти
                                     </h4>
@@ -57,16 +45,9 @@
                                             <div class="circle"></div>
                                         </div>
                                     </button>
-                                    <a asp-controller="Home" asp-action="Index" class="btn">
-                                        <strong class="strongBtn">Назад</strong>
-                                        <div id="container-stars">
-                                            <div id="stars"></div>
-                                        </div>
-                                        <div id="glow">
-                                            <div class="circle"></div>
-                                            <div class="circle"></div>
-                                        </div>
-                                    </a>
+                                    <p >
+                                    Ещё нет аккаунта? <a asp-controller="Account" style="display:inline" asp-action="Register">Регистрация</a>
+                                    </p>
                                 </form>
 
                             </div>
@@ -81,100 +62,14 @@
                 </p >
     </div >
 
-    <div class="card-back">
-                            <div class="center-wrap">
-                                <form class="None1" method="post" asp-controller="Account" asp-action="Register">
-                                    <h4 class="title1">Регистрация</h4>
-                                    <div class="inputBox">
-                                        <input asp-for="FirstName" type="text" placeholder="Имя" />
-                                        <span asp-validation-for="FirstName" class="text-danger"></span>
-                                    </div>
-                                    <div class="inputBox">
-                                        <input asp-for="LastName" placeholder="Фамилия" />
-                                        <span asp-validation-for="LastName" class="text-danger"></span>
-                                    </div>
-                                    <div class="inputBox">
-                                        <input asp-for="Name" placeholder="Логин" />
-                                        <span asp-validation-for="Name" class="text-danger"></span>
-                                    </div>
-                                    <div class="inputBox">
-                                        <input asp-for="Email" type="email" placeholder="email" />
-                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                    </div>
-                                      <div class="inputBox">
-                                        <input asp-for="Password" type="password" placeholder="Пароль" />
-                                        <span asp-validation-for="Password" class="text-danger"></span>
-                                    </div>
-                                    <div class="inputBox">
-                                        <input asp-for="PasswordConfirm" type="password" placeholder="Повторите пароль" />
-                                        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
-                                    </div>
-                                    <div class="inputBox">
-                                        <input asp-for="NumberStudentBook" type="number" placeholder="Номер зачётки" />
-                                        <span asp-validation-for="NumberStudentBook" class="text-danger"></span>
-                                    </div>
-                                    <button type = "submit" class="btn" name="send">
-                                        <strong class="strongBtn">Регистрация</strong>
-                                        <div id = "container-stars" >
-                                            <div id="stars"></div>
-                                        </div>
-                                        <div id = "glow" >
-                                            <div class="circle"></div>
-                                            <div class="circle"></div>
-                                        </div>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="Text1">
-                                <div asp-validation-summary="ModelOnly" class="text-danger">
-                                <p class="title">WELCOME<br /></p>
-                                <p class="tex">
-                                    Добро пожаловать в наше приложение! Зарегистрируйтесь и вы получите доступ к тестам, лекциям и многому другому!
-                                    </br>
-                                    <br />
-                                    <strong>Пожалуйста воспользуйтесь тестовыми аккаутнами</strong>
-
-                                </p>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
-
-
-            
-
         </div>
     </div>
-<div/>
-@*
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form   >
-                <h3>LoginApp</h3>
-                <hr />
-              
-                <div class="form-group">
-                   
-                    <span class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="RememberMe">["RememberMe"]</label>
-                        <input asp-for="RememberMe" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary mt-1">["BtnLogin"]</button>
-                </div>
-            </form>
-        </section>
-    </div>
-    
-</div>*@
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

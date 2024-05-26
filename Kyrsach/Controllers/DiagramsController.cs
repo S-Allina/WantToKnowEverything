@@ -27,6 +27,7 @@ namespace Kyrsach.Controllers
         [HttpPost]
         public async Task<FileResult> ExportPeopleInExcel(int idCategory, int idGroup)
         {
+
                 var result = new List<ExcelResultViewModel>();
                 using (var connection = new SqlConnection(_connectionString))
                 {
@@ -54,7 +55,7 @@ namespace Kyrsach.Controllers
         [HttpPost]
         public async Task<FileResult> ExportTestByDateInExcel(string DateStart, string DateEnd,string idGroup)
         {
-            
+
                 var result = new List<ExcelResultViewModel>();
                 using (var connection = new SqlConnection(_connectionString))
                 {
@@ -77,13 +78,14 @@ namespace Kyrsach.Controllers
                 }
                 var fileName = "ResultByDate.xlsx";
                 return GenerateExcel(fileName, result);
-           
+            
         }
 
 
 
         private FileResult GenerateExcel(string fileName, List<ExcelResultViewModel> result)
-        { DataTable dataTable = new DataTable("Result");
+        {
+            DataTable dataTable = new DataTable("Result");
             dataTable.Columns.AddRange(new DataColumn[]
             { new DataColumn("Пользователь")
             });
@@ -115,7 +117,6 @@ namespace Kyrsach.Controllers
  return File(stream.ToArray(),  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
                 }
             }
-
         }
 
 
@@ -223,7 +224,7 @@ namespace Kyrsach.Controllers
                 reader.Close();
                 connection.Close();
             }
-            return Json(result2);
+                return Json(result2);
             }
             catch (Exception ex)
             {

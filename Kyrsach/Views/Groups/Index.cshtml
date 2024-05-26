@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="~/css/Chat.css" />
 
 </head>
-<div class="card">
-    <section class="top">
+<div style="padding:50px 100px">
+    <div class="flexInputForm">
         <span >Список групп:</span>
         @if (ViewBag.name == null)
         {
-            <form asp-action="create" style="display:flex;  width:30%" method="post">
+            <form asp-action="create" style="display:flex;  width:fit-content; gap:30px" method="post">
                 <div class="inputBox">
                 <input name="NameGroup" type="text"/>
                 </div>
@@ -50,10 +50,11 @@
                     </button>
                 </form>
             }
-            </section>
+            </div>
             <hr/>
-    <section class="bottom">
+    <span class="text-danger">@ViewBag.Message</span>
         <ul class="users">
+            
             @foreach (var item in Model)
             {
                     <li class="user found">
@@ -125,5 +126,5 @@
                 </li>
             }
         </ul>
-    </section>
+    
 </div>

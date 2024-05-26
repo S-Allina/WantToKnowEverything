@@ -60,6 +60,10 @@ connection.start().then(function () {
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var group = document.getElementById("IdGroup").value;
     var message = document.getElementById("messageInput").value;
+    if (message == "") {
+        alert("Нельзя отправить пустое сообщение.");
+        return;
+    }
     document.getElementById("messageInput").value = "";
     connection.invoke("SendMessage", group, meName, message).catch(function (err) {
         return console.error(err.toString());

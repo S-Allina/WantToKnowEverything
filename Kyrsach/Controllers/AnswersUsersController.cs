@@ -18,7 +18,7 @@ namespace Kyrsach.Controllers
             _context = context;
         }
 
-        [Authorize]
+        [Authorize(Roles ="teacher,admin")]
         // GET: AnswersUsers
         public async Task<IActionResult> Index()
         {
@@ -45,7 +45,6 @@ namespace Kyrsach.Controllers
             return View(listUser);
         }
         [Authorize]
-        // GET: AnswersUsers
         public async Task<IActionResult> IndexForUser()
         {
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;

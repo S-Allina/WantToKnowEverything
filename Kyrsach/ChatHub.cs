@@ -35,11 +35,11 @@ namespace Kyrsach
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == userNmae);
             int idGroup = int.Parse(group);
-            var role =  _context.PeopleInGroups.FirstOrDefault(p => p.IdGroup == idGroup && p.IdUser == user.Id).Role;
+            var role =  _context?.PeopleInGroups?.FirstOrDefault(p => p.IdGroup == idGroup && p.IdUser == user.Id)?.Role;
             var messageEntity = new Message
             {
                 IdGroup = idGroup,
-                IdSender = user.Id,
+                IdSender = user?.Id,
                 Text = message,
                 Time = DateTime.Now
             };

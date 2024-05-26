@@ -22,7 +22,7 @@ namespace Kyrsach.Controllers
         }
 
         // GET: Groups
-        public async Task<IActionResult> Index(int? idGroup)
+        public async Task<IActionResult> Index(int? idGroup, string? message)
         {
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
             var groups = await _context.Groups.ToListAsync();
@@ -47,6 +47,7 @@ namespace Kyrsach.Controllers
                 ViewBag.Id = idGroup;
                 ViewBag.name=group.NameGroup;
             }
+            ViewBag.Message=message;
             return View(groupViewModel);
         }
 
@@ -102,15 +103,26 @@ namespace Kyrsach.Controllers
             }
             return RedirectToAction("Index");
         }
-        // GET: Groups/Create
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
 
-        // POST: Groups/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditGropFromUser(int idGroup, string idUser)
+        {
+            if(ModelState.IsValid)
+            {
+                var userInGroup = await _context.PeopleInGroups.FirstOrDefaultAsync(u=>u.IdUser==idUser);
+                userInGroup.IdGroup=idGroup;
+                _context.PeopleInGroups.Update(userInGroup);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("FullUsers","Account");
+            }
+            else
+            {
+                return RedirectToAction("FullUsers", "Account");
+            }
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(string NameGroup)
@@ -121,38 +133,28 @@ namespace Kyrsach.Controllers
                 {
                     NameGroup = NameGroup,
                 };
-                PeopleInGroup peopleInGroup = new PeopleInGroup
-                {
-                    IdGroup = _context.Groups.Select(g=>g.IdGroup).Max(),
-                    IdUser = _context.UserView.FirstOrDefault(u=>u.NameRole=="admin").Id,
-                    Role = "admin"
-
-                };
-                await _context.PeopleInGroups.AddAsync(peopleInGroup);
-                _context.SaveChanges();
-                _context.Add(group);
+                await _context.AddAsync(group);
                 await _context.SaveChangesAsync();
+                AddAdminInGroup();
                 return RedirectToAction(nameof(Index));
             }
             ModelState.AddModelError("", "Не указано имя.");
             return View(NameGroup);
         }
 
-        // GET: Groups/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null || _context.Groups == null)
-        //    {
-        //        return NotFound();
-        //    }
+       public async void AddAdminInGroup()
+        {
 
-        //    Group group = await _context.Groups.FindAsync(id);
-        //    if (group == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return RedirectToAction("Index",new { group });
-        //}
+            PeopleInGroup peopleInGroup = new PeopleInGroup
+            {
+                IdGroup = _context.Groups.Select(g => g.IdGroup).Max(),
+                IdUser = _context.UserView.FirstOrDefault(u => u.NameRole == "admin").Id,
+                Role = "admin"
+
+            };
+            await _context.PeopleInGroups.AddAsync(peopleInGroup);
+            await _context.SaveChangesAsync();
+        }
 
         // POST: Groups/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -204,10 +206,14 @@ namespace Kyrsach.Controllers
             {
                 return Problem("Entity set 'SerovaContext.Groups'  is null.");
             }
-            var @group = await _context.Groups.FindAsync(id);
-            if (@group != null)
+            var group = await _context.Groups.FindAsync(id);
+            if(_context.PeopleInGroups.Where(p=>p.IdGroup== id).Any())
             {
-                _context.Groups.Remove(@group);
+                return RedirectToAction("Index",new {message= "Чтобы удалить группу в ней не должно быть ни одного учасника. Переведите всех учеников в другую группу и попросите выйти из неё всех учителей" });
+            }
+            if (group != null)
+            {
+                _context.Groups.Remove(group);
             }
             
             await _context.SaveChangesAsync();

@@ -27,10 +27,18 @@ a:hover {
     text-decoration: none;
 }
 
-.link {
-    color: #ffeba7;
+.flexInputForm {
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    width:100%;
 }
-
+    .flexInputForm .inputBox {
+        width:49%;
+    }
+        .flexInputForm .inputBox input {
+            width: 100%;
+        }
     .link:hover {
         color: #c4c3ca;
     }
@@ -114,8 +122,11 @@ h6 span {
         display: none;
     }
 
-    .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper .None {
+     .None {
         display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper .None1 {

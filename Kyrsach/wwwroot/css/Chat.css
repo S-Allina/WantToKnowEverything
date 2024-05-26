@@ -54,6 +54,7 @@ main {
 .messages-container {
     padding: 15px;
     overflow-y: scroll;
+    overflow-x:hidden;
     max-height: 65%;
     display: flex;
     flex-direction: column;

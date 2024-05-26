@@ -23,48 +23,56 @@ namespace Kyrsach.Controllers
 
         // GET: Category
         [Authorize]
-        public async Task<IActionResult> Index(string type)
+        public async Task<IActionResult> Index(string type, string NameCat="")
         {
-
+            type = type == "fieldImg" ? "field" : type;
+            type = type == "fieldText" ? "field" : type;
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
             var categories = new List<Category>();
-            using (var connection = new SqlConnection(_connectionString))
+            if (!User.IsInRole("admin"))
             {
-                var command = new SqlCommand("GetCategoriesByUser", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@UserId", userId);
-                command.Parameters.AddWithValue("@type", type);
-                connection.Open();
-                var reader = await command.ExecuteReaderAsync();
-                while (reader.Read())
+              
+                using (var connection = new SqlConnection(_connectionString))
                 {
-                    var IdCategory = (int)reader["IdCategory"];
-                    var NameCategory = (string)reader["NameCategory"];
-                    var WhoCreatedCategory = (reader["WhoCreatedCategory"].ToString());
-                    byte[] Picture = (byte[])reader["Picture"];
-                    Category c = new Category{ 
-                        IdCategory = IdCategory, 
-                        NameCategory= NameCategory,
-                        WhoCreatedCategory= (string)WhoCreatedCategory, 
-                        Picture= Picture,
-                        Type = type
-                    };
-                    categories.Add(c);
-                }
-                reader.Close();
-                connection.Close();
-            }
+                    var command = new SqlCommand("GetCategoriesByUser", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@type", type);
+                    connection.Open();
+                    var reader = await command.ExecuteReaderAsync();
+                    while (reader.Read())
+                    {
+                        Category c = new Category
+                        {
+                            IdCategory = (int)reader["IdCategory"],
+                            NameCategory = (string)reader["NameCategory"],
+                            WhoCreatedCategory = (string)(reader["WhoCreatedCategory"]),
+                            Picture = reader["Picture"] is byte[]? (byte[])reader["Picture"] : null,
+                            Type = type
+                        };
 
+
+                        categories.Add(c);
+                    }
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else
+            {
+                categories = _context.Category.Where(c => c.Type.Contains(type)).ToList();
+            }
+            categories.Where(c=>c.NameCategory.ToLower().Contains(NameCat.ToLower())==true).ToList();
             switch (type)
             {
                 case "test":
-                    return View(categories.ToList());
+                    return View(categories);
                 case "quez":
-                 return View("IndexQuez", categories.ToList());
+                 return View("IndexQuez", categories);
                 case "field":
-                    return View("IndexField", categories.ToList());
+                    return View("IndexField", categories);
             }
-            return View(categories.ToList());
+            return View(categories);
         }
 
        
@@ -73,19 +81,19 @@ namespace Kyrsach.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         public IActionResult CreateQuez()
         {
             return View();
         }
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         public IActionResult CreateField()
         {
             return View();
         }
 
         [HttpPost]
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdCategory,NameCategory,WhoCreatedCategory,Picture, Type")] CategoryViewModel CategoryView)
         {
@@ -117,9 +125,9 @@ namespace Kyrsach.Controllers
                     case "quez":
                         return RedirectToAction(nameof(Index), new {type = "quez" });
                     case "fieldImg":
-                        return RedirectToAction(nameof(Index), new { type = "fieldImg" });
+                        return RedirectToAction(nameof(Index), new { type = "field" });
                     case "fieldText":
-                        return RedirectToAction(nameof(Index), new { type = "fieldText" });
+                        return RedirectToAction(nameof(Index), new { type = "field" });
                 }
 
             }
@@ -137,8 +145,7 @@ namespace Kyrsach.Controllers
             return NotFound();
 		}
 
-        [Authorize(Roles = "teacher")]
-        [ValidateAntiForgeryToken]
+[Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Category == null)
@@ -154,8 +161,7 @@ namespace Kyrsach.Controllers
             }
             return View(Category);
         }
-        [Authorize(Roles = "teacher")]
-        [ValidateAntiForgeryToken]
+[Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> EditQuez(int? id)
         {
             if (id == null || _context.Category == null)
@@ -171,8 +177,7 @@ namespace Kyrsach.Controllers
             }
             return View(Category);
         }
-        [Authorize(Roles = "teacher")]
-        [ValidateAntiForgeryToken]
+[Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> EditField(int? id)
         {
             if (id == null || _context.Category == null)
@@ -191,58 +196,59 @@ namespace Kyrsach.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCategory,NameCategory,WhoCreatedCategory,Picture,Type")] Category сategory, IFormFile pic)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCategory,NameCategory,WhoCreatedCategory,Picture,Type")] Category сategory, IFormFile? pic)
         {
-
-
-            var existingCategory = await _context.Category.FindAsync(id); // получаем объект из контекста
-
-            if (existingCategory != null)
+            if (ModelState.IsValid)
             {
-                existingCategory.NameCategory = сategory.NameCategory;
-                existingCategory.WhoCreatedCategory = сategory.WhoCreatedCategory;
 
-                if (pic != null)
+                var existingCategory = await _context.Category.FindAsync(id); // получаем объект из контекста
+
+                if (existingCategory != null)
                 {
-                    byte[] imageData = null;
+                    existingCategory.NameCategory = сategory.NameCategory;
+                    existingCategory.WhoCreatedCategory = сategory.WhoCreatedCategory;
 
-                    using (var binaryReader = new BinaryReader(pic.OpenReadStream()))
+                    if (pic != null)
                     {
-                        imageData = binaryReader.ReadBytes((int)pic.Length);
+                        byte[] imageData = null;
+
+                        using (var binaryReader = new BinaryReader(pic.OpenReadStream()))
+                        {
+                            imageData = binaryReader.ReadBytes((int)pic.Length);
+                        }
+
+                        existingCategory.Picture = imageData;
                     }
 
-                    existingCategory.Picture = imageData;
-                }
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-
-                    switch (existingCategory.Type)
+                    try
                     {
-                        case "test":
-                            return RedirectToAction(nameof(Index), new { type = "test" });
-                        case "quez":
-                            return RedirectToAction(nameof(Index), new { type = "quez" });
-                        case "fieldImg":
-                            return RedirectToAction(nameof(Index), new { type = "fieldImg" });
-                        case "fieldText":
-                            return RedirectToAction(nameof(Index), new { type = "fieldText" });
+                        await _context.SaveChangesAsync();
+
+                        switch (existingCategory.Type)
+                        {
+                            case "test":
+                                return RedirectToAction(nameof(Index), new { type = "test" });
+                            case "quez":
+                                return RedirectToAction(nameof(Index), new { type = "quez" });
+                            case "fieldImg":
+                                return RedirectToAction(nameof(Index), new { type = "field" });
+                            case "fieldText":
+                                return RedirectToAction(nameof(Index), new { type = "field" });
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        return RedirectToAction("Index", "Errors", new { message = ex.Message.Split('.')[0] });
+
                     }
                 }
-                catch (Exception ex)
-                {
-                        return RedirectToAction("Index","Errors",new {message = ex.Message.Split('.')[0] });
-                   
-                }
-            }
+            } return View(сategory);
 
             return RedirectToAction(nameof(Index));
         }
-        [Authorize(Roles = "teacher")]
-        [ValidateAntiForgeryToken]
+[Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Category == null)
@@ -262,8 +268,7 @@ namespace Kyrsach.Controllers
 
         // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
-        [Authorize(Roles = "teacher")]
-        [ValidateAntiForgeryToken]
+[Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Category == null)
@@ -285,9 +290,9 @@ namespace Kyrsach.Controllers
                 case "quez":
                     return RedirectToAction(nameof(Index), new { type = "quez" });
                 case "fieldImg":
-                    return RedirectToAction(nameof(Index), new { type = "fieldImg" });
+                    return RedirectToAction(nameof(Index), new { type = "field" });
                 case "fieldText":
-                    return RedirectToAction(nameof(Index), new { type = "fieldText" });
+                    return RedirectToAction(nameof(Index), new { type = "field" });
             }
             return View(Category);
         }

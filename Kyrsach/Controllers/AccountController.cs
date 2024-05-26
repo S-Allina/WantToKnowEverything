@@ -23,7 +23,7 @@ namespace Kyrsach.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Register(LoginAndRegisterModel model)
+        public async Task<IActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
@@ -51,24 +51,39 @@ namespace Kyrsach.Controllers
                   
                 }
             }
-            return View(model);
+            return View("",model);
         }
         [HttpGet]
         public async Task<IActionResult> FullUsers()
         {
             var user = _userManager.Users.FirstOrDefaultAsync(u => u.UserName == User.Identity.Name).Result;
             List<UserViewModel> users = new List<UserViewModel>();
-            if (_userManager.IsInRoleAsync(user, "admin").Result){
+            ViewBag.Groups = await GetGroupsSelectList();
+
+            if (await _userManager.IsInRoleAsync(user, "admin"))
+            {
                 users = _context.UserView.OrderBy(u => u.NameGroup).ToList();
                 return View(users);
             }
-            else if( _userManager.IsInRoleAsync(user, "teacher").Result)
+            else if (await _userManager.IsInRoleAsync(user, "teacher"))
             {
-                users = _context.UserView.Where(u=>u.NameRole=="user").OrderBy(u=>u.NameGroup).ToList();
+                users = _context.UserView.Where(u => u.NameRole == "user").OrderBy(u => u.NameGroup).ToList();
                 return View(users);
             }
-            return RedirectToAction("Index", "Home");
 
+            return RedirectToAction("Index", "Home");
+        }
+
+        private async Task<List<SelectListItem>> GetGroupsSelectList()
+        {
+            var groups = await _context.Groups.ToListAsync();
+            var selectListItems = groups.Select(c => new SelectListItem
+            {
+                Value = c.IdGroup.ToString(),
+                Text = c.NameGroup
+            }).ToList();
+
+            return selectListItems;
         }
         [HttpGet]
         [Authorize(Roles = "admin")]
@@ -77,25 +92,24 @@ namespace Kyrsach.Controllers
             return View();
         }
         [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            return View();
+        }
+        [HttpGet]
         [Authorize(Roles = "teacher")]
         public async Task<IActionResult> RegisterUser()
         {
-            var groups = await _context.Groups.ToListAsync();
-
-            // Создаем список объектов SelectListItem для заполнения выпадающего списка
-            var selectListItems = groups.Select(c => new SelectListItem
-            {
-                Value = c.IdGroup.ToString(), // Здесь должно быть строковое значение идентификатора категории
-                Text = c.NameGroup // Здесь должно быть название категории
-            }).ToList();
-            ViewBag.Groups = selectListItems;
-
+            ViewBag.Groups = await GetGroupsSelectList();
             return View();
         }
+
+       
+
         [HttpPost]
         [Authorize(Roles = "admin")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RegisterTeacher(LoginAndRegisterModel model)
+        public async Task<IActionResult> RegisterTeacher(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
@@ -139,7 +153,7 @@ namespace Kyrsach.Controllers
         [HttpPost]
         [Authorize(Roles = "teacher")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RegisterUser(LoginAndRegisterModel model)
+        public async Task<IActionResult> RegisterUser(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
@@ -183,13 +197,13 @@ namespace Kyrsach.Controllers
         public async Task<IActionResult> Login()
         {
 		 await _signInManager.GetExternalAuthenticationSchemesAsync();
-            return View(new LoginAndRegisterModel
+            return View(new LoginModel
             {
             });
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginAndRegisterModel model)
+        public async Task<IActionResult> Login(LoginModel model)
         {
             if (model.Name != null && model.Password != null)
             {
@@ -222,11 +236,47 @@ namespace Kyrsach.Controllers
             return View(model);
         }
 
+
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user != null)
+                {
+                    var result = await _userManager.DeleteAsync(user);
+                    if (result.Succeeded)
+                    {
+                        // Пользователь успешно удален
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        string errors = "";
+                        // Произошла ошибка при удалении пользователя
+                        foreach (var error in result.Errors)
+                        {
+                            errors += error.Description + " ";
+                        }
+                        return RedirectToAction("Index", "Errors", new { errors });
 
+                    }
+                }
+                else
+                {
+                    // Пользователь не найден
+                    return NotFound();
+                }
+            }catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { message ="Нельзя удалить ученика так как его данные указаны в других таблицах" });
+
+            }
+        }
     }
 }

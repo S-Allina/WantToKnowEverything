@@ -633,7 +633,6 @@ a {
     align-items: center !important;
     width: 13rem !important;
     height: 3rem !important;
-    margin-left: 50px !important;
     background-size: 300% 300%;
     backdrop-filter: blur(1rem) !important;
     border-radius: 5rem !important;
@@ -2960,6 +2959,10 @@ strong {
         display: none;
         /*transform:translate(-30px);*/
     }
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
 
 textarea {
     /* resize: vertical; */

@@ -1,4 +1,5 @@
-﻿using Kyrsach.Models;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using Kyrsach.Models;
 using Kyrsach.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,55 +22,68 @@ namespace Kyrsach.Controllers
 
 
         // GET: Question
-        public async Task<IActionResult> Index(int idQ, int idT, string? answer)
+        public async Task<IActionResult> Index(int idQ, int idT, string? answer, string? message)
         {
+            ViewBag.Message = message;
             if (idQ == 0 && _context.Questions.Where(t => t.IdTest == idT).FirstOrDefault() != null)
             {
                 ViewBag.idT = idT;
                 var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
-                AnswersUser answersUser = new AnswersUser(userId, 0, DateTime.Now);
+                AnswersUser answersUser = new AnswersUser{
+                   IdUser= userId, 
+                   CountCurrent= 0, 
+                   Time= DateTime.Now };
                 _context.Add(answersUser);
                 await _context.SaveChangesAsync();
-                int Id = _context.Questions.FirstOrDefault(t => t.IdTest == idT).IdQuestion;
-                var serovaContext = _context.Questions.Where(t => t.IdTest == idT && t.IdQuestion == Id);
+                var question = await _context.Questions.FirstOrDefaultAsync(t => t.IdTest == idT);
+                
 
                 ViewBag.Button = "Далее";
-                return View(await serovaContext.ToListAsync());
+                return View(question);
             }
             else
             {
                 ViewBag.idT = idT;
-                var serovaContext = _context.Questions.Where(t => t.IdTest == idT);
-                return View(await serovaContext.ToListAsync());
+                var question = await  _context.Questions.FirstOrDefaultAsync(t => t.IdTest == idT && t.IdQuestion == idQ);
+                ViewBag.Button = "Далее";
+                return View(question);
             }
 
 
         }
         public async Task<IActionResult> Dalee(int idQ, int idT, string answer)
         {
+
             try
             {
-                var nextQuestion = GetNextQuestion(idQ, idT);
-                var lastQuestion = GetLastQuestion(idQ, idT);
-
-                ViewBag.idT = idT;
-                ViewBag.Button = nextQuestion != null ? "Далее" : "Готово";
-
-                string isEqual = CalculateIsEqual(idQ, answer);
-
-                var lastAnswerId = _context.AnswersUsers.OrderByDescending(t => t.IdAnswersUser).FirstOrDefault()?.IdAnswersUser ?? 0;
-                var answ = new Answer(lastAnswerId, idQ, answer, isEqual);
-                await _context.AddAsync(answ);
-                await _context.SaveChangesAsync();
-
-                if (lastQuestion == null)
+                if (answer != null)
                 {
-                   int countResult= await CalculateAndUpdateCurrentScore(idT);
-                    return RedirectToAction(nameof(End), new { count = countResult });
-                }
+                    var nextQuestion = GetNextQuestion(idQ, idT);
+                    var lastQuestion = GetLastQuestion(idQ, idT);
 
-                var serovaContext = _context.Questions.Where(t => t.IdTest == idT && t.IdQuestion == (nextQuestion ==null ? lastQuestion.IdQuestion: nextQuestion.IdQuestion));
-                return View(nameof(Index), await serovaContext.ToListAsync());
+                    ViewBag.idT = idT;
+                    ViewBag.Button = nextQuestion != null ? "Далее" : "Готово";
+
+                    string isEqual = CalculateIsEqual(idQ, answer);
+
+                    var lastAnswerId = _context.AnswersUsers.OrderByDescending(t => t.IdAnswersUser).FirstOrDefault()?.IdAnswersUser ?? 0;
+                    var answ = new Answer(lastAnswerId, idQ, answer, isEqual);
+                    await _context.AddAsync(answ);
+                    await _context.SaveChangesAsync();
+
+                    if (lastQuestion == null)
+                    {
+                        int countResult = await CalculateAndUpdateCurrentScore(idT);
+                        return RedirectToAction(nameof(End), new { count = countResult });
+                    }
+
+                    var serovaContext = _context.Questions.Where(t => t.IdTest == idT && t.IdQuestion == (nextQuestion == null ? lastQuestion.IdQuestion : nextQuestion.IdQuestion));
+                    return View(nameof(Index), await serovaContext.ToListAsync());
+                }
+                else
+                {
+                    return RedirectToAction(nameof(Index), new { idQ, idT, message = "Пожалуйста выберите вариант ответа" });
+                }
             }
             catch (Exception ex)
             {
@@ -129,7 +143,7 @@ namespace Kyrsach.Controllers
 
 
 
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [HttpGet]
         public IActionResult Create(int idT)
         {
@@ -139,7 +153,7 @@ namespace Kyrsach.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(QuestionViewModel questionViewModel, int idT, string answer)
         {

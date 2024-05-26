@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="~/css/Chat.css" />
 
 </head>
-<h1>Категории соотношений</h1>
+<h1>Категории игры "Найди пару"</h1>
 <section class="top">
     @if (User.IsInRole("admin") || User.IsInRole("teacher"))
     {
-        <a asp-action="CreateField">
-            <button type="button" class="btn">
+        <a asp-action="CreateField" class="btn">
 
                 <strong class="strongBtn">Добавить</strong>
                 <div id="container-stars">
@@ -25,7 +24,6 @@
                     <div class="circle"></div>
                     <div class="circle"></div>
                 </div>
-            </button>
         </a>
     }
 @*

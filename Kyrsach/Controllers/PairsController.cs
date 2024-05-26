@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.ComponentModel.DataAnnotations;
 
 namespace Kyrsach.Controllers
 {
@@ -61,7 +62,7 @@ namespace Kyrsach.Controllers
 
 
 
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [HttpGet]
         public IActionResult Create(int idCat)
         {
@@ -72,7 +73,7 @@ namespace Kyrsach.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdPair,IdCategory,Card1Text,Card2Text,Card1Img,Card2Img")] PairViewModel pairViewModel)
         {
@@ -142,7 +143,7 @@ namespace Kyrsach.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int idPairs, [Bind("IdPair,IdCategory,Card1Text,Card2Text,Card1Img,Card2Img")] Pair pair)
         {
@@ -167,7 +168,7 @@ namespace Kyrsach.Controllers
             }
         }
 
-        [Authorize(Roles = "teacher")]
+[Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
         public async Task<IActionResult> Delete(int idPairs)
@@ -194,7 +195,7 @@ namespace Kyrsach.Controllers
     }
     public class ObjectJson
     {
-        public string Card1Text {get;set;}
+		public string Card1Text {get;set;} 
         public string Card2Text  { get; set;}
     public string Card1Img { get; set; }
         public string Card2Img { get; set; }

@@ -2,19 +2,18 @@
 
 @{
     ViewData["Title"] = "Index";
-    string group = "";
 }
 
 <head>
     <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
 
     <link rel="stylesheet" href="~/css/Chat.css" />
+        <link rel="stylesheet" href="~/css/StyleDiagram.css" asp-append-version="true" />
 
 </head>
-
-<div class="card">
-    <section class="top">
-        <span >Список групп:</span>
+<div style="padding:0 100px">
+<div class="flexInputForm">
+    <span>Список групп:</span>
 
         <a class="btn" style="width:fit-content!important" asp-action="RegisterUser">
                 <strong>Зарегистрировать ученика</strong>
@@ -39,32 +38,47 @@
                 </div>
             </a>
         }
-    </section>
+    </div>
             <hr/>
-    <section class="bottom">
+
         <ul class="users">
             @foreach (var item in Model)
             {
-                <li class="user found" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr">
-                    @*  @if (item.Img != null)
-                {
-                <img  src="data:image/png;base64,@(Convert.ToBase64String(item.Img))" />
-                }
-                else
-                {
-                <img  src="~/images/Icons/defaulfUser.png" />
-                }*@
+                <li class="user found" style="grid-template-columns:1.5fr 0.5fr 1fr 0.5fr  2fr">
                     <span class="user-name name soughtFor" >@item.LastName @item.FirstName</span>
                     <span>@item.UserName</span>
                     <span>@item.Email</span>
                     <span>@item.NameGroup</span>
-                      @if (User.IsInRole("admin"))
+                   
+                    @if (item.NameRole == "user")
                     {
-                        <span>@item.NameRole</span>
 
-                          <div class="CreateCategoryButtons">
-                            <a class="btn" style="width:fit-content!important" asp-action="Delete">
-                                <strong>Зарегистрировать учителя</strong>
+                        <form class="CreateCategoryButtons" asp-action="EditGropFromUser" asp-controller="Groups">
+                        @if (User.IsInRole("admin"))
+                        {
+                            <span>@item.NameRole</span>
+
+
+                        }
+                        
+                            <div class="formSelect" style="display:flex;gap:10px">
+
+                                <label for="tests">Группы</label>
+                                <select class="my-select-menu" id="idCategory" name="idGroup" asp-items="@ViewBag.Groups"></select>
+                            </div>
+                            <input name="idUser" value="@item.Id" hidden/>
+                            <button class="btn" style="width:fit-content!important" type="submit">
+                                <strong>Изменить</strong>
+                                <div id="container-stars">
+                                    <div id="stars"></div>
+                                </div>
+                                <div id="glow">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                            </button>
+                        <a class="btn" style="width:fit-content!important" asp-action="DeleteUser" asp-route-userId="@item.Id">
+                                <strong>Удалить</strong>
                                 <div id="container-stars">
                                     <div id="stars"></div>
                                 </div>
@@ -73,10 +87,9 @@
                                     <div class="circle"></div>
                                 </div>
                             </a>
-                    </div>
+                        </form>
                     }
                 </li>
             }
         </ul>
-    </section>
 </div>
