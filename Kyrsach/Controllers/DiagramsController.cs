@@ -206,7 +206,7 @@ namespace Kyrsach.Controllers
             try { 
             var result2 = new List<int>();
             ViewBag.idCategory= data.IdCategory;
-            using (var connection = new SqlConnection(_connectionString))
+                using (var connection = new SqlConnection(_connectionString))
             {
                 var command = new SqlCommand("GetPerformanceStatistics", connection);
                 command.CommandType = CommandType.StoredProcedure;

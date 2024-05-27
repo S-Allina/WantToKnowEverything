@@ -39,27 +39,19 @@
             </div>
         </div>
         <div class="head">
-
             <div class="head__link">
                 <a class="navbar" asp-controller="Home" asp-action="Index">
                     <img src="~/img/1.png" class="head__img" />
                 </a>
-
                 <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="test">
                     <img src="~/img/testttttt.png" class="head__img" />
                 </a>
-              @*  <a class="navbar" asp-controller="Biography" asp-action="Start">
-                    <img src="~/img/Bio.png" class="head__img" />
-                </a>*@
-
                 <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="quez" asp-route-idQ="1">
                     <img src="~/img/thinking.png" class="head__img" />
                 </a>
-
                 <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="field">
                     <img src="~/img/Cards.png" class="head__img" />
                 </a>
-
                 @if (User.Identity.IsAuthenticated && (User.IsInRole("teacher") || User.IsInRole("admin")))
                 {
                     <a class="navbar" asp-controller="AnswersUsers" asp-action="Index">

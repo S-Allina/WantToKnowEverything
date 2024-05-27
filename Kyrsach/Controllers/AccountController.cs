@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Humanizer;
 using Kyrsach.Models;
 using Kyrsach.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -41,7 +42,8 @@ namespace Kyrsach.Controllers
                         ModelState.AddModelError(string.Empty, "Email не уникален");
 
                     }
-                    if(ModelState.ErrorCount!=0) return View(model);
+                    if (_context.Users.FirstOrDefault(u=>u.NumberStudentBook==model.NumberStudentBook).Email!=null) ModelState.AddModelError(string.Empty, "Ученик с этим номером зачётки уже зарегистрирован");
+                    if (ModelState.ErrorCount!=0) return View(model);
                     userFromNumber.Email = model.Email;
                     userFromNumber.UserName = model.Name;
                     var result = _userManager.PasswordHasher.HashPassword(userFromNumber, model.Password);
@@ -165,6 +167,7 @@ namespace Kyrsach.Controllers
                 {
                     ModelState.AddModelError(string.Empty, "Email не уникален");
                 }
+                if(_context.Users.FirstOrDefault(u=>u.NumberStudentBook==model.NumberStudentBook)!=null) ModelState.AddModelError(string.Empty, "Номер зачётки не уникален. Ученик с таким номером зачётки уже зарегистрирован.");
                 if (ModelState.ErrorCount != 0) return View(model);
 
                 UserModel user = new UserModel
@@ -197,9 +200,7 @@ namespace Kyrsach.Controllers
         public async Task<IActionResult> Login()
         {
 		 await _signInManager.GetExternalAuthenticationSchemesAsync();
-            return View(new LoginModel
-            {
-            });
+            return View(new LoginModel {});
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -207,7 +208,7 @@ namespace Kyrsach.Controllers
         {
             if (model.Name != null && model.Password != null)
             {
-                var user = await _context.Users.FirstOrDefaultAsync(u=>u.UserName==model.Name);
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == model.Name);
                 if (user != null)
                 {
                     var result = await _signInManager.PasswordSignInAsync(model.Name, model.Password, model.RememberMe, false);
@@ -216,23 +217,11 @@ namespace Kyrsach.Controllers
                         await _userManager.UpdateAsync(user);
                         return RedirectToAction("Index", "Home");
                     }
-                    else
-                    {
-                        ModelState.AddModelError("", "Неверный логин или пароль");
-                    }
-
+                    else ModelState.AddModelError("", "Неверный логин или пароль");
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Пользователя с таким логином не существует, проверьте правильность введённых данных.");
-                }
-
+                else ModelState.AddModelError("", "Пользователя с таким логином не существует, проверьте правильность введённых данных.");
             }
-            else
-            {
-                ModelState.AddModelError("", "Не все поля заполнены");
-            }
-
+            else ModelState.AddModelError("", "Не все поля заполнены"); 
             return View(model);
         }
 
@@ -280,3 +269,5 @@ namespace Kyrsach.Controllers
         }
     }
 }
+
+

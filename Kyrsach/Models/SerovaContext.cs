@@ -5,18 +5,12 @@ namespace Kyrsach.Models
 {
     public partial class SerovaContext : IdentityDbContext<UserModel>
     {
-        public SerovaContext()
-        {
-        }
+        public SerovaContext() {}
 
-        public SerovaContext(DbContextOptions<SerovaContext> options)
-            : base(options)
-        {
-        }
+        public SerovaContext(DbContextOptions<SerovaContext> options) : base(options) {}
 
         public virtual DbSet<Answer> Answers { get; set; } = null!;
         public virtual DbSet<AnswersUser> AnswersUsers { get; set; } = null!;
-        //public virtual DbSet<UserModel> Users { get; set; } = null!;
         public virtual DbSet<Category> Category { get; set; } = null!;
         public virtual DbSet<Pair> Pairs { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;

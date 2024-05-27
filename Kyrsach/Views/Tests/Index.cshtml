@@ -7,6 +7,7 @@
 <h1>Тесты</h1>
 @if (User.IsInRole("admin") || User.IsInRole("teacher"))
 {
+    <div class="contener">
     <a asp-action="Create" asp-route-idCat="@ViewBag.idCat" class="btn">
             <strong class="strongBtn">Добавить</strong>
             <div id="container-stars">
@@ -18,6 +19,7 @@
                 <div class="circle"></div>
             </div>
     </a>
+    </div>
 }
 <div class="ContenerForImg">
 <div class="contenerTest">

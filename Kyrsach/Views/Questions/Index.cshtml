@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
    
 }
-
+<div class="contener">
 @if(Model ==null){
     @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
     {
-
+       
         <a class="btn" asp-action="Create" asp-route-idT="@ViewBag.idT">
                 <strong>Добавить</strong>
                 <div id="container-stars">
@@ -21,7 +21,8 @@
                 </div>
         </a>
     }
-}
+    <div style="width:100%;height:50vh; display:flex; justify-content:center; align-items:center">Вопросы ещё не добавлены. Обратитесь к преподавателю.</div>
+}else{
 
 <h1>@await Component.InvokeAsync("Count", new {idT = Model.IdTest, idQ=Model.IdQuestion})</h1>
   
@@ -39,7 +40,7 @@
                     </div>
             </a>
 
-            <a class="btn" asp-action="Delete" asp-route-idT="@ViewBag.idT" asp-route-id="@Model.IdQuestion">
+            <a class="btn" asp-action="Delete" id="deleteQuestion" asp-route-idT="@ViewBag.idT" asp-route-id="@Model.IdQuestion">
                     <strong>Удалить</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
@@ -53,7 +54,7 @@
         </div>
     }
    
-    <form class="formCreate" asp-action="Dalee" asp-controller="Questions">
+    <form class="formCreate" style="height:fit-content" asp-action="Dalee" asp-controller="Questions">
     <input name="idQ" class="none" value="@Model.IdQuestion" />
     <input value="@Model.IdTest" name="idT" class="none" />
     <span class="spanQuestion1 question"><b>Вопрос:</b> @Html.DisplayFor(modelItem => Model.TextQuetion)</span>
@@ -167,9 +168,15 @@
 
     </form>
     @*<a asp-action="Index" class="formCreate" asp-route-answer="@Request.Form["value"]" asp-route-answer="answer" asp-route-idQ="@item.IdQuestion" asp-route-idT="@item.IdTest">Далее</a>*@
-    <script src="~/js/question.js"></script>
-
 }
+
+</div>
+<script src="~/js/question.js"></script>
+<script>
+    document.querySelector("#deleteQuestion").addEventListener('click',()=>{
+        alert("Вопрос будет удалён");
+    })
+</script>
 
 
 

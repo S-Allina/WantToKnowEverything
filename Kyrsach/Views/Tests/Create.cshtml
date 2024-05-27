@@ -5,10 +5,9 @@
 }
 
 <h1>Добавление теста</h1>
-
+<div class="contener">
 <form asp-action="Create" class="formCreate">
     <input asp-for="IdCategory" class="none" name="IdCategory" value="@ViewBag.idCat" />
-    @*<span asp-validation-for="IdCategory" class="none"></span>*@
 
     <div class="inputbox question category">
 
@@ -17,13 +16,6 @@
         <i></i>
     </div>
                  <div class="CreateCategoryButtons">
-
-        @* <div class="form-group">
-        <label asp-for="WhoAnsweredCategory" class="control-label"></label>
-        <input asp-for="WhoAnsweredCategory" class="form-control" />
-        <span asp-validation-for="WhoAnsweredCategory" class="text-danger"></span>
-        </div>*@
-
         <button type="submit" value="Create" class="btn">
             <strong>Добавить</strong>
             <div id="container-stars">
@@ -44,7 +36,7 @@
                 </button>
     </div>
 </form>
-
+</div>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

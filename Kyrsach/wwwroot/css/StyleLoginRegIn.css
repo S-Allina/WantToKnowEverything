@@ -39,9 +39,7 @@ a:hover {
         .flexInputForm .inputBox input {
             width: 100%;
         }
-    .link:hover {
-        color: #c4c3ca;
-    }
+   
 
 p {
     font-weight: 500;
@@ -344,7 +342,8 @@ section .box .square:nth-child(5) {
     margin-right: 10px;
     text-align: justify;
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
     position: absolute;
     border-radius: 15px;

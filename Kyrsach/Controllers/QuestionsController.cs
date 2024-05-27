@@ -36,20 +36,15 @@ namespace Kyrsach.Controllers
                 _context.Add(answersUser);
                 await _context.SaveChangesAsync();
                 var question = await _context.Questions.FirstOrDefaultAsync(t => t.IdTest == idT);
-                
-
                 ViewBag.Button = "Далее";
                 return View(question);
-            }
-            else
+            }else
             {
                 ViewBag.idT = idT;
                 var question = await  _context.Questions.FirstOrDefaultAsync(t => t.IdTest == idT && t.IdQuestion == idQ);
                 ViewBag.Button = "Далее";
                 return View(question);
             }
-
-
         }
         public async Task<IActionResult> Dalee(int idQ, int idT, string answer)
         {
@@ -153,7 +148,7 @@ namespace Kyrsach.Controllers
         }
 
         [HttpPost]
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(QuestionViewModel questionViewModel, int idT, string answer)
         {
@@ -172,7 +167,6 @@ namespace Kyrsach.Controllers
 
                     CorrectAnswer = answer == null ? questionViewModel.CorrectAnswer : answer
                 };
-
                 if (questionViewModel.PictureTest != null)
                 {
                     byte[] imageData = null;

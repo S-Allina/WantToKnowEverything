@@ -25,26 +25,19 @@ namespace Kyrsach.Controllers
                 if (_context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault() != null)
                 {
                     ViewBag.idT = idT;
-                    //AnswersUser answersUser = new AnswersUser(1, 0, DateTime.Now);
-                    //_context.Add(answersUser);
-                    //await _context.SaveChangesAsync();
                     var serovaContext = _context.Quezs.Where(t => t.IdTest == idT);
                     ViewBag.Button = "Далее";
                     int[] numbers = new int[5];
                     Random rand = new Random();
-
                     for (int i = 0; i < numbers.Length - 1; i++)
                     {
                         int newNumber;
-
                         do
                         {
                             newNumber = rand.Next(5);
                         } while (Array.IndexOf(numbers, newNumber) != -1);
-
                         numbers[i] = newNumber;
                     }
-
                     ViewBag.numbers = numbers;
                     return View(await serovaContext.ToListAsync());
                 }

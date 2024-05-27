@@ -28,6 +28,7 @@ namespace Kyrsach.Models
         [Required(ErrorMessage = "Поле не заполнено")]
         [Display(Name = "LastName")]
         public string LastName { get; set; }
+        [MaxLength(6,ErrorMessage ="Номер зачётки должен содержать 6 цифр")]
         public int? NumberStudentBook { get; set; }
         public int Group { get; set; }
         [Compare("Password", ErrorMessage = "Passwords do not match")]

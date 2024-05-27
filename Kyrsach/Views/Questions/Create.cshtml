@@ -3,23 +3,18 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Создание вопроса</h1>
+<div class="contener" style="margin-top:30px">
+    <h1 style="width: 100%;margin-bottom:100px">Создание вопроса</h1>
 
 <hr />
-@*<div class="row">
-    <div class="col-md-4">*@
 <form asp-action="Create" class="formCreate" enctype="multipart/form-data">
-    
-
-        <input name="idT" class="none"  value="@ViewBag.IdT" />
+        <input name="idT" hidden  value="@ViewBag.IdT" />
 
 
     <div class="inputbox question">
-       
-        <span asp-validation-for="TextQuetion" class="spanQuestion">Вопрос:</span>
-        <textarea asp-for="TextQuetion" minlength="1" required autocomplete="off" type="text"></textarea>
-        <i></i>
+       <p>Вопрос:</p>
+        <textarea asp-for="TextQuetion" minlength="6" required autocomplete="off" type="text"></textarea>
+            <span asp-validation-for="TextQuetion" ></span>
     </div>
 
 
@@ -50,7 +45,8 @@
                 </label>
                 <div class="inputbox">
                         <input asp-for="Option1"  minlength="1" maxlength="30" id="1" autocomplete="off" required type="text">
-                    <span asp-validation-for="Option1">Вариант 1</span>
+                    <span >Вариант 1</span>
+                            <span asp-validation-for="Option1"></span>
                     <i></i>
                 </div>
         </div>
@@ -61,7 +57,8 @@
                 </label>
                 <div class="inputbox">
                         <input asp-for="Option2" minlength="1" maxlength="30" autocomplete="off" required id="2" type="text">
-                    <span asp-validation-for="Option2">Вариант 2</span>
+                    <span >Вариант 2</span>
+                            <span asp-validation-for="Option2"></span>
                     <i></i>
                 </div>
             </div>
@@ -72,7 +69,8 @@
                 </label>
                 <div class="inputbox">
                         <input asp-for="Option3" minlength="1" maxlength="30" autocomplete="off" id="3" required type="text">
-                    <span asp-validation-for="Option3">Вариант 3</span>
+                    <span>Вариант 3</span>
+                    <span asp-validation-for="Option3"></span>
                     <i></i>
                 </div>
             </div>
@@ -83,7 +81,8 @@
                 </label>
                 <div class="inputbox">
                         <input asp-for="Option4" minlength="1" maxlength="30" autocomplete="off" id="4" required type="text">
-                    <span asp-validation-for="Option4">Вариант 4</span>
+                    <span>Вариант 4</span>
+                            <span asp-validation-for="Option4"></span>
                     <i></i>
                 </div>
             </div>
@@ -94,7 +93,8 @@
                 </label>
             <div class="inputbox" >
                         <input asp-for="Option5" minlength="1" maxlength="30" autocomplete="off" id="5" required type="text">
-                    <span asp-validation-for="Option5">Вариант 5</span>
+                    <span>Вариант 5</span>
+                            <span asp-validation-for="Option5"></span>
                     <i></i>
                 </div>
            
@@ -141,27 +141,12 @@
                 <img src="~/img/DefautlCate.png" id="imgCate" class="imgQuestion" />
             </div>
         </div>
-       
-
-         @*   <img class="imgleft" src="~/img/questionleft.png">
-            <img class="imgcenter" src="~/img/question.png">
-            <img class="imgright" src="~/img/questionright.png">*@
 
         
     </div>
     </div>
-           @* <div class="form-group">
-                <label asp-for="CorrectAnswer" class="control-label"></label>
-                <input asp-for="CorrectAnswer" class="form-control" />
-                <span asp-validation-for="CorrectAnswer" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WhoAnsweredQuestion" class="control-label"></label>
-                <input asp-for="WhoAnsweredQuestion" class="form-control" />
-                <span asp-validation-for="WhoAnsweredQuestion" class="text-danger"></span>
-            </div>*@
 
-                <div class="CreateCategoryButtons">
+                <div class="CreateCategoryButtons" style="margin-top:0px">
         <button type="submit" value="Create" class="btn">
             <strong>Добавить</strong>
             <div id="container-stars">
@@ -182,7 +167,7 @@
                 </button>
                 </div>
       </form>
-
+      </div>
 <script src="~/js/question.js">
 
 </script>
@@ -191,68 +176,12 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 <script>
+    const label = document.querySelector('.input__file-button-text');
+    const img = document.querySelector('#imgCate');
+    const inputCat = document.querySelector('.input__file');
+    inputCat.addEventListener('change', () => {
 
-    document.querySelector('#plus').addEventListener('click', () => {
-        const plus = document.querySelector('#plus');
-        const min = document.querySelector('#minus');
-        const option = document.querySelectorAll('.aa.none');
-        if (option.length === 1) plus.classList.add('none');
-
-        option[0].classList.remove('none');
-        if (min.classList.contains('none')) min.classList.remove('none');
+        label.textContent = 'Файл выбран';
+        img.src = URL.createObjectURL(inputCat.files[0]);
     });
-
-    document.querySelector('#minus').addEventListener('click', () => {
-        const min = document.querySelector('#minus');
-        const plus = document.querySelector('#plus');
-        if (plus.classList.contains('none')) plus.classList.remove('none');
-        const option = document.querySelectorAll('.aa');
-        const None = document.querySelectorAll('.aa.none');
-        for (let i = option.length - 1; i > 1; i--) {
-            if (option[i].classList.contains('none') === false) {
-                console.log("-------");
-                option[i].classList.add('none');
-                option[i].children[1].children[0].value = "";
-                option[i].children[0].children[0].checked = false;
-                break;
-            }
-        }
-        console.log(None.length)
-        if (None.length === 2) {
-            min.classList.add('none');
-            console.log("opopop");
-
-        }
-
-
-
-
-
-    })
-
-
-    const no = document.querySelector('#create-Nooptions');
-    console.log('jujjjjjj');
-
-    const yes = document.querySelector('#create-options');
-    const rodio1 = document.querySelector('#options');
-    const rodio2 = document.querySelector('#Nooptions');
-    rodio1.addEventListener('change', () => {
-        if (rodio1.checked) {
-            no.classList.add('none');
-            console.log('jujjjjjj');
-            yes.classList.remove('none');
-            /*   yes.classList.add('flex');*/
-        }
-    });
-    rodio2.addEventListener('change', () => {
-        if (rodio2.checked) {
-            yes.classList.add('none');
-            console.log('jujjjjjj');
-            no.classList.remove('none');
-        }
-    });
-
-
-
 </script>

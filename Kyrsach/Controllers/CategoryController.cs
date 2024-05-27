@@ -31,7 +31,6 @@ namespace Kyrsach.Controllers
             var categories = new List<Category>();
             if (!User.IsInRole("admin"))
             {
-              
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     var command = new SqlCommand("GetCategoriesByUser", connection);
@@ -75,8 +74,9 @@ namespace Kyrsach.Controllers
             return View(categories);
         }
 
-       
-        [Authorize(Roles="teacher")]
+
+        [Authorize(Roles = "teacher,admin")]
+
         public IActionResult Create()
         {
             return View();
@@ -93,7 +93,7 @@ namespace Kyrsach.Controllers
         }
 
         [HttpPost]
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdCategory,NameCategory,WhoCreatedCategory,Picture, Type")] CategoryViewModel CategoryView)
         {
@@ -196,36 +196,29 @@ namespace Kyrsach.Controllers
 
 
         [HttpPost]
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdCategory,NameCategory,WhoCreatedCategory,Picture,Type")] Category сategory, IFormFile? pic)
         {
             if (ModelState.IsValid)
             {
-
-                var existingCategory = await _context.Category.FindAsync(id); // получаем объект из контекста
-
+                var existingCategory = await _context.Category.FindAsync(id); 
                 if (existingCategory != null)
                 {
                     existingCategory.NameCategory = сategory.NameCategory;
                     existingCategory.WhoCreatedCategory = сategory.WhoCreatedCategory;
-
                     if (pic != null)
                     {
-                        byte[] imageData = null;
-
+                        byte[] imageData = null; 
                         using (var binaryReader = new BinaryReader(pic.OpenReadStream()))
                         {
                             imageData = binaryReader.ReadBytes((int)pic.Length);
-                        }
-
+                        } 
                         existingCategory.Picture = imageData;
-                    }
-
+                    } 
                     try
                     {
-                        await _context.SaveChangesAsync();
-
+                        await _context.SaveChangesAsync(); 
                         switch (existingCategory.Type)
                         {
                             case "test":

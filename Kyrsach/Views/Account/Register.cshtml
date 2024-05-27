@@ -31,7 +31,9 @@
                         <div>
                             <div class="center-wrap" style="width:100%!important">
                                 <div asp-validation-summary="All"></div>
-                                <form  method="post" asp-controller="Account" asp-action="Register">
+                                <form method="post" asp-controller="Account" asp-action="Register" style="    display: flex;
+    flex-direction: column;
+    align-items: center;">
                                     <h4 class="title1">Регистрация</h4>
                                     <div class="flexInputForm">
                                     <div class="inputBox">
@@ -65,21 +67,23 @@
                                         <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
                                     </div>
                                     </div>
-
+                                    <div class="flexInputForm">
                                     <div class="inputBox">
-                                        <input asp-for="NumberStudentBook" type="number" placeholder="Номер зачётки" />
+                                        <input asp-for="NumberStudentBook"  type="number" placeholder="Номер зачётки" />
                                         <span asp-validation-for="NumberStudentBook" class="text-danger"></span>
                                     </div>
-                                    <button type = "submit" class="btn" name="send">
-                                        <strong class="strongBtn">Регистрация</strong>
-                                        <div id = "container-stars" >
-                                            <div id="stars"></div>
-                                        </div>
-                                        <div id = "glow" >
-                                            <div class="circle"></div>
-                                            <div class="circle"></div>
-                                        </div>
-                                    </button>
+                                        <button type="submit" class="btn" name="send">
+                                            <strong class="strongBtn">Регистрация</strong>
+                                            <div id="container-stars">
+                                                <div id="stars"></div>
+                                            </div>
+                                            <div id="glow">
+                                                <div class="circle"></div>
+                                                <div class="circle"></div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                   
                                     <p>
                                         Уже есть аккаунт? <a asp-controller="Account" style="display:inline" asp-action="Login">Вход</a>
                                     </p>

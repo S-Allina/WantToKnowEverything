@@ -51,18 +51,17 @@ namespace Kyrsach.Controllers
             return View();
         }
 
-        // POST: Tests/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTest,IdCategory,NameTest,WhoAnsweredTest")] Test test)
+        public async Task<IActionResult> Create([Bind("IdTest,IdCategory,NameTest")] Test test)
         {
-            _context.Add(test);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index), new { idCat = test.IdCategory });
-
-            ViewData["IdCategory"] = new SelectList(_context.Category, "IdCategory", "IdCategory", test.IdCategory);
+            if (ModelState.IsValid)
+            {
+                _context.Add(test);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index), new { idCat = test.IdCategory });
+            }
+            ViewBag.idCat =  test.IdCategory;
             return View(test);
         }
 
@@ -80,80 +79,53 @@ namespace Kyrsach.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCategory"] = new SelectList(_context.Category, "IdCategory", "IdCategory", test.IdCategory);
-            return View(test);
+            ViewBag.idCat = test.IdCategory; return View(test);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdTest,IdCategory,NameTest,WhoAnsweredTest")] Test test)
+        public async Task<IActionResult> Edit(int id, [Bind("IdTest,IdCategory,NameTest")] Test test)
         {
-            if (id != test.IdTest)
+            if (ModelState.IsValid)
             {
-                return NotFound();
-            }
-
-            try
-            {
-                _context.Update(test);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TestExists(test.IdTest))
+                if (id != test.IdTest) return NotFound(); 
+                try
                 {
-                    return NotFound();
+                    _context.Update(test);
+                    await _context.SaveChangesAsync();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    throw;
+                    if (!TestExists(test.IdTest)) return NotFound(); 
+                    else  throw; 
                 }
-
-
+                ViewBag.idCat = test.IdCategory;
+                return RedirectToAction(nameof(Index), new { idCat = test.IdCategory });
             }
             ViewBag.idCat = test.IdCategory;
-            return RedirectToAction(nameof(Index), new { idCat = test.IdCategory });
-            ViewData["IdCategory"] = new SelectList(_context.Category, "IdCategory", "IdCategory", test.IdCategory);
             return View(test);
         }
 
         // GET: Tests/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Tests == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null || _context.Tests == null) return NotFound();
             var test = await _context.Tests
                 .Include(t => t.IdCategoryNavigation)
                 .FirstOrDefaultAsync(m => m.IdTest == id);
             ViewBag.idCat = test.IdCategory;
-            if (test == null)
-            {
-                return NotFound();
-            }
-
+            if (test == null) return NotFound(); 
             return View(test);
         }
-
-        // POST: Tests/Delete/5
+         
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Tests == null)
-            {
-                return Problem("Entity set 'SerovaContext.Tests'  is null.");
-            }
-
+            if (_context.Tests == null)  return Problem("Entity set 'SerovaContext.Tests'  is null.");  
             var test = await _context.Tests.FindAsync(id);
             int idCat = test.IdCategory;
             ViewBag.idCat = test.IdCategory;
-            if (test != null)
-            {
-                _context.Tests.Remove(test);
-            }
-
+            if (test != null)  _context.Tests.Remove(test);  
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index), new { idCat = idCat });
         }

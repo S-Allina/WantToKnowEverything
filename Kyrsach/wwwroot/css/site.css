@@ -28,6 +28,7 @@ a:hover {
 h1 {
     margin-top: 10px;
     text-align: center;
+    width: 100%;
 }
 
 h4 {
@@ -382,7 +383,7 @@ a {
     flex-wrap: wrap;
     justify-content: left;
     align-items: stretch;
-    gap: 30px;
+    gap: 0px;
     padding: 0 5vw;
 }
 
@@ -985,24 +986,30 @@ strong {
 }
 
 .spanQuestion {
-    font-size: 30px;
+    padding: 50px 10px 10px!important;
 }
 
-.inputbox input {
+.inputbox input,textarea {
     position: relative;
     width: 100%;
-    padding: 30px 10px 5px;
+    padding: 25px 10px 5px;
     background: transparent;
     outline: none;
     box-shadow: none;
     border: none;
     color: black;
+
     font-size: 1em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     z-index: 10;
 }
-
+.inputbox textarea {
+    padding: 10px 10px 5px;
+    height:100px;
+    background:white;
+    border-radius:10px;
+}
 .inputbox span {
     position: absolute;
     left: 0;
@@ -1013,6 +1020,7 @@ strong {
     transition: 0.5s;
     pointer-events: none;
 }
+
 .inputbox .question > .spanQuestion {
     position: relative;
 }
@@ -1022,7 +1030,12 @@ strong {
     transform: translateX(-10px) translateY(-34px);
     font-size: 0,75em;
 }
-
+.inputbox textarea:valid ~ span,
+.inputbox textarea:focus ~ span {
+    color: white;
+    transform: translateX(-10px) translateY(-104px);
+    font-size: 0,75em;
+}
 .inputbox i {
     position: absolute;
     left: 0;
@@ -1039,7 +1052,9 @@ strong {
 .inputbox input:focus ~ i {
     height: 44px;
 }
-
+.inputbox textarea:focus ~ i {
+    height: 124px;
+}
 .aa {
     display: flex;
     align-items: baseline;
@@ -1339,7 +1354,7 @@ strong {
     margin: 10px;
 }
 .formCreate .question {
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 }
     .CategoryImg {
         padding-top: 10px;
@@ -2967,10 +2982,8 @@ input[type=date]::-webkit-inner-spin-button {
 textarea {
     /* resize: vertical; */
     resize: none;
-    color: white;
-    background:transparent;
+    color: black;
     border:none;
-    height:80px;
     width:100%;
     /* resize: both; */
 }
