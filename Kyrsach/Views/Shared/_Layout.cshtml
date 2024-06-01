@@ -52,6 +52,9 @@
                 <a class="navbar" asp-controller="Category" asp-action="Index" asp-route-type="field">
                     <img src="~/img/Cards.png" class="head__img" />
                 </a>
+                <a class="navbar" asp-controller="Files" asp-action="Index">
+                    <img src="~/img/filesIcon.png" class="head__img" />
+                </a>
                 @if (User.Identity.IsAuthenticated && (User.IsInRole("teacher") || User.IsInRole("admin")))
                 {
                     <a class="navbar" asp-controller="AnswersUsers" asp-action="Index">
@@ -82,6 +85,7 @@
                     </a>
                 }else
                     {
+                   
                     <a class="navbar" asp-action="DialogUser" asp-route-userName="@User.Identity.Name" asp-controller="Dialog">
                         <img src="~/img/chat.png" class="head__img" />
                     </a>

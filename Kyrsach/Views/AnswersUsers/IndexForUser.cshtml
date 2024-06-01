@@ -32,7 +32,7 @@
     </div>  <div class="formSelect">
 
         <label for="tests">Категории</label>
-        <select class="my-select-menu " id="tests" name="tests"></select>
+                    <select class="my-select-menu " id="tests" name="tests" asp-items="@ViewBag.Categories"></select>
     </div>
     <div class="formSelect">
         <label for="tests">Дата с</label>
@@ -41,7 +41,7 @@
         <label for="tests">Дата по</label>
         <input id="endDate" class="my-select-menu" type="date" />
     </div>
-    <button class="btn">
+                <button class="btn dia" type="button">
 
         <strong class="strongBtn">Сформировать</strong>
         <div id="container-stars">

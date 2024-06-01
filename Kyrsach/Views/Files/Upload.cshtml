@@ -1,0 +1,95 @@
+﻿@model IFormFile
+
+@{
+    ViewData["Title"] = "Загрузить файл";
+}
+
+
+
+<h1>Добавление учебного материала</h1>
+
+<hr />
+<div class="contener">
+    <form asp-action="Upload" class="formCreate" enctype="multipart/form-data">
+
+        <div class="category-card-create">
+            <div class="CategoryCreate">
+                <div class="inputbox question ">
+
+                    <input  maxlength="20" autocomplete="off" name="Name" id="input-Cat" type="text">
+                    <span class="spanCategory">Название:</span>
+                    <i></i>
+                </div>
+                <span class="text-danger" ></span>
+              <div class="input__wrapper CategoryCreate">
+                    <input type="file" id="file" name="file" accept=".doc,.docx" class="input__file" >
+
+                @*<input type="file"  class="input input__file" />*@
+                <label for="file" class="input__file-button">
+                     <span class="input__file-icon-wrapper">
+                         <img class="input__file-icon" src="~/img/files.png" alt="Выбрать файл" width="55">
+                     </span>
+                    <span class="input__file-button-text" >Выберите файл</span>
+                 </label>
+</div>
+                <div class="CreateCategoryButtons">
+                    <button type="submit" value="Create" class="btn">
+                        <strong>Добавить</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="btnBack">
+
+                        <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+                        <div class="text"> <a asp-action="Index" >Назад</a></div>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+<script>
+    const label = document.querySelector('.input__file-button-text');
+    const img = document.querySelector('#imgCate');
+    const inputCat = document.querySelector('.input__file');
+    inputCat.addEventListener('change', () => {
+      
+        label.textContent = 'Файл выбран';
+        img.src = URL.createObjectURL(inputCat.files[0]);
+    });
+
+
+</script>
+
+<div class="row">
+    <div class="col-md-4">
+        <form >
+            <div class="form-group">
+                <label for="file" class="control-label">Файл</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Загрузить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@*
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>*@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

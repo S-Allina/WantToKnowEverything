@@ -19,7 +19,7 @@ namespace Kyrsach.Models
         public virtual DbSet<UserViewModel> UserView { get; set; } = null!;
         public virtual DbSet<Group> Groups { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
-        public virtual DbSet<FileModel> File { get; set; } = null!;
+        public virtual DbSet<FileModel> Files { get; set; } = null!;
         public virtual DbSet<PeopleInGroup> PeopleInGroups { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

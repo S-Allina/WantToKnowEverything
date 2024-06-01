@@ -25,6 +25,7 @@ namespace Kyrsach.Controllers
         [Authorize]
         public async Task<IActionResult> Index(string type, string NameCat="")
         {
+            try { 
             type = type == "fieldImg" ? "field" : type;
             type = type == "fieldText" ? "field" : type;
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
@@ -72,6 +73,11 @@ namespace Kyrsach.Controllers
                     return View("IndexField", categories);
             }
             return View(categories);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
 
@@ -97,101 +103,126 @@ namespace Kyrsach.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdCategory,NameCategory,WhoCreatedCategory,Picture, Type")] CategoryViewModel CategoryView)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Category category = new Category
+                if (ModelState.IsValid)
                 {
-                    NameCategory = CategoryView.NameCategory,
-                    Type = CategoryView.Type,
-                    WhoCreatedCategory=CategoryView.WhoCreatedCategory
-                };
-                if (CategoryView.Picture != null)
-                {
-                    byte[] imageData = null;
-                    // считываем переданный файл в массив байтов
-                    using (var binaryReader = new BinaryReader(CategoryView.Picture.OpenReadStream()))
+                    Category category = new Category
                     {
-                        imageData = binaryReader.ReadBytes((int)CategoryView.Picture.Length);
+                        NameCategory = CategoryView.NameCategory,
+                        Type = CategoryView.Type,
+                        WhoCreatedCategory = CategoryView.WhoCreatedCategory
+                    };
+                    if (CategoryView.Picture != null)
+                    {
+                        byte[] imageData = null;
+                        // считываем переданный файл в массив байтов
+                        using (var binaryReader = new BinaryReader(CategoryView.Picture.OpenReadStream()))
+                        {
+                            imageData = binaryReader.ReadBytes((int)CategoryView.Picture.Length);
+                        }
+                        // установка массива байтов
+                        category.Picture = imageData;
                     }
-                    // установка массива байтов
-                    category.Picture = imageData;
+                    _context.Add(category);
+                    await _context.SaveChangesAsync();
+                    switch (category.Type)
+                    {
+                        case "test":
+                            return RedirectToAction(nameof(Index), new { type = "test" });
+                        case "quez":
+                            return RedirectToAction(nameof(Index), new { type = "quez" });
+                        case "fieldImg":
+                            return RedirectToAction(nameof(Index), new { type = "field" });
+                        case "fieldText":
+                            return RedirectToAction(nameof(Index), new { type = "field" });
+                    }
+
                 }
-                _context.Add(category);
-                await _context.SaveChangesAsync();
-                switch (category.Type)
+                switch (CategoryView.Type)
                 {
                     case "test":
-                        return RedirectToAction(nameof(Index), new {type = "test" });
+                        return RedirectToAction(nameof(Create), CategoryView);
                     case "quez":
-                        return RedirectToAction(nameof(Index), new {type = "quez" });
+                        return RedirectToAction(nameof(CreateQuez), CategoryView);
                     case "fieldImg":
-                        return RedirectToAction(nameof(Index), new { type = "field" });
+                        return RedirectToAction(nameof(CreateField), CategoryView);
                     case "fieldText":
-                        return RedirectToAction(nameof(Index), new { type = "field" });
+                        return RedirectToAction(nameof(CreateField), CategoryView);
                 }
-
+                return RedirectToAction(nameof(Create), CategoryView);
             }
-			switch (CategoryView.Type)
-			{
-				case "test":
-					return RedirectToAction(nameof(Create), CategoryView);
-				case "quez":
-					return RedirectToAction(nameof(CreateQuez), CategoryView);
-				case "fieldImg":
-					return RedirectToAction(nameof(CreateField), CategoryView);
-				case "fieldText":
-					return RedirectToAction(nameof(CreateField), CategoryView);
-			}
-            return NotFound();
-		}
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
+        }
 
 [Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> Edit(int? id)
         {
+            try { 
             if (id == null || _context.Category == null)
             {
-                return NotFound();
-            }
+                    return RedirectToAction("Index", "Errors", new { message = "Невозможно выполнить операцию. Повторите попытку позже." });
+                }
 
-            var Category = await _context.Category.FindAsync(id);
+                var Category = await _context.Category.FindAsync(id);
             //ViewBag.IdC = id;
             if (Category == null)
             {
-                return NotFound();
-            }
+                    return RedirectToAction("Index", "Errors", new { message="Невозможно выполнить операцию. Повторите попытку позже." });
+                }
             return View(Category);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 [Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> EditQuez(int? id)
         {
+            try { 
             if (id == null || _context.Category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "Errors", new { message = "Невозможно выполнить операцию. Повторите попытку позже." });
             }
 
             var Category = await _context.Category.FindAsync(id);
             //ViewBag.IdC = id;
             if (Category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "Errors", new { message = "Невозможно выполнить операцию. Повторите попытку позже." });
             }
             return View(Category);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 [Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> EditField(int? id)
         {
+            try { 
             if (id == null || _context.Category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "Errors", new { message = "Невозможно выполнить операцию. Повторите попытку позже." });
             }
 
             var Category = await _context.Category.FindAsync(id);
             //ViewBag.IdC = id;
             if (Category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "Errors", new { message = "Невозможно выполнить операцию. Повторите попытку позже." });
             }
             return View(Category);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
 
@@ -241,40 +272,32 @@ namespace Kyrsach.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-[Authorize(Roles = "teacher,admin")]
+
+        [Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Category == null)
-            {
-                return NotFound();
-            }
-
+            try { 
+            if (id == null || _context.Category == null) return NotFound();
             var Category = await _context.Category
                 .FirstOrDefaultAsync(m => m.IdCategory == id);
-            if (Category == null)
-            {
-                return NotFound();
-            }
-
+            if (Category == null) return NotFound(); 
             return View(Category);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
-        // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Category == null)
-            {
-                return Problem("Entity set 'SerovaContext.Сategories'  is null.");
-            }
+            try { 
+            if (_context.Category == null)  return Problem("Entity set 'SerovaContext.Сategories'  is null."); 
             var Category = await _context.Category.FindAsync(id);
             var type = Category.Type;
-            if (Category != null)
-            {
-                _context.Category.Remove(Category);
-            }
-
+            if (Category != null)  _context.Category.Remove(Category);  
             await _context.SaveChangesAsync();
             switch (Category.Type)
             {
@@ -288,6 +311,11 @@ namespace Kyrsach.Controllers
                     return RedirectToAction(nameof(Index), new { type = "field" });
             }
             return View(Category);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         private bool CategoryExists(int id)

@@ -1668,3 +1668,4 @@ D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\bin\Debug\net6
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\bin\Debug\net6.0\SixLabors.Fonts.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\bin\Debug\net6.0\System.IO.Packaging.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\bin\Debug\net6.0\XLParser.dll
+D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\bin\Debug\net6.0\Dropbox.Api.dll

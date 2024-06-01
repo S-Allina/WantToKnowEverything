@@ -18,15 +18,24 @@ namespace Kyrsach.Controllers
         // GET: Tests
         public async Task<IActionResult> Index(int? idCat)
         {
+            try { 
             ViewBag.idCat = idCat;
-            var serovaContext = _context.Tests.Include(t => t.IdCategoryNavigation).Where(t => t.IdCategory == idCat);
-            return View(await serovaContext.ToListAsync());
+            var serovaContext =await _context.Tests.Include(t => t.IdCategoryNavigation).Where(t => t.IdCategory == idCat).ToListAsync();
+            if (_context.Category.FirstOrDefault(c => c.IdCategory == idCat).WhoCreatedCategory == User.Claims.FirstOrDefault(u => u.Type == "id").Value)
+                ViewBag.isThisUserCreated = true;
+            return View( serovaContext);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
 
         // GET: Tests/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            try { 
             if (id == null || _context.Tests == null)
             {
                 return NotFound();
@@ -41,6 +50,11 @@ namespace Kyrsach.Controllers
             }
 
             return View(test);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         // GET: Tests/Create
@@ -55,6 +69,7 @@ namespace Kyrsach.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdTest,IdCategory,NameTest")] Test test)
         {
+            try { 
             if (ModelState.IsValid)
             {
                 _context.Add(test);
@@ -63,23 +78,34 @@ namespace Kyrsach.Controllers
             }
             ViewBag.idCat =  test.IdCategory;
             return View(test);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         // GET: Tests/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            try { 
             if (id == null || _context.Tests == null)
             {
-                return NotFound();
-            }
+                    return RedirectToAction("Index", "Errors", new { message = "Тест не найден" });
+                }
 
-            var test = await _context.Tests.FindAsync(id);
+                var test = await _context.Tests.FindAsync(id);
             ViewBag.idCat = test.IdCategory;
             if (test == null)
             {
-                return NotFound();
+                    return RedirectToAction("Index", "Errors", new { message="Тест не найден" });
+                }
+                ViewBag.idCat = test.IdCategory; return View(test);
             }
-            ViewBag.idCat = test.IdCategory; return View(test);
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -93,10 +119,9 @@ namespace Kyrsach.Controllers
                     _context.Update(test);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!TestExists(test.IdTest)) return NotFound(); 
-                    else  throw; 
+                    return RedirectToAction("Index", "Errors", new { ex.Message });
                 }
                 ViewBag.idCat = test.IdCategory;
                 return RedirectToAction(nameof(Index), new { idCat = test.IdCategory });
@@ -108,19 +133,28 @@ namespace Kyrsach.Controllers
         // GET: Tests/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Tests == null) return NotFound();
-            var test = await _context.Tests
-                .Include(t => t.IdCategoryNavigation)
-                .FirstOrDefaultAsync(m => m.IdTest == id);
-            ViewBag.idCat = test.IdCategory;
-            if (test == null) return NotFound(); 
-            return View(test);
+            try
+            {
+                if (id == null || _context.Tests == null) return NotFound();
+                var test = await _context.Tests
+                    .Include(t => t.IdCategoryNavigation)
+                    .FirstOrDefaultAsync(m => m.IdTest == id);
+                ViewBag.idCat = test.IdCategory;
+                if (test == null) return NotFound();
+                return View(test);
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
+
         }
-         
-        [HttpPost, ActionName("Delete")]
+            [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            try { 
             if (_context.Tests == null)  return Problem("Entity set 'SerovaContext.Tests'  is null.");  
             var test = await _context.Tests.FindAsync(id);
             int idCat = test.IdCategory;
@@ -128,6 +162,11 @@ namespace Kyrsach.Controllers
             if (test != null)  _context.Tests.Remove(test);  
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index), new { idCat = idCat });
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         private bool TestExists(int id)

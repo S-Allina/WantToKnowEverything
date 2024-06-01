@@ -1,5 +1,80 @@
 ﻿@model IEnumerable<Kyrsach.Models.FileModel>
 
+
+
+
+
+<head>
+    <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
+
+    <link rel="stylesheet" href="~/css/Chat.css" />
+
+</head>
+<div style="padding:50px 100px">
+    <div class="flexInputForm">
+        <span class="user-name">Список файлов:</span>
+                <a asp-action="Upload" type="submit" class="btn">
+                    <strong>Добавить</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </a>
+    </div>
+    <hr />
+    <span class="text-danger">@ViewBag.Message</span>
+    <ul class="users">
+
+        @foreach (var item in Model)
+        {
+            <li class="user found" style="grid-template-columns: 2.5fr 0.5fr;">
+                <span class="user-name name soughtFor">@item.Name</span>
+                <div class="CreateCategoryButtons">
+                    @if (User.IsInRole("admin") || ViewBag.idCurrentUser==item.WhoCreated)
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.id" class="btn" onclick="alert('Лекция будет удалена.')">
+                            <strong>Удалить</strong>
+                            <div id="container-stars">
+                                <div id="stars"></div>
+                            </div>
+
+                            <div id="glow">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </a>
+                    }
+                    <a asp-action="Download" asp-route-id="@item.id" class="btn">
+                        <strong>Скачать</strong>
+                        <div id="container-stars">
+                            <div id="stars"></div>
+                        </div>
+
+                        <div id="glow">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        }
+    </ul>
+
+</div>
+<script>
+    function downloadFile(url) {
+        window.location.href = url;
+    }
+    
+</script>
+
+
+
+@*@model IEnumerable<Kyrsach.Models.FileModel>
+
 @{
     Layout = null;
 }
@@ -49,7 +124,7 @@
         {
             <tr>
                 <td>@file.Name</td>
-                <td><a class="view" href="javascript:;" rel="@file.Id">View Word Doc</a></td>
+                <td><a class="view" href="javascript:;" rel="@file.id">View Word Doc</a></td>
             </tr>
         }
     </table>
@@ -92,4 +167,4 @@
         });
     </script>
 </body>
-</html>
+</html>*@

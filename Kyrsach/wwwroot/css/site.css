@@ -373,7 +373,18 @@ a {
     inline-size: 1.25em;
     translate: -25% -5%;
 }
-
+.textErrorSmall span {
+    width: 50vh;
+    position: relative !important;
+    bottom: -35px;
+    color: red !important;
+}
+.textErrorBig span {
+    width: 50vh;
+    position: relative!important;
+    bottom: -90px;
+    color: red !important;
+}
 /*//////////////////////////   Карточки   ////////////////////////////*/
 
 .contener {
@@ -384,6 +395,7 @@ a {
     justify-content: left;
     align-items: stretch;
     gap: 0px;
+    min-height:60vh;
     padding: 0 5vw;
 }
 
@@ -986,7 +998,7 @@ strong {
 }
 
 .spanQuestion {
-    padding: 50px 10px 10px!important;
+    padding: 50px 10px 10px;
 }
 
 .inputbox input,textarea {
@@ -2405,7 +2417,7 @@ strong {
 
 .img1tasks {
     position: absolute;
-    top: 250px;
+    top: 350px;
     width: 25%;
     transform: rotate(40deg);
     animation: img1tasks 3s alternate infinite;
@@ -3311,6 +3323,7 @@ textarea {
         .contener {
             flex-direction: column;
             align-items: center;
+            min-height: 60vh;
         }
 
         .img1tasks {

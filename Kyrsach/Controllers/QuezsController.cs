@@ -20,8 +20,10 @@ namespace Kyrsach.Controllers
         {
             try
             {
-                ViewBag.idQuez = _context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault()?.IdQuez;
-
+                ViewBag.idQuez = _context.Quezs.FirstOrDefault(t => t.IdTest == idT)?.IdQuez;
+                int idCat = _context.Tests.FirstOrDefault(q => q.IdTest == idT).IdCategory;
+                if ( _context.Category.FirstOrDefault(c=>c.IdCategory== idCat).WhoCreatedCategory == User.Claims.FirstOrDefault(u => u.Type == "id").Value)
+                    ViewBag.isThisUserCreated = true;
                 if (_context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault() != null)
                 {
                     ViewBag.idT = idT;
@@ -77,13 +79,11 @@ namespace Kyrsach.Controllers
             var c1 = _context.Quezs.OrderBy(t => t.IdQuez).LastOrDefault(t => t.IdTest == idT && t.IdQuez > idQues);
             var c2 = _context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault(t => t.IdQuez > idQues);
             var c3 = c2 != null ? _context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault(t => t.IdQuez > c2.IdQuez) : null;
-
             if (c3 != null && c2.IdQuez < c1.IdQuez)
             {
                 ViewBag.idT = idT;
                 int Id = c2.IdQuez;
                 var serovaContext = _context.Quezs.Where(t => t.IdTest == idT);
-
                 ViewBag.idQuez = Id;
                 ViewBag.Button = "Далее";
 
@@ -128,26 +128,7 @@ namespace Kyrsach.Controllers
             }
             else
             {
-                //ViewBag.idT = idT;
-                //string[] q = _context.Questions.Where(t => t.IdQuestion == idQ).FirstOrDefault().CorrectAnswer.Split('|');
-                //string[] a = answer.Split('|');
-
-                //string isEqual = q.OrderBy(a => a).SequenceEqual(a.OrderBy(a => a)).ToString();
-
-                //Answer answ = new Answer(_context.AnswersUsers.OrderBy(t => t.IdAnswersUser).Last().IdAnswersUser, idQ, answer, isEqual);
-                //await _context.AddAsync(answ);
-                //await _context.SaveChangesAsync();
-                //int idAnUse = _context.AnswersUsers.OrderBy(t => t.IdAnswersUser).Last().IdAnswersUser;
-                //double all = _context.Answers.Where(t => t.IdAnswersUser == idAnUse).Count();
-                //int curr = _context.Answers.Where(t => t.IdAnswersUser == idAnUse && t.Loyal == "True").Count();
-                //var answerU = _context.AnswersUsers.Where(t => t.IdAnswersUser == idAnUse).OrderBy(t => t.IdAnswersUser).Last();
-                //answerU.CountCurrent = curr;
-                //_context.Entry(answerU).State = EntityState.Modified;
-                //await _context.SaveChangesAsync();
-
-                //int current = (int)(curr / all * 100);
                 return RedirectToAction(nameof(End));
-
             }
             }
             catch (Exception ex)
@@ -171,7 +152,7 @@ namespace Kyrsach.Controllers
         }
 
         [HttpPost]
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdTest,IdQuez,Pic1,Pic2,Pic3,Pic4,Pic5,Q1,Q2,Q3,Q4,Q5")] QuezViewModel quezViewModel)
         {
@@ -186,8 +167,8 @@ namespace Kyrsach.Controllers
                     Q4 = quezViewModel.Q4,
                     Q5 = quezViewModel.Q5
                 };
-
-                if (quezViewModel.Pic1 != null && quezViewModel.Pic2 != null && quezViewModel.Pic3 != null && quezViewModel.Pic4 != null && quezViewModel.Pic5 != null)
+                if (quezViewModel.Pic1 != null && quezViewModel.Pic2 != null && quezViewModel.Pic3 != null && 
+                    quezViewModel.Pic4 != null && quezViewModel.Pic5 != null)
                 {
                     byte[] imageData1 = null;
                     byte[] imageData2 = null;
@@ -235,8 +216,6 @@ namespace Kyrsach.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index), new { idT = tast.IdTest });
 
-                ViewData["IdQuez"] = new SelectList(_context.Quezs, "IdQuez", "IdQuez", tast.IdQuez);
-                return View(tast);
             }
             catch (Exception ex)
             {

@@ -11,18 +11,19 @@
 <hr />
 <form asp-action="Edit" asp-route-id="@Model.IdCategory" class="formCreate" enctype="multipart/form-data">
    <div asp-validation-summary="All" class="text-danger">
-                   <span asp-validation-for="NameCategory"></span>
-               </div>    <input asp-for="WhoCreatedCategory" hidden value="@User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value" />
+               </div>   
+               <input asp-for="WhoCreatedCategory" hidden value="@User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value" />
 
     <div class="category-card-create">
         <div class="CategoryCreate">
 
             <div class="inputbox question ">
                 <input asp-for="NameCategory" checked autocomplete="off" onchange="Text()" id="input-Cat" required type="text">
+
                 <input name="Type" asp-for="Type" maxlength="20" id="Type" class="none" value="@Model.Type" type="text">
 
                 <span class="spanCategory">Название:</span>
-
+                @*<span class="textErrorSmall" asp-validation-for="NameCategory"></span>*@
                 <i></i>
             </div>
 

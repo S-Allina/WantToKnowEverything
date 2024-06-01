@@ -8,8 +8,9 @@
     var item = Model.Where(t=>t.IdQuez==ViewBag.idQuez).FirstOrDefault();
     string[] mass = { item?.Q1, item?.Q2, item?.Q3, item?.Q4, item?.Q5 };
 }
+<div class="contener" style="    flex-direction: column;">
 <h1>Соотношения</h1>
-@if (User.IsInRole("admin")|| User.IsInRole("teacher"))
+    @if (User.IsInRole("admin") || (User.IsInRole("teacher") && ViewBag.isThisUserCreated == true))
                 { <div class="CreateCategoryButtons">
 <a asp-action="Create" asp-route-idT="@ViewBag.idT">
     <button type="submit" value="Create" class="btn">
@@ -173,6 +174,7 @@
    
 
 }
+</div>
     <script>
 const tasksListElement = document.querySelector(`.tasks__list`);
 const taskElements = tasksListElement.querySelectorAll(`.tasks__item`);

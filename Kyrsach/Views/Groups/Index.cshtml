@@ -12,7 +12,7 @@
 </head>
 <div style="padding:50px 100px">
     <div class="flexInputForm">
-        <span >Список групп:</span>
+        <span class="user-name">Список групп:</span>
         @if (ViewBag.name == null)
         {
             <form asp-action="create" style="display:flex;  width:fit-content; gap:30px" method="post">
@@ -58,14 +58,6 @@
             @foreach (var item in Model)
             {
                     <li class="user found">
-                    @*  @if (item.Img != null)
-                {
-                <img  src="data:image/png;base64,@(Convert.ToBase64String(item.Img))" />
-                }
-                else
-                {
-                <img  src="~/images/Icons/defaulfUser.png" />
-                }*@
                         <span class="user-name name soughtFor" >@item.NameGroup</span>
                     <p>
                         @foreach(var p in item.Students)

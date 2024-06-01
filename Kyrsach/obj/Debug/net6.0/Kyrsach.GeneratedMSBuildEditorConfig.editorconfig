@@ -116,8 +116,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcVXBsb2FkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/File/Index.cshtml]

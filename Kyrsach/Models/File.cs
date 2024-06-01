@@ -4,9 +4,11 @@ namespace Kyrsach.Models
 {
     public class FileModel
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string Name { get; set; }
-        public string ContentType { get; set; }
-        public byte[] Data { get; set; }
+        public string Path { get; set; }
+        public string WhoCreated { get; set; }
+
+        //public UserModel User { get; set; }
     }
 }

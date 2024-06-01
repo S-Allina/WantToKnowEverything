@@ -6,7 +6,7 @@
 }
 <div class="contener">
 @if(Model ==null){
-    @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
+    @if (User.IsInRole("admin")|| (User.IsInRole("teacher") && ViewBag.isThisUserCreated==true))
     {
        
         <a class="btn" asp-action="Create" asp-route-idT="@ViewBag.idT">
@@ -25,8 +25,8 @@
 }else{
 
 <h1>@await Component.InvokeAsync("Count", new {idT = Model.IdTest, idQ=Model.IdQuestion})</h1>
-  
-        @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
+
+        @if (User.IsInRole("admin") || (User.IsInRole("teacher") && ViewBag.isThisUserCreated == true))
         {  <div class="CreateCategoryButtons">
             <a class="btn" asp-action="Create" asp-route-idT="@ViewBag.idT">
                     <strong>Добавить</strong>

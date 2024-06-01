@@ -10,10 +10,7 @@ namespace Kyrsach.Models
         [Display(Name = "Password")]
                 [Required(ErrorMessage ="Поле не заполнено")]
         public string? Password { get; set; }
-
-        [Display(Name = "Remember?")]
-        [Required(ErrorMessage ="Поле не заполнено")]
-        public bool RememberMe { get; set; }
+        
 
         [Display(Name = "Login")]
         [Required(ErrorMessage = "Поле не заполнено")]
@@ -28,10 +25,10 @@ namespace Kyrsach.Models
         [Required(ErrorMessage = "Поле не заполнено")]
         [Display(Name = "LastName")]
         public string LastName { get; set; }
-        [MaxLength(6,ErrorMessage ="Номер зачётки должен содержать 6 цифр")]
+        //[MaxLength(6,ErrorMessage ="Номер зачётки должен содержать 6 цифр")]
         public int? NumberStudentBook { get; set; }
-        public int Group { get; set; }
-        [Compare("Password", ErrorMessage = "Passwords do not match")]
+        public int? Group { get; set; }
+        [Compare("Password", ErrorMessage = "Пароли не совподают")]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Required(ErrorMessage = "Поле не заполнено")]

@@ -22,6 +22,7 @@ namespace Kyrsach.Controllers
         // GET: AnswersUsers
         public async Task<IActionResult> Index()
         {
+            try { 
             var groups = await _context.Groups.ToListAsync();
 
             // Создаем список объектов SelectListItem для заполнения выпадающего списка
@@ -43,14 +44,33 @@ namespace Kyrsach.Controllers
 
             var listUser = _context.Users.ToList();
             return View(listUser);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
         [Authorize]
         public async Task<IActionResult> IndexForUser()
         {
+            try { 
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
             ViewBag.UserId = userId;
+            var selectListItems2 = _context.Category.Where(c=>c.Type=="test").Select(c => new SelectListItem
+            {
+                Value = c.IdCategory.ToString(), // Здесь должно быть строковое значение идентификатора категории
+                Text = c.NameCategory // Здесь должно быть название категории
+            }).ToList();
+            ViewBag.Categories = selectListItems2;
+
+
             var listUser = _context.Tests.ToList();
             return View(listUser);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
       
 

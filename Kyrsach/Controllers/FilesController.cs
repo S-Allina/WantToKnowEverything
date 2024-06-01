@@ -3,105 +3,103 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using Dropbox.Api;
+using Dropbox.Api.Files;
+using System.Configuration;
+using static Dropbox.Api.Files.SearchMatchType;
+using System.Text;
+using Kyrsach.Services.IServices;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kyrsach.Controllers
 {
     public class FilesController : Controller
     {
-        public ActionResult Index()
-        {
-            return View(GetFiles());
-        }
+        private readonly IDropboxService _dropboxService;
+        private readonly SerovaContext _context;
 
+        public FilesController(IDropboxService dropboxService, SerovaContext context)
+        {
+            _dropboxService = dropboxService;
+            _context = context;
+        }
+        [Authorize(Roles = "teacher,admin")]
+        [HttpGet]
+        public IActionResult Upload()
+        {
+            return View();
+        }
+        [Authorize(Roles ="teacher,admin")]
         [HttpPost]
-        public ActionResult Index(IFormFile postedFile)
+        public async Task<IActionResult> Upload(IFormFile file, string Name)
         {
-            if (postedFile != null && postedFile.Length > 0)
+            try
             {
-                byte[] bytes;
-                using (var ms = new MemoryStream())
-                {
-                    postedFile.CopyTo(ms);
-                    bytes = ms.ToArray();
-                }
 
-                string constr = "Server=(LocalDB)\\MSSQLLocalDB;Database=Serova4;Trusted_Connection=True;MultipleActiveResultSets=true";
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    string query = "INSERT INTO tbrFile VALUES (@Name, @ContentType, @Data)";
-                    using (SqlCommand cmd = new SqlCommand(query))
-                    {
-                        cmd.Connection = con;
-                        cmd.Parameters.AddWithValue("@Name", Path.GetFileName(postedFile.FileName));
-                        cmd.Parameters.AddWithValue("@ContentType", postedFile.ContentType);
-                        cmd.Parameters.AddWithValue("@Data", bytes);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                    }
-                }
+                var uploadResult = await _dropboxService.UploadFileAsync(file);
+                await SaveFilePathToDatabase(uploadResult.Path, file,Name);
+                return RedirectToAction("Index");
             }
-
-            return View(GetFiles());
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error uploading file to Dropbox.");
+            }
         }
-    
-
-
-[HttpPost]
-        public JsonResult GetWordDocument(string fileId)
+        [Authorize]
+        public IActionResult Index()
         {
-            byte[] bytes;
-            string fileName, contentType;
-            string constr = "Server=(LocalDB)\\MSSQLLocalDB;Database=Serova4;Trusted_Connection=True;MultipleActiveResultSets=true";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tbrFile WHERE Id=@Id";
-                    cmd.Parameters.AddWithValue("@Id", fileId);
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        sdr.Read();
-                        bytes = (byte[])sdr["Data"];
-                        contentType = sdr["ContentType"].ToString();
-                        fileName = sdr["Name"].ToString();
-                    }
-                    con.Close();
-                }
-            }
-            JsonResult jsonResult = Json(new { FileName = fileName, ContentType = contentType, Data = bytes });
-            //jsonResult.MaxJsonLength = int.MaxValue;
+            ViewBag.idCurrentUser = User.Claims.FirstOrDefault(u => u.Type == "id").Value;
+           var files= _context.Files?.ToList();
+            return View(files);
+        }
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Download(int id)
+        {
+            var fileUrl = _context.Files.FirstOrDefault(f => f.id == id).Path;
+            var downloadResult = await _dropboxService.DownloadFileAsync(fileUrl);
 
-            return jsonResult;
+            var memoryStream = new MemoryStream(downloadResult.Data);
+
+            return File(memoryStream, "application/octet-stream", downloadResult.Name);
         }
 
-        private static List<FileModel> GetFiles()
+
+
+
+        public async Task SaveFilePathToDatabase(string path, IFormFile file, string Name)
         {
-            List<FileModel> files = new List<FileModel>();
-            string constr = "Server=(LocalDB)\\MSSQLLocalDB;Database=Serova4;Trusted_Connection=True;MultipleActiveResultSets=true";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT Id, Name FROM tbrFile"))
-                {
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            files.Add(new FileModel
-                            {
-                                Id = Convert.ToInt32(sdr["Id"]),
-                                Name = sdr["Name"].ToString()
-                            });
-                        }
-                    }
-                    con.Close();
-                }
-            }
-            return files;
+            var fileModel = new FileModel { Name = Name, Path = path, WhoCreated= User.Claims.FirstOrDefault(u => u.Type == "id").Value };
+            await _context.Files.AddAsync(fileModel);
+            await _context.SaveChangesAsync();
         }
+        [Authorize(Roles = "teacher,admin")]
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var fileUrl = _context.Files.FirstOrDefault(f => f.id == id).Path;
+                await _dropboxService.DeleteFileAsync(fileUrl);
+                await DeleteFileFromDatabase(fileUrl);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error deleting file from Dropbox and database.");
+            }
+        }
+
+        private async Task DeleteFileFromDatabase(string filePath)
+        {
+            var file = await _context.Files.FirstOrDefaultAsync(f => f.Path == filePath);
+            if (file != null)
+            {
+                _context.Files.Remove(file);
+                await _context.SaveChangesAsync();
+            }
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U0zG7zwk0yKau/3La2yL+IWqrnOHnf7ejWsKkY9S7QY=",
+  "Hash": "PmWWKOw95TE/kGX8ShaqSaHQwhk2xxUwJ+VAjpwfAL8=",
   "Source": "Kyrsach",
   "BasePath": "_content/Kyrsach",
   "Mode": "Default",
@@ -542,6 +542,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\error2.png"
+    },
+    {
+      "Identity": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\files.png",
+      "SourceId": "Kyrsach",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\",
+      "BasePath": "_content/Kyrsach",
+      "RelativePath": "img/files.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\files.png"
     },
     {
       "Identity": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\filesIcon.png",

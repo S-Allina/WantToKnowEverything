@@ -8,11 +8,9 @@
 <h1>Добавление категории</h1>
 
 <hr />
+<div class="contener">
 <form asp-action="Create" class="formCreate" enctype="multipart/form-data">
-    <div asp-validation-summary="All" class="text-danger">
-        <span asp-validation-for="NameCategory"></span>
-        <span asp-validation-for="Picture"></span>
-    </div>
+ 
            <div class="category-card-create">
                
         <input asp-for="WhoCreatedCategory" hidden value="@User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value" />
@@ -25,6 +23,7 @@
                 <span class="spanCategory">Название:</span>
                 <i></i>
             </div>
+            <span class="text-danger" asp-validation-for="NameCategory"></span>
 <div class="input__wrapper CategoryCreate">
                 <input type="file" asp-for="Picture" accept="image/png, image/jpeg" class="input input__file" name="Picture">
                 <label asp-for="Picture" class="input__file-button">
@@ -81,6 +80,7 @@
       
             </div>
         </form>
+        </div>
         <script>
 
     function Text() {

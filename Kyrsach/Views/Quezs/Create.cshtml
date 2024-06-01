@@ -26,22 +26,21 @@
 
 
 <form asp-action="Create" enctype="multipart/form-data" class="create-Nooptions none" id="create-Nopictures">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
     <label asp-for="IdTest" class="none"></label>
     <input asp-for="IdTest" class="none" name="IdTest" value="@ViewBag.idT" />
 
     
         <section class="tasks2">
-              <div class="formCreate" id="t">
-            <span>Необходимо ввести в поля для ввода текста <b>три</b> слова разделяя их <b>пробелом</b> (среднее слово будет подвихно)</span>
-                  </div>
-          <div >
-            <div class="ultasks2">
+        <div class="contener">
+            <div class="ultasks2" style="
+    width: 100%;
+    justify-content: space-between;">
                 <div class="input__wrapper">
                     <input asp-for="Pic1" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic1">
                     <label asp-for="Pic1" class="input__file-button">
                         <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
-                        <span asp-validation-for="Pic1" class="input__file-button-text">Выберите файл</span>
+                        <span  class="input__file-button-text">Выберите файл</span>
                     </label>
                 </div>
 
@@ -49,7 +48,7 @@
                     <input asp-for="Pic2" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic2">
                     <label asp-for="Pic2" class="input__file-button">
                         <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
-                        <span asp-validation-for="Pic2" class="input__file-button-text">Выберите файл</span>
+                        <span  class="input__file-button-text">Выберите файл</span>
                     </label>
                 </div>
 
@@ -57,7 +56,7 @@
                     <input asp-for="Pic3" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic3">
                     <label asp-for="Pic3" class="input__file-button">
                         <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
-                        <span asp-validation-for="Pic3" class="input__file-button-text">Выберите файл</span>
+                        <span  class="input__file-button-text">Выберите файл</span>
                     </label>
                 </div>
 
@@ -65,7 +64,7 @@
                     <input asp-for="Pic4" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic4">
                     <label asp-for="Pic4" class="input__file-button">
                         <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
-                        <span asp-validation-for="Pic4" class="input__file-button-text">Выберите файл</span>
+                        <span  class="input__file-button-text">Выберите файл</span>
                     </label>
                 </div>
 
@@ -73,29 +72,32 @@
                     <input asp-for="Pic5" type="file" required accept="image/png, image/jpeg" class="input input__file" name="Pic5">
                     <label asp-for="Pic5" class="input__file-button">
                         <span class="input__file-icon-wrapper"><img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55"></span>
-                        <span asp-validation-for="Pic5" class="input__file-button-text">Выберите файл</span>
+                        <span  class="input__file-button-text">Выберите файл</span>
                     </label>
                 </div>
             </div>
-            <div class="tasks__list2">
+            <div class="tasks__list2" style="    display: grid;
+    justify-content: space-between;
+    width: 100%;grid-template-columns: repeat(5, 1fr);">
                 <div class="aa">
                     <div class="inputbox">
                         <input asp-for="Q1" required autocomplete="off" name="Q1" type="text">
-                        <span asp-validation-for="Q1" class="spanQuestion">Первое предложение</span>
+                        <span  >Первое предложение</span>
                         <i></i>
                     </div>
+
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input asp-for="Q2" required autocomplete="off" name="Q2" type="text">
-                        <span asp-validation-for="Q2" class="spanQuestion">Второе предложение</span>
+                        <span >Второе предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input asp-for="Q3" required autocomplete="off" name="Q3" type="text">
-                        <span asp-validation-for="Q3" class="spanQuestion">Третье предложение</span>
+                        <span  >Третье предложение</span>
                         <i></i>
                     </div>
                 </div>
@@ -109,13 +111,14 @@
                 <div class="aa">
                     <div class="inputbox">
                         <input asp-for="Q5" required autocomplete="off" name="Q5" type="text">
-                        <span asp-validation-for="Q5" class="spanQuestion">Пятое предложение</span>
+                        <span >Пятое предложение</span>
                         <i></i>
                     </div>
                 </div>
             </div>
             </div>
     </section>
+    <div class="contener">
     <div class="CreateCategoryButtons">
         <button type="submit" value="Create" class="btn">
             <strong>Добавить</strong>
@@ -135,11 +138,11 @@
 
             <div class="text"> <a asp-action="Index" asp-route-idT="@ViewBag.idT">Назад</a></div>
         </button>
+        </div>
     </div>
 </form>
 
 <form asp-action="Create" enctype="multipart/form-data" id="create-pictures">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <label asp-for="IdTest" class="none"></label>
     <input asp-for="IdTest" class="none" name="IdTest" value="@ViewBag.idT" />
     <section class="tasks2" style="display:flex; flex-direction:column;     margin-left: 8%;">
@@ -149,21 +152,21 @@
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q1-1" type="text" class="q1-input-1">
-                        <span class="spanQuestion">Первое предложение</span>
+                        <span >Первое предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa" >
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q1-2" type="text" class="q1-input-2">
-                        <span class="spanQuestion">Второе предложение</span>
+                        <span >Второе предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q1-3" type="text" class="q1-input-3">
-                        <span class="spanQuestion">Третье предложение</span>
+                        <span >Третье предложение</span>
                         <i></i>
                     </div>
                 </div>
@@ -173,21 +176,21 @@
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q2-1" type="text" class="q2-input-1">
-                        <span class="spanQuestion">Первое предложение</span>
+                        <span >Первое предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q2-2" type="text" class="q2-input-2">
-                        <span class="spanQuestion">Второе предложение</span>
+                        <span >Второе предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q2-3" type="text" class="q2-input-3">
-                        <span class="spanQuestion">Третье предложение</span>
+                        <span >Третье предложение</span>
                         <i></i>
                     </div>
                 </div>
@@ -197,21 +200,21 @@
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q3-1" type="text" class="q3-input-1">
-                        <span class="spanQuestion">Первое предложение</span>
+                        <span >Первое предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q3-2" type="text" class="q3-input-2">
-                        <span class="spanQuestion">Второе предложение</span>
+                        <span >Второе предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q3-3" type="text" class="q3-input-3">
-                        <span class="spanQuestion">Третье предложение</span>
+                        <span >Третье предложение</span>
                         <i></i>
                     </div>
                 </div>
@@ -221,21 +224,21 @@
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q4-1" type="text" class="q4-input-1">
-                        <span class="spanQuestion">Первое предложение</span>
+                        <span >Первое предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q4-2" type="text" class="q4-input-2">
-                        <span class="spanQuestion">Второе предложение</span>
+                        <span >Второе предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q4-3" type="text" class="q4-input-3">
-                        <span class="spanQuestion">Третье предложение</span>
+                        <span >Третье предложение</span>
                         <i></i>
                     </div>
                 </div>
@@ -245,21 +248,21 @@
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q5-1" type="text" class="q5-input-1">
-                        <span class="spanQuestion">Первое предложение</span>
+                        <span >Первое предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q5-2" type="text" class="q5-input-2">
-                        <span class="spanQuestion">Второе предложение</span>
+                        <span >Второе предложение</span>
                         <i></i>
                     </div>
                 </div>
                 <div class="aa">
                     <div class="inputbox">
                         <input required autocomplete="off" name="Q5-3" type="text" class="q5-input-3">
-                        <span class="spanQuestion">Третье предложение</span>
+                        <span>Третье предложение</span>
                         <i></i>
                     </div>
                 </div>
@@ -267,6 +270,7 @@
 
 
         </section>
+    <div class="contener">
     <div class="CreateCategoryButtons">
         <button type="submit" value="Create" class="btn">
             <strong>Добавить</strong>
@@ -287,7 +291,7 @@
             <div class="text"> <a asp-action="Index" asp-route-idT="@ViewBag.idT">Назад</a></div>
         </button>
     </div>
-
+    </div>
 
 </form>
 

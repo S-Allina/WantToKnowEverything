@@ -5,10 +5,10 @@
 }
 
 <h1>Тесты</h1>
-@if (User.IsInRole("admin") || User.IsInRole("teacher"))
+@if (User.IsInRole("admin") || (User.IsInRole("teacher") && ViewBag.isThisUserCreated==true))
 {
-    <div class="contener">
-    <a asp-action="Create" asp-route-idCat="@ViewBag.idCat" class="btn">
+ 
+    <a asp-action="Create" asp-route-idCat="@ViewBag.idCat" style="margin-left:50px" class="btn">
             <strong class="strongBtn">Добавить</strong>
             <div id="container-stars">
                 <div id="stars"></div>
@@ -19,7 +19,7 @@
                 <div class="circle"></div>
             </div>
     </a>
-    </div>
+   
 }
 <div class="ContenerForImg">
 <div class="contenerTest">
@@ -51,7 +51,7 @@
 
                                 <span class="title">@Html.DisplayFor(modelItem => item.NameTest)</span>
                                 <strong class="strongTest">
-                                    @if (User.IsInRole("admin") || (User.IsInRole("teacher") && item.IdCategoryNavigation.WhoCreatedCategory == User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value))
+                                    @if (User.IsInRole("admin") || (User.IsInRole("teacher") && ViewBag.isThisUserCreated == true))
                                     {
                                         <a asp-action="Edit" asp-route-id="@item.IdTest" class="link">Изменить</a>
                                         <a asp-action="Delete" asp-route-id="@item.IdTest" class="link">Удалить</a>

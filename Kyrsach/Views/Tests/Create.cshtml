@@ -3,16 +3,15 @@
 @{
     ViewData["Title"] = "Create";
 }
-
 <h1>Добавление теста</h1>
 <div class="contener">
 <form asp-action="Create" class="formCreate">
     <input asp-for="IdCategory" class="none" name="IdCategory" value="@ViewBag.idCat" />
-
+    <div asp-validation-summary="All"></div>
     <div class="inputbox question category">
 
         <input asp-for="NameTest" required autocomplete="off" type="text">
-        <span asp-validation-for="NameTest" class="spanCategory">Название:</span>
+        <span  class="spanCategory">Название:</span>
         <i></i>
     </div>
                  <div class="CreateCategoryButtons">

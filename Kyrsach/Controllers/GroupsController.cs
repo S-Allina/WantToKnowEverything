@@ -24,6 +24,7 @@ namespace Kyrsach.Controllers
         // GET: Groups
         public async Task<IActionResult> Index(int? idGroup, string? message)
         {
+            try { 
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
             var groups = await _context.Groups.ToListAsync();
             List<GroupViewModel> groupViewModel = new List<GroupViewModel>();
@@ -49,11 +50,17 @@ namespace Kyrsach.Controllers
             }
             ViewBag.Message=message;
             return View(groupViewModel);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         // GET: Groups/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            try { 
             if (id == null || _context.Groups == null)
             {
                 return NotFound();
@@ -67,9 +74,15 @@ namespace Kyrsach.Controllers
             }
 
             return View(@group);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
         public async Task<IActionResult> Follow(int id)
         {
+            try { 
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
             if (userId != null)
             {
@@ -87,9 +100,15 @@ namespace Kyrsach.Controllers
                 return NotFound();
             }
             return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
         public async Task<IActionResult> Unfollow(int id)
         {
+            try { 
             var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
             if (userId != null)
             {
@@ -102,6 +121,11 @@ namespace Kyrsach.Controllers
                 return NotFound();
             }
             return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
 
@@ -109,6 +133,7 @@ namespace Kyrsach.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditGropFromUser(int idGroup, string idUser)
         {
+            try { 
             if(ModelState.IsValid)
             {
                 var userInGroup = await _context.PeopleInGroups.FirstOrDefaultAsync(u=>u.IdUser==idUser);
@@ -121,12 +146,18 @@ namespace Kyrsach.Controllers
             {
                 return RedirectToAction("FullUsers", "Account");
             }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(string NameGroup)
         {
+            try { 
             if (NameGroup != null)
             {
                 Group group = new Group
@@ -140,11 +171,16 @@ namespace Kyrsach.Controllers
             }
             ModelState.AddModelError("", "Не указано имя.");
             return View(NameGroup);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
        public async void AddAdminInGroup()
         {
-
+            
             PeopleInGroup peopleInGroup = new PeopleInGroup
             {
                 IdGroup = _context.Groups.Select(g => g.IdGroup).Max(),
@@ -172,18 +208,6 @@ namespace Kyrsach.Controllers
                     group.NameGroup = NameGroup;
                     _context.Update(group);
                     await _context.SaveChangesAsync();
-
-                    //catch (DbUpdateConcurrencyException)
-                    //{
-                    //    if (!GroupExists(id))
-                    //    {
-                    //        return NotFound();
-                    //    }
-                    //    else
-                    //    {
-                    //        throw;
-                    //    }
-                    //}
                     return RedirectToAction(nameof(Index));
                 }
                 else
@@ -202,6 +226,7 @@ namespace Kyrsach.Controllers
         [HttpGet, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            try { 
             if (_context.Groups == null)
             {
                 return Problem("Entity set 'SerovaContext.Groups'  is null.");
@@ -209,7 +234,8 @@ namespace Kyrsach.Controllers
             var group = await _context.Groups.FindAsync(id);
             if(_context.PeopleInGroups.Where(p=>p.IdGroup== id).Any())
             {
-                return RedirectToAction("Index",new {message= "Чтобы удалить группу в ней не должно быть ни одного учасника. Переведите всех учеников в другую группу и попросите выйти из неё всех учителей" });
+                return RedirectToAction("Index",new {message= "Чтобы удалить группу в ней не должно " +
+                    "быть ни одного учасника. Переведите всех учеников в другую группу и попросите выйти из неё всех учителей" });
             }
             if (group != null)
             {
@@ -218,6 +244,11 @@ namespace Kyrsach.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         private bool GroupExists(int id)

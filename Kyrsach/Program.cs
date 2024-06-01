@@ -6,6 +6,8 @@ using Kyrsach.Services.IServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using Dropbox.Api;
+using DocumentFormat.OpenXml.InkML;
 
 namespace Kyrsach
 {
@@ -16,11 +18,13 @@ namespace Kyrsach
             var builder = WebApplication.CreateBuilder(args);
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-
-
+            var dropboxToken = builder.Configuration.GetConnectionString("AccessToken");
+         
 
             builder.Services.AddDbContext<SerovaContext>(options =>
                 options.UseSqlServer(connectionString));
+            builder.Services.AddScoped<IDropboxService, DropboxService>();
+            builder.Services.AddScoped(_ => new DropboxClient(dropboxToken));
 
             builder.Services.AddScoped<Initializer.IDbInitializer, DbInitializer>();
             builder.Services.AddTransient<ListUserViewComponent>();
@@ -44,8 +48,14 @@ namespace Kyrsach
             //builder.Services.AddHttpClient<IUserService, UserService>();
             //builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSingleton<DropboxClient>(_ =>
+            {
+                var appKey = builder.Configuration.GetValue<string>("Dropbox:AppKey");
+                var appSecret = builder.Configuration.GetValue<string>("Dropbox:AppSecret");
+                var accessToken = builder.Configuration.GetValue<string>("Dropbox:AccessToken");
 
-
+                return new DropboxClient(appKey, appSecret, accessToken);
+            });
             //    builder.Services.AddIdentity<UserWithRole, IdentityRole>()
             //.AddEntityFrameworkStores<SerovaContext>()
             //.AddDefaultTokenProviders();

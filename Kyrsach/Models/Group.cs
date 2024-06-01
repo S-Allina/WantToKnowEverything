@@ -9,7 +9,5 @@ namespace Kyrsach.Models
         [Key]
         public int IdGroup { get; set; }
         public string NameGroup { get; set; } = null!;
-
-
     }
 }

@@ -14,9 +14,9 @@
     <div class="inputbox question">
        <p>Вопрос:</p>
         <textarea asp-for="TextQuetion" minlength="6" required autocomplete="off" type="text"></textarea>
-            <span asp-validation-for="TextQuetion" ></span>
+           
     </div>
-
+        <span asp-validation-for="TextQuetion" class="text-danger"></span>
 
     <div class="QuestionImeges">
         <div class="QuestionText">
@@ -46,10 +46,12 @@
                 <div class="inputbox">
                         <input asp-for="Option1"  minlength="1" maxlength="30" id="1" autocomplete="off" required type="text">
                     <span >Вариант 1</span>
-                            <span asp-validation-for="Option1"></span>
+                           
                     <i></i>
+                     
                 </div>
         </div>
+                    <span asp-validation-for="Option1" class="text-danger"></span>
             <div class="aa">
                 <label class="container">
                 <input type="checkbox" id="22"  onchange="copyInputValue(2, 22)" />
@@ -58,10 +60,12 @@
                 <div class="inputbox">
                         <input asp-for="Option2" minlength="1" maxlength="30" autocomplete="off" required id="2" type="text">
                     <span >Вариант 2</span>
-                            <span asp-validation-for="Option2"></span>
+                            
                     <i></i>
                 </div>
+                
             </div>
+                    <span asp-validation-for="Option2" class="text-danger"></span>
                 <div class="aa none" id="option3">
                 <label class="container">
                 <input type="checkbox" id="33" onchange="copyInputValue(3, 33)" />
@@ -70,7 +74,7 @@
                 <div class="inputbox">
                         <input asp-for="Option3" minlength="1" maxlength="30" autocomplete="off" id="3" required type="text">
                     <span>Вариант 3</span>
-                    <span asp-validation-for="Option3"></span>
+                            <span asp-validation-for="Option3" class="text-danger"></span>
                     <i></i>
                 </div>
             </div>
@@ -82,7 +86,7 @@
                 <div class="inputbox">
                         <input asp-for="Option4" minlength="1" maxlength="30" autocomplete="off" id="4" required type="text">
                     <span>Вариант 4</span>
-                            <span asp-validation-for="Option4"></span>
+                            <span asp-validation-for="Option4" class="text-danger"></span>
                     <i></i>
                 </div>
             </div>
@@ -94,7 +98,7 @@
             <div class="inputbox" >
                         <input asp-for="Option5" minlength="1" maxlength="30" autocomplete="off" id="5" required type="text">
                     <span>Вариант 5</span>
-                            <span asp-validation-for="Option5"></span>
+                            <span asp-validation-for="Option5" class="text-danger"></span>
                     <i></i>
                 </div>
            
@@ -117,7 +121,9 @@
     <div class="create-Nooptions none" id="create-Nooptions">
         <div class="inputbox">
                     <input asp-for="CorrectAnswer" minlength="1" maxlength="15" autocomplete="off" type="text">
-            <span asp-validation-for="CorrectAnswer">Ответ:</span>
+            <span>Ответ:</span>
+                        <span asp-validation-for="CorrectAnswer" class="textErrorSmall"></span>
+
             <i></i>
         </div>
        

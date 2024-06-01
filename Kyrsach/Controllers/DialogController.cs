@@ -27,6 +27,7 @@ namespace Kyrsach.Controllers
         [Authorize]
         public async Task<IActionResult> DialogUser()
         {
+            try { 
             var IdUser = _userManager.GetUserAsync(HttpContext.User);
             if (User.IsInRole("user"))
             {
@@ -62,14 +63,25 @@ namespace Kyrsach.Controllers
                     });
                 }
                 return View(groupViewModel);
-            } 
+            }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         [Authorize]
         public async Task<IActionResult> IndexDialog(int IdGroup)
         {
+            try { 
             var group =await _context.Groups.FirstOrDefaultAsync(u=>u.IdGroup== IdGroup);
             return View(group);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
        
     }

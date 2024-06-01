@@ -11,6 +11,7 @@ namespace Kyrsach.Models
         [Key]
         public int IdQuestion { get; set; }
         public int IdTest { get; set; }
+        [Required(ErrorMessage = "Необходимо указать текст вопроса")]
         public string TextQuetion { get; set; } = null!;
         public string? Option1 { get; set; }
         public string? Option2 { get; set; }

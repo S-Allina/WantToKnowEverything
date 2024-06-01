@@ -22,19 +22,26 @@ namespace Kyrsach.Controllers
         // GET: Pairs
         public async Task<IActionResult> Index(int idCat)
         {
-
+            try { 
 			ViewBag.idCat = idCat;
-			//ViewBag.type = _context.Category.First(c => c.IdCategory == idCat).Type;
-   //         var cards = _context.Pairs.Where(c => c.IdCategory == idCat).Distinct();
+            if (_context.Category.FirstOrDefault(c => c.IdCategory ==idCat).WhoCreatedCategory == User.Claims.FirstOrDefault(u => u.Type == "id").Value)
+                ViewBag.isThisUserCreated = true;
+            //ViewBag.type = _context.Category.First(c => c.IdCategory == idCat).Type;
+            //         var cards = _context.Pairs.Where(c => c.IdCategory == idCat).Distinct();
 
-			return View();
+            return View();
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
 
         [HttpGet]
         public async Task<IActionResult> IndexJSON(int idCat)
         {
-
+            try { 
             ViewBag.idCat = idCat;
             ViewBag.type = _context.Category.First(c => c.IdCategory == idCat).Type;
             var cards = _context.Pairs.Where(c => c.IdCategory == idCat).Distinct();
@@ -50,30 +57,47 @@ namespace Kyrsach.Controllers
                 });
             }
                 return Json(obj);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         [HttpGet]
         public async Task<IActionResult> ListPairs(int idCat)
         {
+            try { 
             ViewBag.idCat = idCat;
             ViewBag.type = _context.Category.First(c => c.IdCategory == idCat).Type;
             return View(_context.Pairs.Where(p => p.IdCategory == idCat));
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
 
 
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [HttpGet]
         public IActionResult Create(int idCat)
         {
+            try { 
             ViewBag.idCat = idCat;
             ViewBag.type = _context.Category.First(p => p.IdCategory == idCat).Type;
             ViewData["IdCategory"] = new SelectList(_context.Category, "IdCategory", "IdCategory");
             return View();
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         [HttpPost]
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdPair,IdCategory,Card1Text,Card2Text,Card1Img,Card2Img")] PairViewModel pairViewModel)
         {
@@ -89,20 +113,14 @@ namespace Kyrsach.Controllers
                         Card2Text = pairViewModel.Card2Text
 
                     };
-
-
                     if (pairViewModel.Card2Img != null)
                     {
                         byte[] imageData = null;
-
-                        // считываем переданный файл в массив байтов
                         using (var binaryReader = new BinaryReader(pairViewModel.Card2Img.OpenReadStream()))
                         {
                             imageData = binaryReader.ReadBytes((int)pairViewModel.Card2Img.Length);
                         }
-                        // установка массива байтов
                         pair.Card2Img = imageData;
-
                     }
 
                     _context.Add(pair);
@@ -122,28 +140,7 @@ namespace Kyrsach.Controllers
             }
         }
 
-        // GET: Pairs/Edit/5
-        //public async Task<IActionResult> Edit(int? idPairs)
-        //{
-        //    if (idPairs == null || _context.Pairs == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var pair = await _context.Pairs.FindAsync(idPairs);
-        //    if (pair == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    //ViewData["IdField"] = new SelectList(_context.Fields, "IdField", "IdField", pair.IdField);
-        //    return View(pair);
-        //}
-
-        // POST: Pairs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int idPairs, [Bind("IdPair,IdCategory,Card1Text,Card2Text,Card1Img,Card2Img")] Pair pair)
         {
@@ -154,25 +151,19 @@ namespace Kyrsach.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(ListPairs), new { idCat = pair.IdCategory });
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!PairExists(pair.IdPair))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-
+                return RedirectToAction("Index", "Errors", new { ex.Message
+    });
             }
         }
 
-[Authorize(Roles = "teacher,admin")]
+        [Authorize(Roles = "teacher,admin")]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
         public async Task<IActionResult> Delete(int idPairs)
         {
+            try { 
             if (_context.Pairs == null)
             {
                 return Problem("Entity set 'SerovaContext.Pairs'  is null.");
@@ -183,9 +174,13 @@ namespace Kyrsach.Controllers
             {
                 _context.Pairs.Remove(pair);
             }
-
             await _context.SaveChangesAsync();
             return RedirectToAction("ListPairs", new { idCat = idCat });
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         private bool PairExists(int id)

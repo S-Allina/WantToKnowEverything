@@ -40,23 +40,17 @@ var you = document.querySelector("#You").textContent.split(' ');
 
 
 connection.on('x', (UserName,FirstName, message) => {
-    console.log("99");
-    console.log(message);
     var li = document.createElement("li");
     li.classList.add("message-box");
     li.classList.add(meName !== UserName ? "left" : "right");
-    //li.classList.add(role !== "user" ? "messageFromTeacher" : "");
     document.getElementById("messageInput").value = "";
     document.getElementById("messagesList").appendChild(li);
     li.textContent = `${FirstName}: ${message}`;
 });
-
-
 connection.start().then(function () {
 }).catch(function (err) {
     return console.error(err.toString());
 });
-
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var group = document.getElementById("IdGroup").value;
     var message = document.getElementById("messageInput").value;

@@ -13,8 +13,6 @@ namespace Kyrsach.Models
         public string Text { get; set; } = null!;
         public DateTime Time { get; set; }
 
-        //public virtual UserModel IdSenderNavigation { get; set; } 
-        //public virtual Group IdGroupNavigation { get; set; } 
 
     }
 }

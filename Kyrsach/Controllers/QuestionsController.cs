@@ -24,11 +24,16 @@ namespace Kyrsach.Controllers
         // GET: Question
         public async Task<IActionResult> Index(int idQ, int idT, string? answer, string? message)
         {
+            try { 
             ViewBag.Message = message;
-            if (idQ == 0 && _context.Questions.Where(t => t.IdTest == idT).FirstOrDefault() != null)
+            var idCat = _context.Tests.FirstOrDefault(q => q.IdTest == idT).IdCategory;
+            if (_context.Category.FirstOrDefault(c=>c.IdCategory== idCat).WhoCreatedCategory == User.Claims.FirstOrDefault(u => u.Type == "id").Value)
+                ViewBag.isThisUserCreated = true;
+
+            if (idQ == 0 && _context.Questions.FirstOrDefault(t => t.IdTest == idT) != null)
             {
                 ViewBag.idT = idT;
-                var userId = User.Claims.Where(u => u.Type == "id")?.FirstOrDefault()?.Value;
+                var userId = User.Claims.FirstOrDefault(u => u.Type == "id")?.Value;
                 AnswersUser answersUser = new AnswersUser{
                    IdUser= userId, 
                    CountCurrent= 0, 
@@ -44,6 +49,11 @@ namespace Kyrsach.Controllers
                 var question = await  _context.Questions.FirstOrDefaultAsync(t => t.IdTest == idT && t.IdQuestion == idQ);
                 ViewBag.Button = "Далее";
                 return View(question);
+            }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
             }
         }
         public async Task<IActionResult> Dalee(int idQ, int idT, string answer)
@@ -72,8 +82,8 @@ namespace Kyrsach.Controllers
                         return RedirectToAction(nameof(End), new { count = countResult });
                     }
 
-                    var serovaContext = _context.Questions.Where(t => t.IdTest == idT && t.IdQuestion == (nextQuestion == null ? lastQuestion.IdQuestion : nextQuestion.IdQuestion));
-                    return View(nameof(Index), await serovaContext.ToListAsync());
+                    var serovaContext = _context.Questions.FirstOrDefault(t => t.IdTest == idT && t.IdQuestion == (nextQuestion == null ? lastQuestion.IdQuestion : nextQuestion.IdQuestion));
+                    return View(nameof(Index),  serovaContext);
                 }
                 else
                 {
@@ -92,6 +102,7 @@ namespace Kyrsach.Controllers
 
         private Question GetNextQuestion(int idQ, int idT)
         {
+
             return _context.Questions.OrderBy(t => t.IdQuestion).FirstOrDefault(t => t.IdTest == idT && t.IdQuestion > idQ);
         }
 
@@ -102,24 +113,16 @@ namespace Kyrsach.Controllers
 
         private string CalculateIsEqual(int idQ, string answer)
         {
-            if (string.IsNullOrEmpty(answer))
-            {
-                return "false";
-            }
-
+            if (string.IsNullOrEmpty(answer))  return "false"; 
             var correctAnswer = _context.Questions.FirstOrDefault(t => t.IdQuestion == idQ)?.CorrectAnswer;
-            if (correctAnswer == null)
-            {
-                return "false";
-            }
-
+            if (correctAnswer == null)  return "false"; 
             var q = correctAnswer.Split('|');
             var a = answer.Split('|');
             return q.OrderBy(a => a).SequenceEqual(a.OrderBy(a => a), StringComparer.OrdinalIgnoreCase).ToString();
         }
-
         private async Task<int> CalculateAndUpdateCurrentScore(int idT)
         {
+
             var idAnUse = _context.AnswersUsers.OrderByDescending(t => t.IdAnswersUser).FirstOrDefault().IdAnswersUser;
             double all = _context.Answers.Count(t => t.IdAnswersUser == idAnUse);
             double curr = _context.Answers.Count(t => t.IdAnswersUser == idAnUse && t.Loyal == "True");
@@ -129,7 +132,6 @@ namespace Kyrsach.Controllers
             await _context.SaveChangesAsync();
             return (int)(curr / all * 100);
         }
-
         public async Task<IActionResult> End(int count)
         {
             ViewBag.Count = count;
@@ -142,9 +144,15 @@ namespace Kyrsach.Controllers
         [HttpGet]
         public IActionResult Create(int idT)
         {
+            try { 
             ViewBag.idT = idT;
             ViewData["IdTest"] = new SelectList(_context.Tests, "IdTest", "IdTest");
             return View();
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Errors", new { ex.Message });
+            }
         }
 
         [HttpPost]

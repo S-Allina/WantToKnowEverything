@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "End";
 }
+<div class="contener">
 <div class="diagr">
     <div class="pie animate" style="--p: @ViewBag.Count; --c: fuchsia">@ViewBag.Count %</div>
 </div>
@@ -39,3 +40,4 @@ else if (ViewBag.Count > 80 && ViewBag.Count <= 100)
             <div class="circle"></div>
         </div>
 </a>
+</div>

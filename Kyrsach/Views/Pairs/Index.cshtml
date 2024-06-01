@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="~/css/Confetti.css" asp-append-version="true" />
 	</head>
 <h1>Найди пару</h1>
+<div class="contener">
 @if (User.IsInRole("admin")|| User.IsInRole("teacher"))
                 {
 	<a asp-action="ListPairs" asp-route-idCat="@ViewBag.idCat" class="btn">
@@ -89,7 +90,7 @@
 		</div>
 	</div>
 </div>
-
+</div>
 <!-- подключаем jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <!-- и наш скрипт -->

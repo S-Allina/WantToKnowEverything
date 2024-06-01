@@ -16,7 +16,7 @@
 
         <div class="col-12 text-center align-self-center py-5">
 
-                <div class="card-3d-wrap mx-auto" style="width:350px!important">
+                <div class="card-3d-wrap mx-auto" style="width:450px!important">
                     <div class="square" style="--i: 0"></div>
                     <div class="square" style="--i: 1"></div>
                     <div class="square" style="--i: 2"></div>
@@ -29,7 +29,10 @@
 
     <div>
                             <div class="center-wrap" style="width:100%!important">
-                            <form method="post" asp-controller="Account" asp-action="RegisterTeacher">
+                                <form method="post" asp-controller="Account" asp-action="RegisterTeacher" style="    display: flex;
+    flex-direction: column;
+    align-items: center;">
+                                    
                                     <h4 class="title1">Регистрация учителя</h4>
                                     <div asp-validation-summary="All"></div>
                                     <div class="inputBox">
