@@ -10,9 +10,7 @@
 <form asp-action="Edit" class="formCreate">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="IdTest" />
-    <label asp-for="IdCategory" class="none"></label>
-    <select asp-for="IdCategory" class="none" asp-items="ViewBag.IdCategory"></select>
-    <span asp-validation-for="IdCategory" class="none"></span>
+    <input asp-for="IdCategory" class="none" />
 
 
     <div class="inputbox question category">

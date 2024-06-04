@@ -7,9 +7,7 @@ search.addEventListener('input', function () { // Изменено на 'input'
             console.log(u.closest(".found"));
             console.log("yes")
         } else {
-            //if (u.closest(".PostageStampCard").style.border != "4px solid rgb(31, 189, 31)") {
             u.closest(".found").style.border = "none"; // Сброс границы
-            //}
         }
     })
 })

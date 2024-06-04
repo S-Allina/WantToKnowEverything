@@ -14,16 +14,10 @@ namespace Kyrsach.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        //private readonly IUserStore<UserWithRole> _userStore;
-        //private readonly IUserService _userService;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            //_userStore = userStore;
-            //_userService = userService;
-
         }
-
         public async Task<IActionResult> Index()
         {
 

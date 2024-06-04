@@ -36,7 +36,6 @@ namespace Kyrsach.Controllers
         {
             try
             {
-
                 var uploadResult = await _dropboxService.UploadFileAsync(file);
                 await SaveFilePathToDatabase(uploadResult.Path, file,Name);
                 return RedirectToAction("Index");
@@ -54,7 +53,6 @@ namespace Kyrsach.Controllers
             return View(files);
         }
         [Authorize]
-        [HttpGet]
         public async Task<IActionResult> Download(int id)
         {
             var fileUrl = _context.Files.FirstOrDefault(f => f.id == id).Path;

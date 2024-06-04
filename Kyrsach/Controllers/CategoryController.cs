@@ -62,8 +62,8 @@ namespace Kyrsach.Controllers
             {
                 categories = _context.Category.Where(c => c.Type.Contains(type)).ToList();
             }
-            categories.Where(c=>c.NameCategory.ToLower().Contains(NameCat.ToLower())==true).ToList();
-            switch (type)
+                categories = categories.Where(c => c.NameCategory.ToLower().Contains(NameCat.ToLower())).ToList();
+                switch (type)
             {
                 case "test":
                     return View(categories);

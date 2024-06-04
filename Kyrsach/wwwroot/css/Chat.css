@@ -186,9 +186,12 @@ main {
     color: white;
 }
 .users {
+    height: 70vh;
     display: flex;
     flex-direction: column;
     padding: .5rem 0;
+    overflow-y: scroll;
+    overflow-x:hidden;
 }
 ul {
     list-style-type: none;

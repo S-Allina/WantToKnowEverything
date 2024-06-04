@@ -72,7 +72,7 @@ namespace Kyrsach.Controllers
 
                 if (await _userManager.IsInRoleAsync(user, "admin"))
                 {
-                    users = _context.UserView.OrderBy(u => u.NameGroup).ToList();
+                    users = _context.UserView.Where(u=>u.Id != user.Id).OrderBy(u => u.NameGroup).ToList();
                     return View(users);
                 }
                 else if (await _userManager.IsInRoleAsync(user, "teacher"))

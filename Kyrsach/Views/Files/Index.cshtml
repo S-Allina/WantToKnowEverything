@@ -46,8 +46,8 @@
                                 <div class="circle"></div>
                             </div>
                         </a>
-                    }
-                    <a asp-action="Download" asp-route-id="@item.id" class="btn">
+                    }<form asp-action="Download" asp-route-id="@item.id">
+                    <button  class="btn">
                         <strong>Скачать</strong>
                         <div id="container-stars">
                             <div id="stars"></div>
@@ -57,7 +57,8 @@
                             <div class="circle"></div>
                             <div class="circle"></div>
                         </div>
-                    </a>
+                    </button>
+                    </form>
                 </div>
             </li>
         }
