@@ -1,4 +1,30 @@
-﻿function GenerateDiagramm1(data) {
+﻿
+//const forms = document.querySelectorAll('form');
+//console.log(forms)
+//for (let form of forms) {
+//    console.log(form)
+//    form.addEventListener('submit', (e) => {
+//        e.preventDefault();
+
+//        const inputs = form.querySelectorAll('input.my-select-menu');
+//        console.log(inputs)
+//        if (inputs.length != 0) {
+//            for (const input of inputs) {
+//                console.log(input.value)
+//                if (!input.value) {
+//                    alert('Пожалуйста, заполните все поля формы.');
+//                    event.preventDefault();
+//                    return;
+//                } else {
+//                    return;
+//                }
+//            }
+//        }
+
+//    });
+//}
+
+function GenerateDiagramm1(data) {
     console.log(data)
     console.log(Math.max.apply(null,data.averageScore));
     console.log(data.nameTest)
@@ -147,14 +173,14 @@ document.querySelector('form.center-wrap .dia').addEventListener('click', functi
     var selectedTest = document.querySelector('#tests');
     var startDate = document.querySelector('#startDate');
     var endDate = document.querySelector('#endDate');
-
+    console.log(startDate.value);
 
     // Create a data object to send to the controller
     var data = {
         idUser: selectedUser.value,
         idCategory: parseInt(selectedTest.value),
-        startDate: new Date(startDate.value),
-        endDate: new Date(endDate.value)
+        startDate: new Date(startDate.value == "" ? "01-01-2000" : startDate.value),
+        endDate: new Date(endDate.value == "" ? "01-01-2050" : endDate.value)
     };
     if (!areFieldsFilled(data)) {
         alert('Пожалуйста, заполните все необходимые поля');
@@ -272,23 +298,3 @@ function fillOptionsSelect(options) {
     });
 }
 
-const forms = document.querySelectorAll('form');
-console.log(forms)
-for (let form of forms) {
-    console.log(form)
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const inputs = form.querySelectorAll('input,select');
-        console.log(inputs)
-        for (const input of inputs) {
-            console.log(input.value)
-            if (!input.value) {
-                alert('Пожалуйста, заполните все поля формы.');
-                event.preventDefault(); 
-                return;
-            }
-        }
-
-    });
-}

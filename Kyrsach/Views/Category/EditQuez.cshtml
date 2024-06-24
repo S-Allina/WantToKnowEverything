@@ -60,11 +60,7 @@
         </div>
         <div class="contener">
             <div class="contener1">
-
-
                         <div class="box">
-                     
-
                     <a href="#" class="contener__elementQuez">
                         <div class="boxQuez">
                             <span></span>
@@ -96,25 +92,7 @@
     </div>
 </form>
 </div>
-<script>
-    function Text() {
-        const inptutCreate = document.getElementById('input-Cat');
-        const spanCreate = document.getElementById('NameCate');
-        spanCreate.textContent = inptutCreate.value;
-
-    }
-
-    const label = document.querySelector('.input__file-button-text');
-    const img = document.querySelector('#imgCate');
-    const inputCat = document.querySelector('.input__file');
-    inputCat.addEventListener('change', () => {
-
-        label.textContent = 'Файл выбран';
-        img.src = URL.createObjectURL(inputCat.files[0]);
-    });
-
-
-</script>
+<script src="~/js/changeImgFile.js"></script>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

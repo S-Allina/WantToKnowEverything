@@ -36,14 +36,23 @@ namespace Kyrsach.Controllers
         {
             try
             {
-                var uploadResult = await _dropboxService.UploadFileAsync(file);
-                await SaveFilePathToDatabase(uploadResult.Path, file,Name);
-                return RedirectToAction("Index");
+                if (file != null && Name != null)
+                {
+                    var uploadResult = await _dropboxService.UploadFileAsync(file);
+                    await SaveFilePathToDatabase(uploadResult.Path, file, Name);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.message = "Не все поля заполнены";
+                    return View();
+                }
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error uploading file to Dropbox.");
-            }
+				ViewBag.message = ex.Message;
+				return View();
+			}
         }
         [Authorize]
         public IActionResult Index()

@@ -7,8 +7,6 @@ var meName = document.getElementById("me").value;
 
 const chatHub = connection.start().then(() => connection.invoke('LoadHistory', IdGroup));
 connection.on('LoadHistory', (messages) => {
-    console.log(meName)
-    console.log(messages)
     const messagesList = document.getElementById('messagesList');
     messages.forEach(message => {
         const li = document.createElement("li");
@@ -26,8 +24,10 @@ connection.on('LoadHistory', (messages) => {
             
         }
         //li.classList.add(meName !== message.senderUserName ? "left" : "right");
-     
-        li.textContent = `${message.senderName}: ${message.text} `;
+
+        /*li.textContent = `${message.senderName}: ${message.text} `;*/
+        li.innerHTML = `${message.senderName}: <br/> ${message.text.replace(/\n/g, '<br>')}`;
+
         messagesList.appendChild(li);
     });
    preventDefault();
@@ -45,11 +45,11 @@ connection.on('x', (UserName,FirstName, message) => {
     li.classList.add(meName !== UserName ? "left" : "right");
     document.getElementById("messageInput").value = "";
     document.getElementById("messagesList").appendChild(li);
-    li.textContent = `${FirstName}: ${message}`;
+    li.innerHTML = `${FirstName}:<br/> ${message}`;
 });
 connection.start().then(function () {
 }).catch(function (err) {
-    return console.error(err.toString());
+    return console.log(err.toString());
 });
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var group = document.getElementById("IdGroup").value;

@@ -58,9 +58,11 @@ namespace Kyrsach.Controllers
         }
         public async Task<IActionResult> Dalee(int idQ, int idT, string answer)
         {
-
             try
             {
+                var idCat = _context.Tests.FirstOrDefault(q => q.IdTest == idT).IdCategory;
+                if (_context.Category.FirstOrDefault(c => c.IdCategory == idCat).WhoCreatedCategory == User.Claims.FirstOrDefault(u => u.Type == "id").Value)
+                    ViewBag.isThisUserCreated = true;
                 if (answer != null)
                 {
                     var nextQuestion = GetNextQuestion(idQ, idT);
@@ -83,7 +85,7 @@ namespace Kyrsach.Controllers
                     }
 
                     var serovaContext = _context.Questions.FirstOrDefault(t => t.IdTest == idT && t.IdQuestion == (nextQuestion == null ? lastQuestion.IdQuestion : nextQuestion.IdQuestion));
-                    return View(nameof(Index),  serovaContext);
+                    return View(nameof(Index), serovaContext);
                 }
                 else
                 {

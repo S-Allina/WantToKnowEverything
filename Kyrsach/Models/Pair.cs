@@ -12,6 +12,6 @@ namespace Kyrsach.Models
         public byte[]? Card1Img { get; set; }
         public byte[]? Card2Img { get; set; }
 
-        public virtual Category IdCategoryNavigation { get; set; } = null!;
+        public virtual Category? IdCategoryNavigation { get; set; } 
     }
 }

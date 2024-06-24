@@ -60,7 +60,6 @@ document.querySelector('#minus').addEventListener('click', () => {
     console.log(None.length)
     if (None.length === 2) {
         min.classList.add('none');
-        console.log("opopop");
 
     }
 
@@ -72,7 +71,6 @@ document.querySelector('#minus').addEventListener('click', () => {
 
 
 const no = document.querySelector('#create-Nooptions');
-console.log('jujjjjjj');
 
 const yes = document.querySelector('#create-options');
 const rodio1 = document.querySelector('#options');
@@ -80,7 +78,6 @@ const rodio2 = document.querySelector('#Nooptions');
 rodio1.addEventListener('change', () => {
     if (rodio1.checked) {
         no.classList.add('none');
-        console.log('jujjjjjj');
         yes.classList.remove('none');
         /*   yes.classList.add('flex');*/
     }
@@ -88,7 +85,6 @@ rodio1.addEventListener('change', () => {
 rodio2.addEventListener('change', () => {
     if (rodio2.checked) {
         yes.classList.add('none');
-        console.log('jujjjjjj');
         no.classList.remove('none');
     }
 });

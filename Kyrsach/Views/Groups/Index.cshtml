@@ -103,7 +103,7 @@
                                 <div class="circle"></div>
                             </div>
                         </a>
-                        <a asp-action="Delete" asp-route-id="@item.IdGroup" class="btn">
+                        <a asp-action="Delete" asp-route-id="@item.IdGroup" class="btn delete">
                             <strong>Удалить</strong>
                             <div id="container-stars">
                                 <div id="stars"></div>
@@ -116,6 +116,8 @@
                         </a>
                     </div>
                 </li>
+            <hr />
+
             }
         </ul>
     

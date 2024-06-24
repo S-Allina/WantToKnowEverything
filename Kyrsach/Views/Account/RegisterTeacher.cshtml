@@ -5,9 +5,6 @@
 
 <head>
     <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
-
-    @*<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">*@
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <div>
@@ -23,18 +20,15 @@
                     <div class="square" style="--i: 3"></div>
                     <div class="square" style="--i: 4"></div>
                     <div class="card-3d-wrapper">
-
-
                         <div class="card-front">
-
-    <div>
                             <div class="center-wrap" style="width:100%!important">
                                 <form method="post" asp-controller="Account" asp-action="RegisterTeacher" style="    display: flex;
     flex-direction: column;
     align-items: center;">
                                     
                                     <h4 class="title1">Регистрация учителя</h4>
-                                    <div asp-validation-summary="All"></div>
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="flexInputForm">
                                     <div class="inputBox">
                                         <input asp-for="FirstName" type="text" placeholder="Имя" />
                                         <span asp-validation-for="FirstName" class="text-danger"></span>
@@ -43,6 +37,8 @@
                                         <input asp-for="LastName" placeholder="Фамилия" />
                                         <span asp-validation-for="LastName" class="text-danger"></span>
                                     </div>
+                                    </div>
+                                <div class="flexInputForm">
                                     <div class="inputBox">
                                         <input asp-for="Name" placeholder="Логин" />
                                         <span asp-validation-for="Name" class="text-danger"></span>
@@ -51,6 +47,8 @@
                                         <input asp-for="Email" type="email" placeholder="email" />
                                         <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
+                                    </div>
+                                <div class="flexInputForm">
                                       <div class="inputBox">
                                         <input asp-for="Password" type="password" placeholder="Пароль" />
                                         <span asp-validation-for="Password" class="text-danger"></span>
@@ -58,6 +56,7 @@
                                     <div class="inputBox">
                                         <input asp-for="PasswordConfirm" type="password" placeholder="Повторите пароль" />
                                         <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                                    </div>
                                     </div>
                                     <button type = "submit" class="btn" name="send">
                                         <strong class="strongBtn">Регистрация</strong>
@@ -71,7 +70,6 @@
                                     </button>
                                 </form>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

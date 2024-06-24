@@ -35,11 +35,11 @@ namespace Kyrsach.Controllers
                     if (userFromNumber == null) ModelState.AddModelError("", "Студента с таким номером зачётки ещё не зарегистрировано. Проверьте правильность введённых данных.");
                     else
                     {
-                        if (_userManager.FindByNameAsync(model.Name) != null)
+                        if (_userManager.FindByNameAsync(model.Name).Result != null)
                         {
                             ModelState.AddModelError(string.Empty, "Логин не уникален");
                         }
-                        if (_userManager.FindByEmailAsync(model.Name) != null)
+                        if (_userManager.FindByEmailAsync(model.Email).Result != null)
                         {
                             ModelState.AddModelError(string.Empty, "Email не уникален");
 
@@ -129,8 +129,8 @@ namespace Kyrsach.Controllers
             try { 
             if (ModelState.IsValid)
             {
-                if (_userManager.FindByNameAsync(model.Name) != null) ModelState.AddModelError(string.Empty, "Логин не уникален");
-                if (_userManager.FindByEmailAsync(model.Name) != null)ModelState.AddModelError(string.Empty, "Email не уникален");
+                if (_userManager.FindByNameAsync(model.Name).Result != null) ModelState.AddModelError(string.Empty, "Логин не уникален");
+                if (_userManager.FindByEmailAsync(model.Email).Result != null)ModelState.AddModelError(string.Empty, "Email не уникален");
                 if (ModelState.ErrorCount != 0) return View(model);
                 UserModel user = new UserModel
                 {

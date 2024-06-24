@@ -40,7 +40,7 @@
                     </div>
             </a>
 
-            <a class="btn" asp-action="Delete" id="deleteQuestion" asp-route-idT="@ViewBag.idT" asp-route-id="@Model.IdQuestion">
+            <a class="btn delete" asp-action="Delete" id="deleteQuestion" asp-route-idT="@ViewBag.idT" asp-route-id="@Model.IdQuestion">
                     <strong>Удалить</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
@@ -171,11 +171,29 @@
 }
 
 </div>
+@*<script src="~/js/ShowMessage.js"></script>*@
 <script src="~/js/question.js"></script>
 <script>
-    document.querySelector("#deleteQuestion").addEventListener('click',()=>{
-        alert("Вопрос будет удалён");
-    })
+    //document.querySelector("#deleteQuestion").addEventListener('click',()=>{
+    //    alert("Вопрос будет удалён");
+    //})
+
+    //document.querySelectorAll(".delete").forEach((value) => {
+    //    value.addEventListener('click', () => {
+    //        event.preventDefault();
+
+    //        // Подтверждение удаления
+    //        const confirmation = confirm("Вы точно хотите удалить данную запись?");
+
+    //        if (confirmation) {
+    //            // Переход по ссылке
+    //            window.location.href = value.href;
+    //        } else {
+    //            // Отмена перехода
+    //            //event.stopPropagation();
+    //        }
+    //    })
+    //})
 </script>
 
 

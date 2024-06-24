@@ -1,4 +1,5 @@
 ﻿
+using DocumentFormat.OpenXml.Spreadsheet;
 using Kyrsach.Models;
 using Kyrsach.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -65,10 +66,12 @@ namespace Kyrsach.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ListPairs(int idCat)
+        public async Task<IActionResult> ListPairs(int idCat, string? message)
         {
-            try { 
-            ViewBag.idCat = idCat;
+            try {
+                ViewBag.message = message;
+
+			ViewBag.idCat = idCat;
             ViewBag.type = _context.Category.First(c => c.IdCategory == idCat).Type;
             return View(_context.Pairs.Where(p => p.IdCategory == idCat));
             }
@@ -105,37 +108,43 @@ namespace Kyrsach.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Pair pair = new Pair
-                    {
-                        IdPair = pairViewModel.IdPair,
-                        IdCategory = pairViewModel.IdCategory,
-                        Card1Text = pairViewModel.Card1Text,
-                        Card2Text = pairViewModel.Card2Text
-
-                    };
-                    if (pairViewModel.Card2Img != null)
-                    {
-                        byte[] imageData = null;
-                        using (var binaryReader = new BinaryReader(pairViewModel.Card2Img.OpenReadStream()))
+                    if ((pairViewModel.Card1Text!=null && pairViewModel.Card2Text!=null) ||(pairViewModel.Card2Img!=null && pairViewModel.Card2Text!=null)) {
+                        Pair pair = new Pair
                         {
-                            imageData = binaryReader.ReadBytes((int)pairViewModel.Card2Img.Length);
+                            IdPair = pairViewModel.IdPair,
+                            IdCategory = pairViewModel.IdCategory,
+                            Card1Text = pairViewModel.Card1Text,
+                            Card2Text = pairViewModel.Card2Text
+                        };
+                        if (pairViewModel.Card2Img != null)
+                        {
+                            byte[] imageData = null;
+                            using (var binaryReader = new BinaryReader(pairViewModel.Card2Img.OpenReadStream()))
+                            {
+                                imageData = binaryReader.ReadBytes((int)pairViewModel.Card2Img.Length);
+                            }
+                            pair.Card2Img = imageData;
                         }
-                        pair.Card2Img = imageData;
+
+                        _context.Add(pair);
+
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction("ListPairs", new { idCat = pairViewModel.IdCategory });
                     }
+                    else {
+                        ModelState.AddModelError("","Не все поля заполнены.");
+                        return View(pairViewModel);
 
-                    _context.Add(pair);
-
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("ListPairs", new { idCat = pairViewModel.IdCategory });
+                    }
                 }
                 else
                 {
                     return View(pairViewModel);
-
                 }
             }
-            catch
+            catch (Exception ex) 
             {
+                ModelState.AddModelError("",ex.Message);
                 return View(pairViewModel);
             }
         }
@@ -147,10 +156,18 @@ namespace Kyrsach.Controllers
 
             try
             {
-                _context.Update(pair);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ListPairs), new { idCat = pair.IdCategory });
-            }
+                if (ModelState.IsValid)
+                {
+                    _context.Update(pair);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(ListPairs), new { idCat = pair.IdCategory });
+                }
+                else
+                {
+					return RedirectToAction(nameof(ListPairs), new { idCat = pair.IdCategory,message= "Некорректные данные. Поле должно содержать от 3 до 15 русских символов, цифр, запятых, тире и точек" });
+
+				}
+			}
             catch (Exception ex)
             {
                 return RedirectToAction("Index", "Errors", new { ex.Message
@@ -159,8 +176,6 @@ namespace Kyrsach.Controllers
         }
 
         [Authorize(Roles = "teacher,admin")]
-        [ValidateAntiForgeryToken]
-        [ActionName("Delete")]
         public async Task<IActionResult> Delete(int idPairs)
         {
             try { 
@@ -175,7 +190,7 @@ namespace Kyrsach.Controllers
                 _context.Pairs.Remove(pair);
             }
             await _context.SaveChangesAsync();
-            return RedirectToAction("ListPairs", new { idCat = idCat });
+            return RedirectToAction("ListPairs", new { idCat });
             }
             catch (Exception ex)
             {

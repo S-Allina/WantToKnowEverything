@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PmWWKOw95TE/kGX8ShaqSaHQwhk2xxUwJ+VAjpwfAL8=",
+  "Hash": "kTcIhkw58mpVrJqkE+q+W4LNYp/Y2gifxufI9i5W8IA=",
   "Source": "Kyrsach",
   "BasePath": "_content/Kyrsach",
   "Mode": "Default",
@@ -1258,6 +1258,23 @@
       "OriginalItemSpec": "wwwroot\\js\\Cards.js"
     },
     {
+      "Identity": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\changeImgFile.js",
+      "SourceId": "Kyrsach",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\",
+      "BasePath": "_content/Kyrsach",
+      "RelativePath": "js/changeImgFile.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\changeImgFile.js"
+    },
+    {
       "Identity": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\Chat.js",
       "SourceId": "Kyrsach",
       "SourceType": "Discovered",
@@ -1375,6 +1392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\search.js"
+    },
+    {
+      "Identity": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\ShowMessage.js",
+      "SourceId": "Kyrsach",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\",
+      "BasePath": "_content/Kyrsach",
+      "RelativePath": "js/ShowMessage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ShowMessage.js"
     },
     {
       "Identity": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\site.js",

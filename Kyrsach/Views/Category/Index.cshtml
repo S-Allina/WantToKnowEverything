@@ -7,7 +7,6 @@
 <h1 >Категории</h1>
 
 <div id="loader" style="display: none;">
-    <h1  style="font-size:40">PEYHEPRF</h1>
 </div>
 <head>
     <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
@@ -50,7 +49,7 @@
             </button>
         </form>
         </section>
-<div class="contener">
+<div class="contener" style="padding:0;padding-bottom: 2%;height: 60vh;overflow-y: scroll; margin: 0 5vw">
     @foreach (var item in Model) {
         <div class="contener1 ">
 
@@ -78,28 +77,28 @@
     }
 </div>
 <script>
-    // Получаем ссылки на элементы DOM
-    var loader = document.getElementById("loader");
+    //// Получаем ссылки на элементы DOM
+    //var loader = document.getElementById("loader");
 
-    // Функция для показа индикатора загрузки
-    function showLoader() {
-        loader.style.display = "block";
-    }
+    //// Функция для показа индикатора загрузки
+    //function showLoader() {
+    //    loader.style.display = "block";
+    //}
 
-    // Функция для скрытия индикатора загрузки
-    function hideLoader() {
-        loader.style.display = "none";
-    }
+    //// Функция для скрытия индикатора загрузки
+    //function hideLoader() {
+    //    loader.style.display = "none";
+    //}
 
-    // Перехватываем начало и окончание AJAX-запроса
-    function setupLoader() {
-        // Показываем индикатор загрузки перед началом AJAX-запроса
-        document.addEventListener("ajaxStart", showLoader, false);
+    //// Перехватываем начало и окончание AJAX-запроса
+    //function setupLoader() {
+    //    // Показываем индикатор загрузки перед началом AJAX-запроса
+    //    document.addEventListener("ajaxStart", showLoader, false);
 
-        // Скрываем индикатор загрузки после окончания AJAX-запроса
-        document.addEventListener("ajaxStop", hideLoader, false);
-    }
+    //    // Скрываем индикатор загрузки после окончания AJAX-запроса
+    //    document.addEventListener("ajaxStop", hideLoader, false);
+    //}
 
-    // Вызываем функцию для настройки индикатора загрузки
-    setupLoader();
+    //// Вызываем функцию для настройки индикатора загрузки
+    //setupLoader();
 </script>

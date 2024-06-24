@@ -48,18 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXEluZGV4Rm9yVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Biography/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlvZ3JhcGh5XEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Biography/Speak.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlvZ3JhcGh5XFNwZWFrLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Biography/Start.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlvZ3JhcGh5XFN0YXJ0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Category/Cards/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2FyZHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,10 +114,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Upload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcVXBsb2FkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/File/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Groups/Index.cshtml]

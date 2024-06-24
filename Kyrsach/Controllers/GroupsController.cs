@@ -165,9 +165,18 @@ namespace Kyrsach.Controllers
                     NameGroup = NameGroup,
                 };
                 await _context.AddAsync(group);
-                await _context.SaveChangesAsync();
-                AddAdminInGroup();
-                return RedirectToAction(nameof(Index));
+                    await _context.SaveChangesAsync();
+                    PeopleInGroup peopleInGroup = new PeopleInGroup
+                    {
+                        IdGroup = _context.Groups.Select(g => g.IdGroup).Max(),
+                        IdUser = _context.UserView.FirstOrDefault(u => u.NameRole == "admin").Id,
+                        Role = "admin"
+
+                    };
+                    await _context.PeopleInGroups.AddAsync(peopleInGroup);
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
             }
             ModelState.AddModelError("", "Не указано имя.");
             return View(NameGroup);

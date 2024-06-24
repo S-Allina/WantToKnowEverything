@@ -19,7 +19,7 @@
         <ul class="users">
             @foreach (var item in Model)
             {
-                <li class="user" style="    grid-template-columns: 0.5fr 2fr 0.3fr;">
+                <li class="user found" style="grid-template-columns: 0.5fr 2fr 0.3fr;">
                     @*  @if (item.Img != null)
                 {
                 <img  src="data:image/png;base64,@(Convert.ToBase64String(item.Img))" />
@@ -50,6 +50,7 @@
                         </a>
                     </div>
                 </li>
+                <hr>
             }
         </ul>
     </section>

@@ -13,16 +13,19 @@
 <div style="padding:50px 100px">
     <div class="flexInputForm">
         <span class="user-name">Список файлов:</span>
-                <a asp-action="Upload" type="submit" class="btn">
-                    <strong>Добавить</strong>
-                    <div id="container-stars">
-                        <div id="stars"></div>
-                    </div>
-                    <div id="glow">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                    </div>
-                </a>
+        @if (User.IsInRole("admin") || User.IsInRole("teacher"))
+        {
+            <a asp-action="Upload" type="submit" class="btn">
+                <strong>Добавить</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </a>
+        }
     </div>
     <hr />
     <span class="text-danger">@ViewBag.Message</span>
@@ -35,7 +38,7 @@
                 <div class="CreateCategoryButtons">
                     @if (User.IsInRole("admin") || ViewBag.idCurrentUser==item.WhoCreated)
                     {
-                        <a asp-action="Delete" asp-route-id="@item.id" class="btn" onclick="alert('Лекция будет удалена.')">
+                        <a asp-action="Delete" asp-route-id="@item.id" class="btn delete" >
                             <strong>Удалить</strong>
                             <div id="container-stars">
                                 <div id="stars"></div>
@@ -61,6 +64,8 @@
                     </form>
                 </div>
             </li>
+            <hr />
+
         }
     </ul>
 

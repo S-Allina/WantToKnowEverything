@@ -29,6 +29,8 @@
 		<div class="text">Назад</div>
 	</a>
 	</div>
+
+	<span class="text-danger">@ViewBag.message</span>
 	@if (ViewBag.type == "fieldText")
 	{
 
@@ -36,8 +38,6 @@
 		{
 
 			<form asp-action="Edit" asp-controller="Pairs"  class="ListPairItem">
-
-					
 				
 				
 				<div class="aa">
@@ -65,11 +65,9 @@
 						<div class="sign"><img class="button_Img_pair" src="~/img/savePair.png" /></div>
 						<div class="text">Сохранить</div>
 					</button>
-					<a asp-action="Delete" asp-route-idPairs="@item.IdPair">
-						<button type="button" class="btnBack button_pair-red">
+					<a asp-action="Delete" class="btnBack button_pair-red delete" asp-route-idPairs="@item.IdPair">
 					<div class="sign"><img class="button_Img_pair" src="~/img/DeleteField.png" /></div>
 						<div class="text"> удалить</div>
-				</button>
 					</a>
 				</div>
 				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -117,6 +115,7 @@
 	<!-- блок с игрой -->
 	
 </div>
+<script src="js/loader.js"></script>
 
 <script>
 	

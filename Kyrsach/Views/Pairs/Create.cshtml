@@ -8,17 +8,14 @@
 <h1>Создание пары</h1>
 
 <hr />
-<div class="contener">
+<div class="contener" style="justify-content: center;">
 <form asp-action="Create" class="" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div asp-validation-summary="All" class="text-danger"></div>
     <label  class="none"></label>
     <input class="none" name="IdCategory" value="@ViewBag.idCat" />
-
-  
-
         <section class="tasks2">
 
-            <div class="tasks__list2">
+            <div class="tasks__list2" style="align-items: center;">
                     @if (ViewBag.type == "fieldText")
             {
                 <div class="aa">
@@ -41,7 +38,7 @@
                 <div class="aa">
                     <div class="input__wrapper CategoryCreate">
                         <input type="file" asp-for="Card2Img" accept="image/png, image/jpeg" class="input input__file" name="Card2Img">
-                        <label asp-for="Card2Img" class="input__file-button">
+                            <label asp-for="Card2Img" class="input__file-button" style="    width: 290px;">
                             <span class="input__file-icon-wrapper">
                                 <img class="input__file-icon" src="~/img/picture.png" alt="Выбрать файл" width="55">
                             </span>
@@ -60,14 +57,7 @@
             }
         </div>
         </section>
-    
-
-
-                               
-          
-      
-   
-    <div class="CreateCategoryButtons">
+        <div class="CreateCategoryButtons" style="width: 100%; justify-content: center;">
         <button type="submit" value="Create" class="btn">
             <strong>Добавить</strong>
             <div id="container-stars">
@@ -93,16 +83,7 @@
 
 </div>
 
-<script>
-
-    const label = document.querySelector('.input__file-button-text');
-    const img = document.getElementById('imgCate');
-    const inputCat = document.querySelector('.input__file');
-    inputCat.addEventListener('change', () => {
-        label.textContent = 'Файл выбран';
-        img.src = URL.createObjectURL(inputCat.files[0]);
-    });
-</script>
+<script src="~/js/changeImgFile.js"></script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

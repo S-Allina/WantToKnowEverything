@@ -28,7 +28,7 @@
 <body>
     <header>
         <div class="navi">
-            <p class="nav__title"><img src="~/img/logo.png" style="width:50px"/></p>
+            <p class="nav__title"><img src="~/img/logo.png" style="width:50px; height:0px"/></p>
             <div class="navi" style="width:40%">
             <input id="search" placeholder="поиск..."/>
             @if (User.Identity.IsAuthenticated )
@@ -175,6 +175,7 @@
         @RenderBody()
     </main>
 
+    <script src="~/js/loader.js"></script>
 
  @*   <footer class="border-top text-muted footerMy">
         <div class="">
@@ -184,7 +185,8 @@
     </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/search.js"/>
+
+    <script src="js/search.js"></script>
     <script>
         document.querySelectorAll(".Menu").forEach((i) => i.addEventListener("click", () => {
 
@@ -195,6 +197,6 @@
     @await RenderSectionAsync("Scripts", required: false);
 
 
-    <script src="js/loader.js"></script>
+
 </body>
 </html>

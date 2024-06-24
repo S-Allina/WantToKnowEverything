@@ -18,6 +18,10 @@ body {
 a:hover {
     color: white;
 }
+.text-danger ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
 @media (min-width: 768px) {
     html {
@@ -1289,7 +1293,7 @@ strong {
     display: flex;
     align-items: baseline;
     width: 70%;
-    margin-top: -5%;
+    margin-top: 5%;
     position: relative;
     align-self: center;
     justify-content: end;
@@ -1300,6 +1304,11 @@ strong {
     display: flex;
     align-items: baseline;
     justify-content: space-around;
+}
+hr:not([size]) {
+    border: 1px solid #fff; /* задаем толщину и цвет линии */
+    border-style: solid;
+    margin:0;/* устанавливаем стиль линии */
 }
 
 .QuestionText {

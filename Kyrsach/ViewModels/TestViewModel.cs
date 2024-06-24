@@ -1,4 +1,5 @@
 ﻿using Kyrsach.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Kyrsach.ViewModels
 {
@@ -11,6 +12,9 @@ namespace Kyrsach.ViewModels
 
         public int IdTest { get; set; }
         public int IdCategory { get; set; }
+        [RegularExpression(@"^[а-яА-ЯA-Za-z0-9,#\.\s-]{2,15}$", ErrorMessage = "Некорректные данные. " +
+              "Название должно содержать от 2 до 15 символов, цифр, запятых, тире и точек")]
+        [Required(ErrorMessage = "Поле не заполнено")]
         public string NameTest { get; set; } = null!;
         public int? WhoAnsweredTest { get; set; }
 

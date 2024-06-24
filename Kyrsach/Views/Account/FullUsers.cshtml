@@ -6,10 +6,8 @@
 
 <head>
     <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
-
     <link rel="stylesheet" href="~/css/Chat.css" />
         <link rel="stylesheet" href="~/css/StyleDiagram.css" asp-append-version="true" />
-
 </head>
 <div style="padding:0 100px">
 <div class="flexInputForm">
@@ -44,7 +42,7 @@
         <ul class="users">
             @foreach (var item in Model)
             {
-                <li class="user found" style="grid-template-columns:1.5fr 0.4fr 1fr 0.5fr  2.1fr">
+            <li class="user found" style="grid-template-columns:1.5fr 0.4fr 1fr 0.5fr  2.1fr;align-items: baseline;">
                     <span class="user-name name soughtFor" >@item.LastName @item.FirstName</span>
                     <span>@item.UserName</span>
                     <span>@item.Email</span>
@@ -77,7 +75,7 @@
                                     <div class="circle"></div>
                                 </div>
                             </button>
-                        <a class="btn" style="width:fit-content!important" asp-action="DeleteUser" asp-route-userId="@item.Id">
+                        <a class="btn delete" style="width:fit-content!important" asp-action="DeleteUser" asp-route-userId="@item.Id">
                                 <strong>Удалить</strong>
                                 <div id="container-stars">
                                     <div id="stars"></div>
@@ -90,6 +88,8 @@
                         </form>
                     }
                 </li>
+            <hr />
+
             }
         </ul>
 </div>

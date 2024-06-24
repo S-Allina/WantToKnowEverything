@@ -11,12 +11,12 @@
 <hr />
 <div class="contener">
     <form asp-action="Upload" class="formCreate" enctype="multipart/form-data">
-
+        <span class="text-danger">@ViewBag.message</span>
         <div class="category-card-create">
             <div class="CategoryCreate">
                 <div class="inputbox question ">
 
-                    <input  maxlength="20" autocomplete="off" name="Name" id="input-Cat" type="text">
+                    <input  maxlength="50" autocomplete="off" name="Name" id="input-Cat" type="text">
                     <span class="spanCategory">Название:</span>
                     <i></i>
                 </div>

@@ -174,20 +174,8 @@
                 </div>
       </form>
       </div>
-<script src="~/js/question.js">
-
-</script>
-
+<script src="~/js/question.js"></script>
+<script src="~/js/changeImgFile.js"></script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-<script>
-    const label = document.querySelector('.input__file-button-text');
-    const img = document.querySelector('#imgCate');
-    const inputCat = document.querySelector('.input__file');
-    inputCat.addEventListener('change', () => {
-
-        label.textContent = 'Файл выбран';
-        img.src = URL.createObjectURL(inputCat.files[0]);
-    });
-</script>

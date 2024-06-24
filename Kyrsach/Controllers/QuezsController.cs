@@ -75,8 +75,11 @@ namespace Kyrsach.Controllers
 
         public async Task<IActionResult> Dalee(int idQues, int idT, string? answer)
         {
-            try { 
-            var c1 = _context.Quezs.OrderBy(t => t.IdQuez).LastOrDefault(t => t.IdTest == idT && t.IdQuez > idQues);
+            try {
+                int idCat = _context.Tests.FirstOrDefault(q => q.IdTest == idT).IdCategory;
+                if (_context.Category.FirstOrDefault(c => c.IdCategory == idCat).WhoCreatedCategory == User.Claims.FirstOrDefault(u => u.Type == "id").Value)
+                    ViewBag.isThisUserCreated = true;
+                var c1 = _context.Quezs.OrderBy(t => t.IdQuez).LastOrDefault(t => t.IdTest == idT && t.IdQuez > idQues);
             var c2 = _context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault(t => t.IdQuez > idQues);
             var c3 = c2 != null ? _context.Quezs.Where(t => t.IdTest == idT).FirstOrDefault(t => t.IdQuez > c2.IdQuez) : null;
             if (c3 != null && c2.IdQuez < c1.IdQuez)

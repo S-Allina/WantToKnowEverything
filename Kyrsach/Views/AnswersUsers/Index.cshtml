@@ -12,7 +12,6 @@
 
   <h1>Вывод в Excel</h1>
 <hr />
-
 <div class="card-3d-wrap mx-auto" style="      width: 1150px;  height: 200px;margin-bottom:100px">
                     <div class="square" style="--i: 0"></div>
                     <div class="square" style="--i: 1"></div>
@@ -125,7 +124,7 @@
                     <select id="users" class="my-select-menu" name="users">
                         @foreach (var i in Model)
                         {
-                            <option value="@i.Id">@i.NormalizedUserName</option>
+                            <option value="@i.Id">@i.LastName @i.FirstName</option>
                         }
                     </select>
                 </div>  <div class="formSelect">
@@ -193,9 +192,4 @@
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="~/js/diagrams.js"></script>
 <script>
-   $(document).ready(function () {
-      $('select').selectize({
-          sortField: 'text'
-      });
-  });
 </script>

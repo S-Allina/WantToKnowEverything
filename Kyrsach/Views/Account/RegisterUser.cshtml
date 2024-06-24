@@ -6,11 +6,8 @@
 <head>
     <link rel="stylesheet" href="~/css/StyleLoginRegIn.css" />
 
-    @*<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">*@
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
-<div>
     <div class="box">
 
 
@@ -27,15 +24,13 @@
 
                         <div class="card-front">
 
-
-    <div>
                             <div class="center-wrap" style="width:100%!important">
                                 <form method="post" asp-controller="Account" asp-action="RegisterUser" style="    display: flex;
     flex-direction: column;
     align-items: center;">
                                     <h4 class="title1">Регистрация ученика</h4>
-                                    <div asp-validation-summary="All"></div>
-
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="flexInputForm">
                                     <div class="inputBox">
                                         <input asp-for="FirstName" type="text" placeholder="Имя" />
                                         <span asp-validation-for="FirstName" class="text-danger"></span>
@@ -44,6 +39,8 @@
                                         <input asp-for="LastName" type="text" placeholder="Фамилия" />
                                         <span asp-validation-for="LastName" class="text-danger"></span>
                                     </div>
+                                    </div>
+                            <div class="flexInputForm">
                                     <div class="inputBox">
                                         <input asp-for="NumberStudentBook"  type="text" placeholder="Номер зачётки" />
                                         <span asp-validation-for="NumberStudentBook" class="text-danger"></span>
@@ -51,6 +48,7 @@
                                     <div class="inputBox">
                                         <select asp-for="Group" asp-items="ViewBag.Groups"></select>
                                         <span asp-validation-for="Group" class="text-danger"></span>
+                                    </div>
                                     </div>
                                     <button type = "submit" class="btn" name="send">
                                         <strong class="strongBtn">Регистрация</strong>
@@ -64,45 +62,9 @@
                                     </button>
                                 </form>
                             </div>
-                          
-
-                        </div>
                     </div>
                 </div>
             </div>
-
-
-            
-
         </div>
     </div>
 <div/>
-@*
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form   >
-                <h3>LoginApp</h3>
-                <hr />
-              
-                <div class="form-group">
-                   
-                    <span class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="RememberMe">["RememberMe"]</label>
-                        <input asp-for="RememberMe" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary mt-1">["BtnLogin"]</button>
-                </div>
-            </form>
-        </section>
-    </div>
-    
-</div>*@

@@ -26,7 +26,7 @@
                 </div>
         </a>
     }
-@*
+
     <form asp-action="IndexField" style="display: flex;width: 30%;align-items: baseline;gap: 15px;">
         <span>Фильтр:</span>
         <div class="inputBox">
@@ -42,10 +42,10 @@
                 <div class="circle"></div>
             </div>
         </button>
-    </form>*@
+    </form>
 </section>
 
-<div class="contener" style="gap: 1%;">
+<div class="contener" style="gap: 1%;padding:0;padding-bottom: 2%;height: 60vh;overflow-y: scroll; margin: 0 5vw">>
     @foreach (var item in Model)
     {
         <a asp-controller="Pairs" asp-action="Index" asp-route-idCat="@item.IdCategory" class="contener__elementQuez">
