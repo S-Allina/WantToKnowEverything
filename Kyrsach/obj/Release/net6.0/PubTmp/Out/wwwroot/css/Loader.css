@@ -13,7 +13,7 @@
     background: linear-gradient(to right, #2d60ec, #3ccfda);
     font-size: 30px;
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip:text;
     animation: animate8345 9s linear infinite;
     font-weight: bold;
 }

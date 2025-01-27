@@ -1,0 +1,248 @@
+.card-container {
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    /*width: 280px;*/
+    height: 70vh;
+}
+main {
+    max-height: 100vh;
+}
+/*.ContainerDialog {
+    width: 100%;
+    display: grid;
+    background-color: transparent;
+    height:60vh;
+ 
+}*/
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+    /*.card-header .img-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+        background-color: #333;
+    }
+*/
+    .card-header .text-chat {
+        font-weight: 700;
+        color: white;
+        margin: 0;
+        font-size: 20px;
+        line-height: 0;
+    }
+    .card-header p {
+        margin:0;
+    }
+.li_span {
+    font-weight:800;
+}
+.card-body {
+    flex: 1;
+    max-height: 80vh;
+}
+
+
+.messages-container {
+    padding: 15px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    max-height: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-box {
+    padding: 10px;
+    max-width: 70%;
+    width: fit-content;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+    .message-box.left {
+        background-color: #fff;
+        position: relative;
+        color: black;
+        font-size: 13px;
+        align-self:start;
+    }
+
+    .message-box.right {
+        background-color: fuchsia;
+        color: #fff;
+        position: relative;
+        font-size: 13px;
+        right: 0px;
+        align-self: end;
+    }
+
+.message-input {
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+
+    .message-input .message-send {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        resize: none;
+    }
+
+    .message-input .button-send {
+        background-color: rgba(0,92,169,1);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+        border-radius: 10px;
+        font-size: 13px;
+    }
+
+        .message-input .button-send:hover {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+/*
+.wrapper {
+    position: relative;
+    --white: #0d6efd;
+    --bc: rgb(203,46,79);
+    --bc-al: rgba(255,255,255,1);
+}*/
+
+.card {
+    border:none;
+    height: 90vh;
+    display: grid;
+    grid-template-areas:
+        "top"
+        "bottom";
+    color: white;
+    /*grid-template-rows: 10% 1fr;*/
+    /*border: 1px solid rgb(46 180 203 / 60%);*/
+    /* border-radius: .75rem; */
+    background: transparent;
+    /*color: fuchsia;*/
+    /*backdrop-filter: blur(14px);*/
+    /*box-shadow: 0 15px 30px -15px rgb(46 203 168 / 60%);*/
+    isolation: isolate;
+}
+
+
+.top {
+    padding: .5rem 4rem;
+    z-index: 1;
+    font-size:30px;
+    color:white;
+    display:flex;
+    justify-content:space-around;
+    min-height:0;
+    margin:50px 0 20px;
+}
+.messageFromTeacher {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f00d0d!important
+}
+.bottom {
+    z-index: 2;
+    height: 80vh;
+    overflow-y: scroll;
+    display: block;
+    /*border-top: 2px solid white;*/
+}
+.request {
+    /* margin-top: 1.5rem; */
+    width: 49%;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    height: 65%;
+    line-height: 1.5rem;
+    transition: all .3s ease;
+}
+
+.ContainerButton {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.request:hover {
+    background-color: rgba(0,155,223,1);
+    color: white;
+}
+.users {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 0;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+ul {
+    list-style-type: none;
+}
+.user {
+    list-style-type: none;
+    width: 100%;
+    height: 90px;
+    padding: 0.7rem 3rem;
+    display: grid;
+    color: white;
+    grid-template-columns: 0.5fr 2fr 1.5fr;
+    align-items: center;
+    /* gap: .1rem; */
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    font-size: 1.1rem;
+    /*border-bottom: 1px solid #fff;*/
+    position: relative;
+}
+    .user .CreateCategoryButtons {
+        margin-top:0;
+    }
+    .user:hover {
+        background-color: rgb(255 255 255 / 43%);
+    }
+.user img{
+   height:75px;
+   width:auto;
+   border: 2px solid white;
+}
+    .user:nth-last-child(1) {
+        border-bottom: none;
+    }
+
+
+
+.user-name {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.user-occupation {
+    opacity: .8;
+}
+
+.u-l {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: italic;
+}

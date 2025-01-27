@@ -513,3 +513,18 @@ body {
         transform: rotateY(0deg);
     }
 }
+
+
+.QuezEnd {
+    background: url('https://i.pinimg.com/originals/67/d9/35/67d9350a82968b19a7d011f662904f54.gif');
+    animation: moveBackground 30s linear infinite;
+}
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 100vh;
+    }
+}

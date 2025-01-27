@@ -163,11 +163,8 @@
 
 /* настройки затемнения при выводе модального окна */
 .modal-overlay {
-    /* на старте его не видно */
     display: none;
-    /* затемняем экран */
-    background: rgba(0, 0, 0, 0.8);
-    /* располагаем окно по центру экрана */
+    background: rgb(201 201 201 / 54%);
     position: fixed;
     top: 0;
     left: 0;
@@ -179,25 +176,31 @@
 .modal {
     display: none;
     position: relative;
-    width: 500px;
-    height: 300px;
+    width: 500px !important;
+    height: 300px !important;
     max-height: 90%;
     max-width: 90%;
     min-height: 380px;
     margin: 0 auto;
-    background: white;
+    background-color: rgb(255 255 255 / 35%);
+    border: 1px solid rgb(255 255 255 / 85%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .3rem;
     top: 50%;
     transform: translateY(-50%);
     padding: 30px 10px;
 }
-
-    /* настройки шрифта сообщения о победе */
-    .modal .winner {
-        font-size: 80px;
-        text-align: center;
-        color: #4d4d4d;
-        text-shadow: 0px 3px 0 black;
-    }
+.model .restart {
+    margin:0 auto;
+}
+/* настройки шрифта сообщения о победе */
+.modal .winner {
+    font-size: 50px;
+    text-align: center;
+    color: fuchsia;
+    text-shadow: 0px 3px 0 pink;
+}
 
     /* если ширина окна маленькая, делаем шрифт поменьше */
     /*media (max-width: 480px) {
@@ -207,26 +210,7 @@
 	}
 	*/
     /* настройки кнопки перезапуска игры */
-    .modal .restart {
-        margin: 30px auto;
-        padding: 20px 30px;
-        display: block;
-        font-size: 30px;
-        border: none;
-        background: #4d4d4d;
-        background: linear-gradient(#4d4d4d, #222);
-        border: 1px solid #222;
-        border-radius: 5px;
-        color: white;
-        text-shadow: 0px 1px 0 black;
-        cursor: pointer;
-    }
-
-        /* меняем фон при наведении мышки на кнопку */
-        .modal .restart:hover {
-            background: linear-gradient(#222, black);
-        }
-
+    
     /* выравниваем надписи на модальном окне по центру */
     .modal .message {
         text-align: center;

@@ -8,9 +8,19 @@ html {
 * {
     user-select: none;
 }
-
+main {
+    min-height:100vh;
+    max-height:max-content;
+}
+body {
+    font-family: "Sofia Sans Semi Condensed", sans-serif !important;
+}
 a:hover {
     color: white;
+}
+.text-danger ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 @media (min-width: 768px) {
@@ -22,6 +32,7 @@ a:hover {
 h1 {
     margin-top: 10px;
     text-align: center;
+    width: 100%;
 }
 
 h4 {
@@ -164,7 +175,12 @@ a {
     scale: calc(1 + (var(--active) * 0.1));
     transition: .3s;
 }
-
+#search {
+    height: 45px;
+    padding: 3px 10px;
+    border: 2px solid fuchsia;
+    border-radius: 10px;
+}
     .buttonCrt:active {
         scale: 1;
         transition: .3s;
@@ -361,7 +377,18 @@ a {
     inline-size: 1.25em;
     translate: -25% -5%;
 }
-
+.textErrorSmall span {
+    width: 50vh;
+    position: relative !important;
+    bottom: -35px;
+    color: red !important;
+}
+.textErrorBig span {
+    width: 50vh;
+    position: relative!important;
+    bottom: -90px;
+    color: red !important;
+}
 /*//////////////////////////   Карточки   ////////////////////////////*/
 
 .contener {
@@ -369,9 +396,11 @@ a {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: left;
     align-items: stretch;
-    gap: 30px;
+    gap: 0px;
+    min-height:60vh;
+    padding: 0 5vw;
 }
 
 .img {
@@ -390,7 +419,6 @@ a {
 
 .container1 {
     position: relative;
-    font-family: sans-serif;
     margin: 20px 10px 0;
 }
 
@@ -528,7 +556,6 @@ a {
 .container1Test {
     width: fit-content;
     position: relative;
-    font-family: sans-serif;
     width: fit-content;
     margin: 20px 50px 0;
 }
@@ -618,23 +645,22 @@ a {
 */
 /*/////////////////////////// Кнопка добавить ////////////////////////////////////*/
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 13rem;
-    height: 3rem;
-    margin-left: 50px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 13rem !important;
+    height: 3rem !important;
     background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 5rem;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    backdrop-filter: blur(1rem) !important;
+    border-radius: 5rem !important;
+    transition: 0.5s !important;
+    animation: gradient_301 5s ease infinite !important;
+    border: double 4px transparent !important;
+    background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%) !important;
+    background-origin: border-box !important;
+    background-clip: content-box, border-box !important;
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
 }
 
 a {
@@ -657,7 +683,6 @@ a {
 strong {
     display: flex;
     z-index: 2;
-    font-family: 'Avalors Personal Use';
     font-size: 20px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -851,6 +876,7 @@ strong {
 }
 
 .nav__title {
+    font-family: "Dela Gothic One", sans-serif;
     font-size: 35px;
     background: -webkit-linear-gradient(-45deg, #7030a0 0%,#9dc3e6 39%,#ff66ff 76%,#ffffff 100%);
     font-weight: 700;
@@ -864,7 +890,6 @@ strong {
     white-space: pre-wrap;
     text-align: center;
     line-height: 19px;
-    font-family: "Avalors Personal Use";
     font-size: 19px;
     letter-spacing: 1px;
     padding: 5px;
@@ -977,24 +1002,30 @@ strong {
 }
 
 .spanQuestion {
-    font-size: 30px;
+    padding: 50px 10px 10px;
 }
 
-.inputbox input {
+.inputbox input,textarea {
     position: relative;
     width: 100%;
-    padding: 30px 10px 5px;
+    padding: 25px 10px 5px;
     background: transparent;
     outline: none;
     box-shadow: none;
     border: none;
     color: black;
+
     font-size: 1em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     z-index: 10;
 }
-
+.inputbox textarea {
+    padding: 10px 10px 5px;
+    height:100px;
+    background:white;
+    border-radius:10px;
+}
 .inputbox span {
     position: absolute;
     left: 0;
@@ -1005,6 +1036,7 @@ strong {
     transition: 0.5s;
     pointer-events: none;
 }
+
 .inputbox .question > .spanQuestion {
     position: relative;
 }
@@ -1014,7 +1046,12 @@ strong {
     transform: translateX(-10px) translateY(-34px);
     font-size: 0,75em;
 }
-
+.inputbox textarea:valid ~ span,
+.inputbox textarea:focus ~ span {
+    color: white;
+    transform: translateX(-10px) translateY(-104px);
+    font-size: 0,75em;
+}
 .inputbox i {
     position: absolute;
     left: 0;
@@ -1031,7 +1068,9 @@ strong {
 .inputbox input:focus ~ i {
     height: 44px;
 }
-
+.inputbox textarea:focus ~ i {
+    height: 124px;
+}
 .aa {
     display: flex;
     align-items: baseline;
@@ -1254,7 +1293,7 @@ strong {
     display: flex;
     align-items: baseline;
     width: 70%;
-    margin-top: -5%;
+    margin-top: 5%;
     position: relative;
     align-self: center;
     justify-content: end;
@@ -1265,6 +1304,11 @@ strong {
     display: flex;
     align-items: baseline;
     justify-content: space-around;
+}
+hr:not([size]) {
+    border: 1px solid #fff; /* задаем толщину и цвет линии */
+    border-style: solid;
+    margin:0;/* устанавливаем стиль линии */
 }
 
 .QuestionText {
@@ -1316,7 +1360,14 @@ strong {
 /*////////////////////////////// КАТЕГОРИЯ-СОЗДАНИЕ ////////////////////////////////////*/
 .formCreate {
     margin-left: 10%;
-    margin-right:5%;
+    margin-right: 5%;
+    margin-left: 0;
+    padding: 0 20px;
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -1324,7 +1375,7 @@ strong {
     margin: 10px;
 }
 .formCreate .question {
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 }
     .CategoryImg {
         padding-top: 10px;
@@ -1378,7 +1429,6 @@ strong {
     place-content: center;
     font-size: 75px;
     font-weight: bold;
-    font-family: sans-serif;
     color: black;
     font-weight: 700;
     text-shadow: inset -2px -5px 0px rgba(0,0,0,1), 0 0 5px black;
@@ -1837,7 +1887,6 @@ strong {
 /*//////////////////////////////////////////////////////////////*/
 .cssbuttons-io-button {
     color: white;
-    font-family: inherit;
     padding: 0.35em;
     padding-left: 1.2em;
     font-size: 17px;
@@ -2211,7 +2260,6 @@ strong {
     background: transparent;
     padding: 0;
     font-size: inherit;
-    font-family: inherit;
     color: white;
 }
 
@@ -2378,7 +2426,7 @@ strong {
 
 .img1tasks {
     position: absolute;
-    top: 250px;
+    top: 350px;
     width: 25%;
     transform: rotate(40deg);
     animation: img1tasks 3s alternate infinite;
@@ -2484,12 +2532,12 @@ strong {
 }
 
 #create-pictures .inputbox {
-    min-width: 650px;
+    min-width: 100%;
 }
-
-
+#create-pictures .aa {
+    width:80%;
+}
 /*/////////////////////////// CategoryQuez /////////////////////////////////*/
-
 .contenerQuez {
     display: flex;
 }
@@ -2716,17 +2764,16 @@ strong {
     flex-wrap: wrap;
     padding: 0 50px;
     width: 100vw;
-    height: 100vh;
-    /*   background: url('/img/party-balloons-and-confetti-31.gif');
-    background-size:cover;*/
-     background: url('/img/confetti-gif-3.gif');
-    background-size: 20%;
+    height: max-content;
+    /*background-size:cover;*/
+    /*    background: url('/img/confetti-gif-3.gif');
+    background-size: 20%;*/
     /* background: url('/img/confetti-19.gif');
     background-size: 100%;*/
-
- /*   background: url('/img/1622861_edaa2.gif');
+    /*   background: url('/img/1622861_edaa2.gif');
     background-size: 10%;*/
 }
+
 .Home__Titile{
     width:100%;
     text-align:center;
@@ -2948,14 +2995,16 @@ strong {
         display: none;
         /*transform:translate(-30px);*/
     }
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
 
 textarea {
     /* resize: vertical; */
     resize: none;
-    color: white;
-    background:transparent;
+    color: black;
     border:none;
-    height:80px;
     width:100%;
     /* resize: both; */
 }
@@ -3283,6 +3332,7 @@ textarea {
         .contener {
             flex-direction: column;
             align-items: center;
+            min-height: 60vh;
         }
 
         .img1tasks {
@@ -3400,6 +3450,11 @@ textarea {
         .formCreate {
             margin-left: 0;
             padding: 0 20px;
+            height: 60vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
             .formCreate .question {

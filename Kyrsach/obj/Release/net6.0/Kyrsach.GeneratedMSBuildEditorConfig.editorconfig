@@ -16,64 +16,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Controllers/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbGxlcnNcQXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Account/FullUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGdWxsVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/AnswersUsers/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXENyZWF0ZS5jc2h0bWw=
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/AnswersUsers/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXERlbGV0ZS5jc2h0bWw=
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Account/RegisterTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclRlYWNoZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/AnswersUsers/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/AnswersUsers/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXEVkaXQuY3NodG1s
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Account/RegisterUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/AnswersUsers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Answers/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Answers/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Answers/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Answers/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Answers/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Biography/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlvZ3JhcGh5XEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Biography/Speak.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlvZ3JhcGh5XFNwZWFrLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Biography/Start.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlvZ3JhcGh5XFN0YXJ0LmNzaHRtbA==
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/AnswersUsers/IndexForUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1VzZXJzXEluZGV4Rm9yVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Category/Cards/Index.cshtml]
@@ -94,10 +66,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Category/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Category/Edit.cshtml]
@@ -124,12 +92,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXhRdWV6LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Dialog/DialogUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhbG9nXERpYWxvZ1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Dialog/IndexDialog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhbG9nXEluZGV4RGlhbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Errors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/File/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVxJbmRleC5jc2h0bWw=
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Files/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZXNcVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Groups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Home/Index.cshtml]
@@ -142,14 +130,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Pairs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpcnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Pairs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpcnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Pairs/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Pairs/Edit.cshtml]
@@ -168,18 +148,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Questions/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Questions/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Questions/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Questions/End.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXEVuZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -194,18 +162,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Quezs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlenNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Quezs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlenNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Quezs/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlenNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Quezs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlenNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Quezs/End.cshtml]
@@ -246,10 +202,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Tests/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Tests/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/КП/WantToKnowEverything29-20-24/WantToKnowEverything/Kyrsach/Views/Tests/Edit.cshtml]

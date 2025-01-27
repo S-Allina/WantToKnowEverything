@@ -53,12 +53,11 @@ tasksListElement.addEventListener(`dragover`, (evt) => {
 });
 function Proverka() {
     const task = document.querySelectorAll('.tasks__item');
-    const curr1 = document.getElementById('current1').textContent.split(' ');
+    const curr1 = document.getElementById('current1').textContent.split('^');
     const g = document.getElementById('Got');
     g.classList.add('none');
     const d = document.getElementById('Dall');
     d.classList.remove('none');
-    //const curr2 = document.getElementById('current2');
     console.log(task[0].textContent);
     for (let i = 0; i < task.length; i++) {
         if (task[i].textContent === curr1[i]) {

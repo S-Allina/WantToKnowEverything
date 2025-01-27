@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -315,7 +314,28 @@ body.dark .switch::before {
 @media screen and (max-width: 400px) {
     .Menu {
         display: flex;
-        align-items:center;
-        width:fit-content;
+        align-items: center;
+        width: 100%;
+        justify-content: end;
+        padding: 5px 30px;
+    }
+
+    .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper .None1 {
+        display: flex;
+        position: relative;
+        left: 50%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Text1, .Text {
+        display: none;
+    }
+
+    .None1 .btn {
+        margin-left: 30px !important;
+    }
+    .btn {
+        margin-left: calc(50vw - 13rem / 2) !important;
     }
 }

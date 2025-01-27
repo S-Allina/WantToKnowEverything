@@ -21,10 +21,17 @@
         background-color: #e499ff;
         background-image: radial-gradient(at 47% 69%, hsla(17,62%,65%,1) 0px, transparent 50%), radial-gradient(at 9% 32%, hsla(222,75%,60%,1) 0px, transparent 50%);
     }
-.formSelect{
-    display:grid;
-    width:20vw;
-    gap:10px;
+h2 {
+    text-align:center
+}
+.formSelect {
+    display: grid;
+    width: 40%;
+    gap: 10px;
+}
+.contener {
+    padding: 0;
+    flex-wrap:nowrap;
 }
 .my-select-menu option {
     max-width: 200px;

@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\Cards.css"
     },
     {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\Chat.css",
+      "PackagePath": "staticwebassets\\css\\Chat.css"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\Confetti.css",
+      "PackagePath": "staticwebassets\\css\\Confetti.css"
+    },
+    {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\css\\Loader.css",
       "PackagePath": "staticwebassets\\css\\Loader.css"
     },
@@ -49,6 +57,10 @@
       "PackagePath": "staticwebassets\\img\\1622861_edaa2.gif"
     },
     {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\AddAdminIcon.png",
+      "PackagePath": "staticwebassets\\img\\AddAdminIcon.png"
+    },
+    {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\Bio.png",
       "PackagePath": "staticwebassets\\img\\Bio.png"
     },
@@ -85,12 +97,20 @@
       "PackagePath": "staticwebassets\\img\\acount.png"
     },
     {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\addStudent.png",
+      "PackagePath": "staticwebassets\\img\\addStudent.png"
+    },
+    {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\arrowLeft.png",
       "PackagePath": "staticwebassets\\img\\arrowLeft.png"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\celebration-gif-4.gif",
       "PackagePath": "staticwebassets\\img\\celebration-gif-4.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\chat.png",
+      "PackagePath": "staticwebassets\\img\\chat.png"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\confetti-19.gif",
@@ -113,12 +133,20 @@
       "PackagePath": "staticwebassets\\img\\error2.png"
     },
     {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\files.png",
+      "PackagePath": "staticwebassets\\img\\files.png"
+    },
+    {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\filesIcon.png",
       "PackagePath": "staticwebassets\\img\\filesIcon.png"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\glitter.gif",
       "PackagePath": "staticwebassets\\img\\glitter.gif"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\group.png",
+      "PackagePath": "staticwebassets\\img\\group.png"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\home1.png",
@@ -129,8 +157,16 @@
       "PackagePath": "staticwebassets\\img\\hz.png"
     },
     {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\loguot.png",
       "PackagePath": "staticwebassets\\img\\loguot.png"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\menu.png",
+      "PackagePath": "staticwebassets\\img\\menu.png"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\minus.jpg",
@@ -245,16 +281,28 @@
       "PackagePath": "staticwebassets\\img\\vecteezy_ink-with-feather-icons-of-art-and-stationary-illustration_8470746_847.png"
     },
     {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\img\\win.png",
+      "PackagePath": "staticwebassets\\img\\win.png"
+    },
+    {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\Cards.js",
       "PackagePath": "staticwebassets\\js\\Cards.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\Chat.js",
+      "PackagePath": "staticwebassets\\js\\Chat.js"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\Quez.js",
       "PackagePath": "staticwebassets\\js\\Quez.js"
     },
     {
-      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\React.js",
-      "PackagePath": "staticwebassets\\js\\React.js"
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\ShowMessage.js",
+      "PackagePath": "staticwebassets\\js\\ShowMessage.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\changeImgFile.js",
+      "PackagePath": "staticwebassets\\js\\changeImgFile.js"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\dia1.js",
@@ -271,6 +319,10 @@
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\question.js",
       "PackagePath": "staticwebassets\\js\\question.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
     },
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\js\\site.js",
@@ -503,6 +555,890 @@
     {
       "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\README.md",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\README.md"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\AbortController.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\AbortController.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\AbortController.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\AbortController.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\AccessTokenHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\AccessTokenHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\AccessTokenHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\AccessTokenHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultReconnectPolicy.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultReconnectPolicy.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultReconnectPolicy.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DefaultReconnectPolicy.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.browser.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.browser.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.browser.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.browser.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\DynamicImports.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Errors.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Errors.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Errors.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Errors.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\FetchHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\FetchHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\FetchHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\FetchHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HandshakeProtocol.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HandshakeProtocol.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HandshakeProtocol.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HandshakeProtocol.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HeaderNames.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HeaderNames.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HeaderNames.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HeaderNames.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HttpConnection.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HttpConnection.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HttpConnection.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HttpConnection.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnection.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnection.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnection.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnection.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnectionBuilder.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnectionBuilder.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnectionBuilder.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\HubConnectionBuilder.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IConnection.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IConnection.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IConnection.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IConnection.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IHttpConnectionOptions.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IHttpConnectionOptions.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IHttpConnectionOptions.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IHttpConnectionOptions.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IHubProtocol.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IHubProtocol.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IHubProtocol.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IHubProtocol.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\ILogger.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\ILogger.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\ILogger.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\ILogger.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IRetryPolicy.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IRetryPolicy.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IRetryPolicy.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IRetryPolicy.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IStatefulReconnectOptions.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IStatefulReconnectOptions.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\IStatefulReconnectOptions.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\IStatefulReconnectOptions.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\ITransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\ITransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\ITransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\ITransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\JsonHubProtocol.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\JsonHubProtocol.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\JsonHubProtocol.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\JsonHubProtocol.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Loggers.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Loggers.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Loggers.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Loggers.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\LongPollingTransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\LongPollingTransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\LongPollingTransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\LongPollingTransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\MessageBuffer.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\MessageBuffer.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\MessageBuffer.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\MessageBuffer.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Polyfills.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Polyfills.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Polyfills.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Polyfills.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\ServerSentEventsTransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\ServerSentEventsTransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\ServerSentEventsTransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\ServerSentEventsTransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Stream.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Stream.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Stream.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Stream.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Subject.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Subject.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Subject.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Subject.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\TextMessageFormat.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\TextMessageFormat.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\TextMessageFormat.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\TextMessageFormat.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Utils.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Utils.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\Utils.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\Utils.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\WebSocketTransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\WebSocketTransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\WebSocketTransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\WebSocketTransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\XhrHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\XhrHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\XhrHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\XhrHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\browser-index.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\browser-index.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\browser-index.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\browser-index.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\index.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\index.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\cjs\\index.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\cjs\\index.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\AbortController.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\AbortController.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\AbortController.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\AbortController.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\AbortController.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\AbortController.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\AccessTokenHttpClient.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\AccessTokenHttpClient.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\AccessTokenHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\AccessTokenHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\AccessTokenHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\AccessTokenHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DefaultHttpClient.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DefaultHttpClient.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DefaultHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DefaultHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DefaultHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DefaultHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DefaultReconnectPolicy.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DefaultReconnectPolicy.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DefaultReconnectPolicy.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DefaultReconnectPolicy.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DefaultReconnectPolicy.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DefaultReconnectPolicy.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.browser.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.browser.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.browser.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.browser.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.browser.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.browser.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\DynamicImports.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Errors.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Errors.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Errors.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Errors.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Errors.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Errors.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\FetchHttpClient.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\FetchHttpClient.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\FetchHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\FetchHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\FetchHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\FetchHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HandshakeProtocol.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HandshakeProtocol.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HandshakeProtocol.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HandshakeProtocol.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HandshakeProtocol.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HandshakeProtocol.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HeaderNames.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HeaderNames.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HeaderNames.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HeaderNames.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HeaderNames.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HeaderNames.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HttpClient.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HttpClient.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HttpConnection.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HttpConnection.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HttpConnection.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HttpConnection.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HttpConnection.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HttpConnection.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HubConnection.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HubConnection.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HubConnection.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HubConnection.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HubConnection.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HubConnection.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HubConnectionBuilder.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HubConnectionBuilder.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HubConnectionBuilder.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HubConnectionBuilder.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\HubConnectionBuilder.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\HubConnectionBuilder.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IConnection.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IConnection.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IConnection.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IConnection.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IConnection.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IConnection.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IHttpConnectionOptions.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IHttpConnectionOptions.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IHttpConnectionOptions.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IHttpConnectionOptions.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IHttpConnectionOptions.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IHttpConnectionOptions.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IHubProtocol.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IHubProtocol.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IHubProtocol.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IHubProtocol.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IHubProtocol.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IHubProtocol.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ILogger.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ILogger.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ILogger.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ILogger.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ILogger.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ILogger.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IRetryPolicy.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IRetryPolicy.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IRetryPolicy.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IRetryPolicy.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IRetryPolicy.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IRetryPolicy.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IStatefulReconnectOptions.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IStatefulReconnectOptions.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IStatefulReconnectOptions.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IStatefulReconnectOptions.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\IStatefulReconnectOptions.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\IStatefulReconnectOptions.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ITransport.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ITransport.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ITransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ITransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ITransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ITransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\JsonHubProtocol.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\JsonHubProtocol.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\JsonHubProtocol.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\JsonHubProtocol.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\JsonHubProtocol.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\JsonHubProtocol.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Loggers.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Loggers.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Loggers.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Loggers.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Loggers.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Loggers.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\LongPollingTransport.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\LongPollingTransport.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\LongPollingTransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\LongPollingTransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\LongPollingTransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\LongPollingTransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\MessageBuffer.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\MessageBuffer.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\MessageBuffer.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\MessageBuffer.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\MessageBuffer.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\MessageBuffer.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Polyfills.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Polyfills.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Polyfills.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Polyfills.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Polyfills.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Polyfills.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ServerSentEventsTransport.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ServerSentEventsTransport.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ServerSentEventsTransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ServerSentEventsTransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\ServerSentEventsTransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\ServerSentEventsTransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Stream.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Stream.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Stream.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Stream.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Stream.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Stream.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Subject.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Subject.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Subject.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Subject.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Subject.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Subject.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\TextMessageFormat.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\TextMessageFormat.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\TextMessageFormat.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\TextMessageFormat.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\TextMessageFormat.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\TextMessageFormat.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Utils.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Utils.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Utils.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Utils.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\Utils.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\Utils.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\WebSocketTransport.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\WebSocketTransport.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\WebSocketTransport.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\WebSocketTransport.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\WebSocketTransport.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\WebSocketTransport.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\XhrHttpClient.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\XhrHttpClient.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\XhrHttpClient.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\XhrHttpClient.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\XhrHttpClient.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\XhrHttpClient.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\browser-index.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\browser-index.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\browser-index.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\browser-index.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\browser-index.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\browser-index.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\index.d.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\index.d.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\index.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\index.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\esm\\index.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\esm\\index.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.min.js",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.min.js"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\dist\\webworker\\signalr.min.js.map"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\package.json",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\package.json"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\AbortController.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\AbortController.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\AccessTokenHttpClient.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\AccessTokenHttpClient.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\DefaultHttpClient.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\DefaultHttpClient.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\DefaultReconnectPolicy.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\DefaultReconnectPolicy.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\DynamicImports.browser.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\DynamicImports.browser.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\DynamicImports.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\DynamicImports.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\Errors.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\Errors.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\FetchHttpClient.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\FetchHttpClient.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\HandshakeProtocol.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\HandshakeProtocol.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\HeaderNames.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\HeaderNames.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\HttpClient.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\HttpClient.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\HttpConnection.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\HttpConnection.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\HubConnection.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\HubConnection.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\HubConnectionBuilder.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\HubConnectionBuilder.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\IConnection.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\IConnection.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\IHttpConnectionOptions.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\IHttpConnectionOptions.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\IHubProtocol.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\IHubProtocol.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\ILogger.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\ILogger.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\IRetryPolicy.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\IRetryPolicy.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\IStatefulReconnectOptions.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\IStatefulReconnectOptions.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\ITransport.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\ITransport.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\JsonHubProtocol.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\JsonHubProtocol.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\Loggers.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\Loggers.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\LongPollingTransport.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\LongPollingTransport.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\MessageBuffer.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\MessageBuffer.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\Polyfills.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\Polyfills.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\ServerSentEventsTransport.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\ServerSentEventsTransport.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\Stream.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\Stream.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\Subject.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\Subject.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\TextMessageFormat.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\TextMessageFormat.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\Utils.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\Utils.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\WebSocketTransport.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\WebSocketTransport.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\XhrHttpClient.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\XhrHttpClient.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\browser-index.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\browser-index.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\index.ts",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\index.ts"
+    },
+    {
+      "Id": "D:\\КП\\WantToKnowEverything29-20-24\\WantToKnowEverything\\Kyrsach\\wwwroot\\lib\\microsoft\\signalr\\src\\third-party-notices.txt",
+      "PackagePath": "staticwebassets\\lib\\microsoft\\signalr\\src\\third-party-notices.txt"
     },
     {
       "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.Kyrsach.Microsoft.AspNetCore.StaticWebAssets.props",

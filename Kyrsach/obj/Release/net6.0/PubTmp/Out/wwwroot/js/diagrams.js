@@ -1,4 +1,30 @@
-﻿function GenerateDiagramm1(data) {
+﻿
+//const forms = document.querySelectorAll('form');
+//console.log(forms)
+//for (let form of forms) {
+//    console.log(form)
+//    form.addEventListener('submit', (e) => {
+//        e.preventDefault();
+
+//        const inputs = form.querySelectorAll('input.my-select-menu');
+//        console.log(inputs)
+//        if (inputs.length != 0) {
+//            for (const input of inputs) {
+//                console.log(input.value)
+//                if (!input.value) {
+//                    alert('Пожалуйста, заполните все поля формы.');
+//                    event.preventDefault();
+//                    return;
+//                } else {
+//                    return;
+//                }
+//            }
+//        }
+
+//    });
+//}
+
+function GenerateDiagramm1(data) {
     console.log(data)
     console.log(Math.max.apply(null,data.averageScore));
     console.log(data.nameTest)
@@ -17,24 +43,7 @@
                 pointHighlightStroke: "rgba(225,225,225,0.9)",
                 data: data.averageScore
             },
-            //{
-            //    label: "Middle",
-            //    fillColor: "rgba(255, 172, 100, 0.1)",
-            //    strokeColor: "rgba(255, 172, 100, 1)",
-            //    pointColor: "rgba(255, 172, 100, 1)",
-            //    pointStrokeColor: "#202b33",
-            //    pointHighlightStroke: "rgba(225,225,225,0.9)",
-            //    data: [0, 0, 0]
-            //},
-            //{
-            //    label: "Back",
-            //    fillColor: "rgba(19, 71, 34, 0.3)",
-            //    strokeColor: "rgba(88, 188, 116, 1)",
-            //    pointColor: "rgba(88, 188, 116, 1)",
-            //    pointStrokeColor: "#202b33",
-            //    pointHighlightStroke: "rgba(225,225,225,0.9)",
-            //    data: [0, 0, 0]
-            //}
+           
         ]
     };
     var ctx = document.getElementById("salesData").getContext("2d");
@@ -146,25 +155,39 @@ function GenerateDiagramm3(data) {
     label.verticalCenter = "middle";
     label.fontSize = 40;
 }
-document.querySelector('form.contener button').addEventListener('click', function (e) {
+
+function areFieldsFilled(data) {
+    return data.idUser && data.idCategory && data.startDate && data.endDate;
+}
+
+var excelBtn = document.querySelector("#Excel");
+
+document.querySelector('form.center-wrap .dia').addEventListener('click', function (e) {
+ 
     e.preventDefault();
 
     // Get selected values from the form
-    var selectedUser = document.querySelector('#users');
+
+    var selectedUser = document.querySelector('#users') === null ? document.querySelector('#User') : document.querySelector('#users');
+    
     var selectedTest = document.querySelector('#tests');
     var startDate = document.querySelector('#startDate');
     var endDate = document.querySelector('#endDate');
-
-
+    console.log(startDate.value);
 
     // Create a data object to send to the controller
     var data = {
         idUser: selectedUser.value,
         idCategory: parseInt(selectedTest.value),
-        startDate: new Date(startDate.value),
-        endDate: new Date(endDate.value)
+        startDate: new Date(startDate.value == "" ? "01-01-2000" : startDate.value),
+        endDate: new Date(endDate.value == "" ? "01-01-2050" : endDate.value)
     };
-    console.log(data)
+    if (!areFieldsFilled(data)) {
+        alert('Пожалуйста, заполните все необходимые поля');
+        return;
+    }
+
+    try {
     // Send a POST request to the controller and retrieve the JSON data
     fetch('/Diagrams/GetResultTest', {
         method: 'POST',
@@ -197,7 +220,8 @@ document.querySelector('form.contener button').addEventListener('click', functio
     xhr.send();
 
 
-
+    //excelBtn.attributes.removeNamedItem("hidden");
+    //excelBtn.setAttribute("asp-route-idCategory", data.idCategory);
     fetch('/Diagrams/GetPerformanceTest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -208,7 +232,7 @@ document.querySelector('form.contener button').addEventListener('click', functio
             // Process the returned JSON data as needed
             console.log(data);
             GenerateDiagramm3(data);
-            //GenerateDiagramm1(data)
+            /*GenerateDiagramm1(data)*/
             selectedUser.toggleAttribute("disabled");
             selectedTest.toggleAttribute("disabled");
             startDate.toggleAttribute("disabled");
@@ -217,22 +241,26 @@ document.querySelector('form.contener button').addEventListener('click', functio
         .catch(error => {
             console.error('Error:', error);
         });
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
+    }
 });
-
-
-
-
 
 window.onload = function () {
     var usersSelect = document.getElementById("users");
+    var user = document.getElementById("User");
     var optionsSelect = document.getElementById("tests");
-    usersSelect.addEventListener("change", function () {
-        var selectedUser = usersSelect.value;
-        optionsSelect.innerHTML = "";
-
-        loadOptionsFromDatabase(selectedUser)
-    });
-
+    if (usersSelect === null && user !== null) {
+        loadOptionsFromDatabase(user.value)
+    } else {
+        usersSelect.addEventListener("change", function () {
+            var selectedUser = usersSelect.value;
+            optionsSelect.innerHTML = "";
+            loadOptionsFromDatabase(selectedUser)
+        });
+    }
     function loadOptionsFromDatabase(type) {
         console.log(type)
         var xhr = new XMLHttpRequest();
@@ -247,6 +275,7 @@ window.onload = function () {
         };
         xhr.send();
     }
+    
     function fillOptionsSelect(options) {
         console.log(options)
         options.forEach(function (option) {
@@ -257,3 +286,15 @@ window.onload = function () {
         });
     }
 };
+var optionsSelect2 = document.getElementById("idCategory");
+
+function fillOptionsSelect(options) {
+    console.log(options)
+    options.forEach(function (option) {
+        var optionElement = document.createElement("option");
+        optionElement.text = option.nameCategory;
+        optionElement.value = option.idCategory;
+        optionsSelect2.add(optionElement);
+    });
+}
+

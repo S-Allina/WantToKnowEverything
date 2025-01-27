@@ -6,11 +6,13 @@ D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\ne
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Kyrsach.pdb
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\ClosedXML.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\DocumentFormat.OpenXml.dll
+D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Dropbox.Api.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\ExcelNumberFormat.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Humanizer.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Irony.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\MessagePack.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\MessagePack.Annotations.dll
+D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -41,6 +43,7 @@ D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\ne
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Identity.Core.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Identity.Stores.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.dll
+D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Logging.dll
 D:\КП\WantToKnowEverything29-20-24\WantToKnowEverything\Kyrsach\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
